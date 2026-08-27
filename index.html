@@ -2,51 +2,38 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>BAR OS</title>
 
 <style>
-
 :root{
-    --bg:#0d0f10;
-    --card:#171a1c;
-    --card2:#1d2123;
+    --bg:#0b0d0e;
+    --card:#151819;
+    --card2:#1c2022;
     --text:#f5f5f5;
-    --muted:#92989b;
+    --muted:#8e9699;
     --accent:#9ee6c0;
-    --accent2:#5dc891;
-    --danger:#ff6b6b;
+    --accent2:#55c58d;
+    --danger:#ff7272;
     --warning:#ffc857;
     --border:#292e30;
 }
 
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
     background:var(--bg);
     color:var(--text);
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
-    padding-bottom:90px;
+    padding-bottom:92px;
 }
 
-button,
-input,
-select,
-textarea{
-    font:inherit;
-}
-
-button{
-    border:0;
-    cursor:pointer;
-}
+button,input,select,textarea{font:inherit}
+button{border:0;cursor:pointer}
 
 .app{
-    max-width:650px;
+    max-width:680px;
     margin:auto;
     padding:18px 16px;
 }
@@ -55,12 +42,12 @@ button{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:24px;
+    margin-bottom:22px;
 }
 
 .logo{
     font-size:25px;
-    font-weight:800;
+    font-weight:850;
     letter-spacing:2px;
 }
 
@@ -69,120 +56,107 @@ button{
     font-size:13px;
 }
 
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
-}
-
-/* DASHBOARD */
+.page{display:none}
+.page.active{display:block}
 
 .hero{
-    background:linear-gradient(145deg,#1a2520,#141817);
+    background:linear-gradient(145deg,#17231d,#121716);
     border:1px solid #26372f;
-    border-radius:24px;
+    border-radius:25px;
     padding:22px;
-    margin-bottom:16px;
+    margin-bottom:14px;
 }
 
 .hero-title{
     color:var(--muted);
-    font-size:13px;
-    margin-bottom:6px;
+    font-size:12px;
 }
 
 .hero-value{
-    font-size:42px;
-    font-weight:800;
+    font-size:43px;
+    font-weight:850;
     letter-spacing:-2px;
+    margin-top:5px;
 }
 
 .hero-sub{
-    margin-top:5px;
     color:var(--accent);
-    font-size:14px;
+    font-size:13px;
+    margin-top:5px;
 }
 
 .grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:12px;
+    gap:11px;
 }
 
 .stat{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:20px;
-    padding:17px;
+    border-radius:19px;
+    padding:16px;
 }
 
 .stat-label{
     color:var(--muted);
-    font-size:12px;
+    font-size:11px;
 }
 
 .stat-value{
-    font-size:25px;
-    font-weight:750;
+    font-size:24px;
+    font-weight:800;
     margin-top:7px;
 }
 
 .stat-small{
     color:var(--muted);
-    font-size:11px;
-    margin-top:4px;
+    font-size:10px;
+    margin-top:3px;
 }
 
 .section-title{
     margin:25px 2px 12px;
     font-size:17px;
-    font-weight:750;
+    font-weight:800;
 }
-
-/* BUTTONS */
 
 .primary{
     width:100%;
     background:var(--accent);
-    color:#0c1611;
+    color:#0b1510;
     padding:15px;
-    border-radius:15px;
-    font-weight:750;
-    margin-top:12px;
+    border-radius:14px;
+    font-weight:800;
+    margin-top:10px;
 }
 
 .secondary{
     background:var(--card2);
     color:var(--text);
     border:1px solid var(--border);
-    padding:13px 15px;
+    padding:12px 14px;
     border-radius:13px;
 }
 
 .danger{
-    background:#321b1d;
-    color:#ff8d8d;
+    background:#301c1e;
+    color:#ff8a8a;
 }
 
 .row{
     display:flex;
-    gap:9px;
+    gap:8px;
 }
 
-.row>*{
-    flex:1;
-}
-
-/* CARDS */
+.row>*{flex:1}
 
 .card{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:20px;
-    padding:17px;
-    margin-bottom:12px;
+    border-radius:19px;
+    padding:16px;
+    margin-bottom:11px;
 }
 
 .card-header{
@@ -191,98 +165,35 @@ button{
     gap:12px;
 }
 
-.cocktail-name{
-    font-size:18px;
-    font-weight:750;
+.title{
+    font-size:17px;
+    font-weight:780;
 }
 
 .category{
     color:var(--muted);
-    font-size:12px;
+    font-size:11px;
     margin-top:4px;
 }
 
 .price{
-    font-weight:750;
-    font-size:16px;
+    font-weight:800;
 }
-
-.ingredients{
-    margin-top:13px;
-}
-
-.ingredient-line{
-    display:flex;
-    justify-content:space-between;
-    color:#c9cdce;
-    font-size:13px;
-    padding:5px 0;
-}
-
-.cost-line{
-    display:flex;
-    justify-content:space-between;
-    font-size:13px;
-    padding:5px 0;
-}
-
-.margin{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:13px;
-    padding-top:12px;
-    border-top:1px solid var(--border);
-    font-size:13px;
-}
-
-.good{
-    color:var(--accent);
-}
-
-.bad{
-    color:var(--danger);
-}
-
-/* SEARCH */
 
 .search{
     width:100%;
     background:var(--card);
     color:white;
     border:1px solid var(--border);
-    border-radius:15px;
-    padding:14px 16px;
+    border-radius:14px;
+    padding:14px;
     outline:none;
-    margin-bottom:14px;
+    margin-bottom:8px;
 }
 
-.search:focus{
-    border-color:var(--accent2);
-}
-
-/* FORMS */
-
-.form-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:18px;
-    margin-bottom:15px;
-}
-
-label{
-    display:block;
-    color:var(--muted);
-    font-size:12px;
-    margin:12px 0 6px;
-}
-
-input,
-select,
-textarea{
+input,select,textarea{
     width:100%;
-    background:#101314;
+    background:#0f1213;
     color:white;
     border:1px solid var(--border);
     border-radius:12px;
@@ -290,9 +201,7 @@ textarea{
     outline:none;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
+input:focus,select:focus,textarea:focus{
     border-color:var(--accent2);
 }
 
@@ -301,84 +210,117 @@ textarea{
     resize:vertical;
 }
 
-/* INGREDIENT ROW */
+label{
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    margin:12px 0 6px;
+}
 
 .ingredient-row{
     display:grid;
-    grid-template-columns:1fr 90px 40px;
+    grid-template-columns:1fr 82px 40px;
     gap:7px;
-    align-items:end;
     margin-bottom:8px;
 }
 
 .remove{
-    height:44px;
-    border-radius:10px;
-    background:#302022;
+    background:#301c1e;
     color:#ff8585;
+    border-radius:10px;
 }
 
-/* INGREDIENT CARD */
+.cost-box{
+    margin-top:14px;
+    padding:14px;
+    background:#101515;
+    border:1px solid #26372f;
+    border-radius:14px;
+}
 
-.ingredient-cost{
-    color:var(--accent);
+.cost-big{
+    font-size:27px;
+    font-weight:850;
+    margin-top:3px;
+}
+
+.green{color:var(--accent)}
+.red{color:var(--danger)}
+.yellow{color:var(--warning)}
+
+.ingredient-line,
+.sale-line{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:6px 0;
     font-size:13px;
-    margin-top:6px;
 }
 
-.ingredient-info{
-    color:var(--muted);
-    font-size:12px;
-    margin-top:4px;
-}
-
-/* NAV */
-
-.bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    background:rgba(14,16,17,.96);
-    backdrop-filter:blur(18px);
+.divider{
     border-top:1px solid var(--border);
-    z-index:50;
-    padding-bottom:max(8px,env(safe-area-inset-bottom));
+    margin-top:10px;
+    padding-top:10px;
 }
 
-.nav-inner{
-    width:100%;
-    max-width:650px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
+.stock-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
 }
 
-.nav-btn{
-    background:none;
+.stock-row:last-child{border-bottom:0}
+
+.stock-name{font-weight:700}
+
+.stock-detail{
     color:var(--muted);
-    padding:9px 2px 7px;
-    font-size:9px;
+    font-size:10px;
+    margin-top:3px;
 }
 
-.nav-btn.active{
+.stock-right{
+    text-align:right;
+    font-weight:800;
+}
+
+.stock-remaining{
+    font-size:11px;
+    margin-top:3px;
+}
+
+.sale-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:14px;
+    margin-bottom:9px;
+}
+
+.sale-time{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.sale-name{
+    font-weight:750;
+    margin-top:3px;
+}
+
+.sale-quantity{
     color:var(--accent);
+    font-weight:800;
 }
-
-.nav-icon{
-    font-size:20px;
-    display:block;
-    margin-bottom:2px;
-}
-
-/* CHART */
 
 .chart{
-    height:180px;
+    height:175px;
     display:flex;
     align-items:flex-end;
     gap:8px;
-    padding:15px 5px 0;
+    padding:10px 5px 0;
 }
 
 .bar{
@@ -394,110 +336,100 @@ textarea{
     bottom:-20px;
     left:50%;
     transform:translateX(-50%);
+    color:var(--muted);
     font-size:9px;
-    color:var(--muted);
 }
-
-/* STOCK */
-
-.stock-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:13px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.stock-row:last-child{
-    border-bottom:0;
-}
-
-.stock-name{
-    font-weight:600;
-}
-
-.stock-detail{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:3px;
-}
-
-.stock-qty{
-    text-align:right;
-    font-weight:700;
-}
-
-.low{
-    color:var(--warning);
-}
-
-.out{
-    color:var(--danger);
-}
-
-/* MODAL */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.78);
+    background:rgba(0,0,0,.8);
     display:none;
     align-items:flex-end;
     z-index:100;
 }
 
-.modal.active{
-    display:flex;
-}
+.modal.active{display:flex}
 
 .modal-content{
     width:100%;
-    max-width:650px;
+    max-width:680px;
+    max-height:94vh;
+    overflow:auto;
     margin:auto;
     background:#151819;
     border:1px solid var(--border);
     border-radius:25px 25px 0 0;
     padding:20px;
-    max-height:94vh;
-    overflow:auto;
 }
 
 .modal-title{
     font-size:20px;
-    font-weight:750;
-    margin-bottom:15px;
+    font-weight:850;
+    margin-bottom:14px;
 }
-
-/* EMPTY */
 
 .empty{
     text-align:center;
-    padding:35px 15px;
     color:var(--muted);
+    padding:30px 10px;
 }
 
 .empty-icon{
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:8px;
 }
 
-/* TOAST */
+.bottom-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:50;
+    background:rgba(12,14,15,.96);
+    backdrop-filter:blur(18px);
+    border-top:1px solid var(--border);
+    padding-bottom:max(7px,env(safe-area-inset-bottom));
+}
+
+.nav-inner{
+    max-width:680px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+}
+
+.nav-btn{
+    background:none;
+    color:var(--muted);
+    font-size:9px;
+    padding:8px 1px 6px;
+}
+
+.nav-btn.active{color:var(--accent)}
+
+.nav-icon{
+    display:block;
+    font-size:19px;
+    margin-bottom:2px;
+}
 
 .toast{
     position:fixed;
+    bottom:100px;
     left:50%;
-    bottom:95px;
-    transform:translateX(-50%) translateY(20px);
-    background:#f1f1f1;
+    transform:translateX(-50%) translateY(15px);
+    background:#f2f2f2;
     color:#111;
-    padding:12px 18px;
-    border-radius:14px;
-    font-size:13px;
-    font-weight:650;
+    border-radius:13px;
+    padding:11px 17px;
+    font-size:12px;
+    font-weight:750;
     opacity:0;
     pointer-events:none;
     transition:.25s;
     z-index:200;
+    white-space:nowrap;
 }
 
 .toast.show{
@@ -505,18 +437,14 @@ textarea{
     transform:translateX(-50%) translateY(0);
 }
 
-@media(max-width:400px){
-
-    .hero-value{
-        font-size:36px;
-    }
-
+@media(max-width:390px){
+    .nav-btn{font-size:8px}
+    .nav-icon{font-size:17px}
+    .hero-value{font-size:37px}
     .ingredient-row{
         grid-template-columns:1fr 70px 38px;
     }
-
 }
-
 </style>
 </head>
 
@@ -525,102 +453,47 @@ textarea{
 <div class="app">
 
 <header class="header">
-
     <div class="logo">BAR OS</div>
-
     <div class="date" id="todayDate"></div>
-
 </header>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- ================= HOME ================= -->
 
 <section id="dashboard" class="page active">
 
     <div class="hero">
-
-        <div class="hero-title">
-            INCASSO DI OGGI
-        </div>
-
-        <div class="hero-value" id="dashboardRevenue">
-            €0,00
-        </div>
-
+        <div class="hero-title">INCASSO DI OGGI</div>
+        <div class="hero-value" id="dashboardRevenue">€0,00</div>
         <div class="hero-sub" id="performanceText">
-            Turno non ancora iniziato
+            Nessuna vendita registrata
         </div>
-
     </div>
-
 
     <div class="grid">
 
         <div class="stat">
-
-            <div class="stat-label">
-                COCKTAIL
-            </div>
-
-            <div class="stat-value" id="dashCocktails">
-                0
-            </div>
-
-            <div class="stat-small">
-                serviti oggi
-            </div>
-
+            <div class="stat-label">COCKTAIL</div>
+            <div class="stat-value" id="dashCocktails">0</div>
+            <div class="stat-small">venduti</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                CLIENTI
-            </div>
-
-            <div class="stat-value" id="dashCustomers">
-                0
-            </div>
-
-            <div class="stat-small">
-                registrati
-            </div>
-
+            <div class="stat-label">CLIENTI</div>
+            <div class="stat-value" id="dashCustomers">0</div>
+            <div class="stat-small">oggi</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                MARGINE
-            </div>
-
-            <div class="stat-value" id="dashMargin">
-                €0
-            </div>
-
-            <div class="stat-small">
-                stimato
-            </div>
-
+            <div class="stat-label">COSTO</div>
+            <div class="stat-value" id="dashCost">€0</div>
+            <div class="stat-small">materie prime</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                MEDIA
-            </div>
-
-            <div class="stat-value" id="dashAverage">
-                €0
-            </div>
-
-            <div class="stat-small">
-                per cliente
-            </div>
-
+            <div class="stat-label">MARGINE</div>
+            <div class="stat-value" id="dashMargin">€0</div>
+            <div class="stat-small">lordo stimato</div>
         </div>
 
     </div>
@@ -644,10 +517,10 @@ textarea{
 
 
     <div class="section-title">
-        Più venduti oggi
+        Vendite di oggi
     </div>
 
-    <div id="topCocktails"></div>
+    <div id="todaySales"></div>
 
 </section>
 
@@ -661,8 +534,8 @@ textarea{
     </div>
 
     <input
-        class="search"
         id="cocktailSearch"
+        class="search"
         placeholder="🔎 Cerca cocktail o ingrediente..."
         oninput="renderCocktails()"
     >
@@ -671,7 +544,7 @@ textarea{
         ＋ Nuovo cocktail
     </button>
 
-    <div style="margin-top:18px" id="cocktailList"></div>
+    <div id="cocktailList" style="margin-top:17px"></div>
 
 </section>
 
@@ -686,13 +559,17 @@ textarea{
 
     <div class="card">
 
-        <div style="font-size:13px;color:var(--muted);line-height:1.5">
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">
 
-            Qui inserisci i prodotti utilizzati nei cocktail.
+            Registra ogni prodotto indicando
+            <strong>ml della bottiglia</strong> e
+            <strong>costo della bottiglia</strong>.
+
             <br><br>
 
-            L'app calcola automaticamente il
-            <strong>costo per ml</strong>.
+            BAR OS calcolerà automaticamente
+            il costo per ml e quindi il costo reale
+            di ogni cocktail.
 
         </div>
 
@@ -702,7 +579,7 @@ textarea{
         ＋ Nuovo ingrediente
     </button>
 
-    <div style="margin-top:18px" id="ingredientList"></div>
+    <div id="ingredientList" style="margin-top:17px"></div>
 
 </section>
 
@@ -715,11 +592,44 @@ textarea{
         Magazzino
     </div>
 
+    <div class="card">
+
+        <div style="font-size:12px;color:var(--muted);line-height:1.5">
+
+            Lo stock viene collegato agli ingredienti.
+            Le vendite dei cocktail vengono sottratte
+            automaticamente in base agli ml utilizzati.
+
+        </div>
+
+    </div>
+
     <button class="primary" onclick="openStockModal()">
-        ＋ Aggiungi prodotto
+        ＋ Carica stock
     </button>
 
-    <div style="margin-top:18px" class="card" id="stockList"></div>
+    <div style="margin-top:17px" class="card" id="stockList"></div>
+
+</section>
+
+
+<!-- ================= VENDITE ================= -->
+
+<section id="sales" class="page">
+
+    <div class="section-title" style="margin-top:0">
+        Vendite
+    </div>
+
+    <button class="primary" onclick="openSaleModal()">
+        ＋ Registra vendita
+    </button>
+
+    <div class="section-title">
+        Vendite di oggi
+    </div>
+
+    <div id="salesPageList"></div>
 
 </section>
 
@@ -735,79 +645,42 @@ textarea{
     <div class="grid">
 
         <div class="stat">
-
-            <div class="stat-label">
-                INCASSO TOTALE
-            </div>
-
-            <div class="stat-value" id="statRevenue">
-                €0
-            </div>
-
+            <div class="stat-label">INCASSO</div>
+            <div class="stat-value" id="statRevenue">€0</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                COCKTAIL TOTALI
-            </div>
-
-            <div class="stat-value" id="statCocktails">
-                0
-            </div>
-
+            <div class="stat-label">COCKTAIL</div>
+            <div class="stat-value" id="statCocktails">0</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                MARGINE
-            </div>
-
-            <div class="stat-value" id="statMargin">
-                €0
-            </div>
-
+            <div class="stat-label">COSTI</div>
+            <div class="stat-value" id="statCost">€0</div>
         </div>
 
-
         <div class="stat">
-
-            <div class="stat-label">
-                CLIENTI
-            </div>
-
-            <div class="stat-value" id="statCustomers">
-                0
-            </div>
-
+            <div class="stat-label">MARGINE</div>
+            <div class="stat-value" id="statMargin">€0</div>
         </div>
 
     </div>
 
-
     <div class="section-title">
-        Incassi ultimi 7 giorni
+        Incasso ultimi 7 giorni
     </div>
 
     <div class="card">
-
         <div class="chart" id="revenueChart"></div>
-
     </div>
 
-
     <div class="section-title">
-        Storico
+        Storico turni
     </div>
 
     <div id="history"></div>
 
 </section>
-
-</div>
 
 
 <!-- ================= NAV ================= -->
@@ -817,52 +690,45 @@ textarea{
 <div class="nav-inner">
 
     <button class="nav-btn active"
-            onclick="showPage('dashboard',this)">
-
+        onclick="showPage('dashboard',this)">
         <span class="nav-icon">⌂</span>
         Home
-
     </button>
 
-
     <button class="nav-btn"
-            onclick="showPage('cocktails',this)">
-
+        onclick="showPage('cocktails',this)">
         <span class="nav-icon">🍸</span>
         Cocktail
-
     </button>
 
-
     <button class="nav-btn"
-            onclick="showPage('ingredients',this)">
-
+        onclick="showPage('ingredients',this)">
         <span class="nav-icon">🧪</span>
         Ingredienti
-
     </button>
 
-
     <button class="nav-btn"
-            onclick="showPage('stock',this)">
-
+        onclick="showPage('stock',this)">
         <span class="nav-icon">📦</span>
         Stock
-
     </button>
 
+    <button class="nav-btn"
+        onclick="showPage('sales',this)">
+        <span class="nav-icon">🧾</span>
+        Vendite
+    </button>
 
     <button class="nav-btn"
-            onclick="showPage('stats',this)">
-
+        onclick="showPage('stats',this)">
         <span class="nav-icon">📊</span>
         Stats
-
     </button>
 
 </div>
-
 </nav>
+
+</div>
 
 
 <!-- ================= INGREDIENT MODAL ================= -->
@@ -872,70 +738,54 @@ textarea{
 <div class="modal-content">
 
     <div class="modal-title">
-        Nuovo ingrediente
+        Ingrediente
     </div>
 
     <input type="hidden" id="editIngredientId">
 
+    <label>Nome</label>
+    <input id="ingredientName" placeholder="Es. Gin Monkey 47">
 
-    <label>
-        Nome ingrediente
-    </label>
-
-    <input
-        id="ingredientName"
-        placeholder="Es. Gin Monkey 47"
-    >
-
-
-    <label>
-        Contenuto bottiglia (ml)
-    </label>
-
+    <label>Contenuto bottiglia</label>
     <input
         id="ingredientMl"
         type="number"
-        step="1"
         placeholder="700"
-        oninput="calculateIngredientPreview()"
+        oninput="ingredientPreview()"
     >
 
-
-    <label>
-        Costo bottiglia (€)
-    </label>
-
+    <label>Costo bottiglia (€)</label>
     <input
         id="ingredientPrice"
         type="number"
         step="0.01"
         placeholder="35"
-        oninput="calculateIngredientPreview()"
+        oninput="ingredientPreview()"
     >
 
+    <div class="cost-box" id="ingredientPreviewBox" style="display:none">
 
-    <div
-        id="ingredientPreview"
-        class="card"
-        style="margin-top:15px;display:none"
-    ></div>
+        <div style="color:var(--muted);font-size:10px">
+            COSTO PER ML
+        </div>
 
+        <div class="cost-big green" id="ingredientPreviewValue">
+            €0,0000
+        </div>
+
+    </div>
 
     <button class="primary" onclick="saveIngredient()">
         Salva ingrediente
     </button>
 
-
-    <button
-        class="secondary"
+    <button class="secondary"
         style="width:100%;margin-top:8px"
-        onclick="closeModal('ingredientModal')"
-    >
+        onclick="closeModal('ingredientModal')">
         Annulla
     </button>
 
 </div>
-
 </div>
 
 
@@ -951,153 +801,97 @@ textarea{
 
     <input type="hidden" id="editCocktailId">
 
+    <label>Nome cocktail</label>
+    <input id="cocktailName" placeholder="Es. Negroni">
 
-    <label>
-        Nome cocktail
-    </label>
-
-    <input
-        id="cocktailName"
-        placeholder="Es. Margarita"
-    >
-
-
-    <label>
-        Categoria
-    </label>
-
+    <label>Categoria</label>
     <select id="cocktailCategory">
-
         <option>Classic</option>
         <option>Signature</option>
         <option>Spritz</option>
-        <option>Long Drink</option>
         <option>Sour</option>
+        <option>Long Drink</option>
         <option>Martini</option>
         <option>Analcolico</option>
-
     </select>
 
-
-    <label>
-        Prezzo di vendita (€)
-    </label>
-
+    <label>Prezzo vendita (€)</label>
     <input
         id="cocktailPrice"
         type="number"
         step="0.01"
         placeholder="10"
+        oninput="updateCocktailCostPreview()"
     >
 
-
-    <label>
-        Tecnica
-    </label>
-
+    <label>Tecnica</label>
     <select id="cocktailTechnique">
-
         <option>Shake</option>
         <option>Stir</option>
         <option>Build</option>
         <option>Throw</option>
         <option>Blend</option>
-
     </select>
 
+    <label>Bicchiere</label>
+    <input id="cocktailGlass" placeholder="Es. Rocks">
 
-    <label>
-        Bicchiere
-    </label>
+    <label>Ingredienti</label>
 
-    <input
-        id="cocktailGlass"
-        placeholder="Es. Rocks"
-    >
-
-
-    <label>
-        Ingredienti
-    </label>
-
-
-    <div id="ingredientRows"></div>
-
+    <div id="cocktailIngredientRows"></div>
 
     <button
         class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="addCocktailIngredientRow()"
-    >
+        style="width:100%"
+        onclick="addCocktailIngredientRow()">
         ＋ Aggiungi ingrediente
     </button>
 
 
-    <div
-        id="cocktailCostPreview"
-        class="card"
-        style="margin-top:15px"
-    >
+    <div class="cost-box">
 
-        <div style="color:var(--muted);font-size:12px">
-            COSTO DEL COCKTAIL
+        <div style="color:var(--muted);font-size:10px">
+            COSTO REALE DEL COCKTAIL
         </div>
 
         <div
-            id="liveCocktailCost"
-            style="font-size:28px;font-weight:800;margin-top:5px"
-        >
+            class="cost-big"
+            id="liveCocktailCost">
             €0,00
+        </div>
+
+        <div
+            id="liveCocktailMargin"
+            style="font-size:12px;margin-top:4px">
+            Margine: €0,00
         </div>
 
     </div>
 
 
-    <label>
-        Ghiaccio
-    </label>
+    <label>Ghiaccio</label>
+    <input id="cocktailIce" placeholder="Es. cubi">
 
-    <input
-        id="cocktailIce"
-        placeholder="Es. Cubi"
-    >
+    <label>Garnish</label>
+    <input id="cocktailGarnish" placeholder="Es. scorza d'arancia">
 
-
-    <label>
-        Garnish
-    </label>
-
-    <input
-        id="cocktailGarnish"
-        placeholder="Es. Lime"
-    >
-
-
-    <label>
-        Note
-    </label>
-
+    <label>Note</label>
     <textarea
         id="cocktailNotes"
-        placeholder="Note personali..."
-    ></textarea>
-
+        placeholder="Note personali">
+    </textarea>
 
     <button class="primary" onclick="saveCocktail()">
         Salva cocktail
     </button>
 
-
-    <button
-        class="secondary"
+    <button class="secondary"
         style="width:100%;margin-top:8px"
-        onclick="closeModal('cocktailModal')"
-    >
+        onclick="closeModal('cocktailModal')">
         Annulla
     </button>
 
 </div>
-
 </div>
 
 
@@ -1107,21 +901,17 @@ textarea{
 
 <div class="modal-content">
 
-    <div class="modal-title">
+    <div class="modal-title" id="saleModalTitle">
         Registra vendita
     </div>
 
+    <input type="hidden" id="editSaleId">
 
-    <label>
-        Cocktail
-    </label>
+    <label>Cocktail</label>
 
     <select id="saleCocktail"></select>
 
-
-    <label>
-        Quantità
-    </label>
+    <label>Quantità</label>
 
     <input
         id="saleQuantity"
@@ -1130,22 +920,30 @@ textarea{
         value="1"
     >
 
+    <div class="cost-box">
 
-    <button class="primary" onclick="registerSale()">
-        Registra vendita
+        <div style="color:var(--muted);font-size:10px">
+            ANTEPRIMA
+        </div>
+
+        <div id="salePreview"
+            style="font-size:14px;margin-top:5px">
+            Seleziona un cocktail
+        </div>
+
+    </div>
+
+    <button class="primary" onclick="saveSale()">
+        Salva vendita
     </button>
 
-
-    <button
-        class="secondary"
+    <button class="secondary"
         style="width:100%;margin-top:8px"
-        onclick="closeModal('saleModal')"
-    >
+        onclick="closeModal('saleModal')">
         Annulla
     </button>
 
 </div>
-
 </div>
 
 
@@ -1156,86 +954,50 @@ textarea{
 <div class="modal-content">
 
     <div class="modal-title">
-        Prodotto
+        Carica stock
     </div>
-
 
     <input type="hidden" id="editStockId">
 
+    <label>Ingrediente</label>
 
-    <label>
-        Nome prodotto
-    </label>
+    <select id="stockIngredient"></select>
 
-    <input
-        id="stockName"
-        placeholder="Es. Gin"
-    >
-
-
-    <label>
-        Quantità
-    </label>
+    <label>Quantità iniziale</label>
 
     <input
-        id="stockQuantity"
+        id="stockInitial"
         type="number"
-        step="0.1"
+        step="1"
+        placeholder="700"
     >
 
-
-    <label>
-        Unità
-    </label>
+    <label>Unità</label>
 
     <select id="stockUnit">
-
-        <option>bottiglie</option>
-        <option>litri</option>
-        <option>kg</option>
+        <option>ml</option>
         <option>pezzi</option>
-
     </select>
 
-
-    <label>
-        Soglia minima
-    </label>
+    <label>Soglia minima (ml)</label>
 
     <input
         id="stockMinimum"
         type="number"
-        step="0.1"
-        value="1"
+        value="100"
     >
-
-
-    <label>
-        Costo unitario (€)
-    </label>
-
-    <input
-        id="stockCost"
-        type="number"
-        step="0.01"
-    >
-
 
     <button class="primary" onclick="saveStock()">
-        Salva prodotto
+        Salva stock
     </button>
 
-
-    <button
-        class="secondary"
+    <button class="secondary"
         style="width:100%;margin-top:8px"
-        onclick="closeModal('stockModal')"
-    >
+        onclick="closeModal('stockModal')">
         Annulla
     </button>
 
 </div>
-
 </div>
 
 
@@ -1246,13 +1008,10 @@ textarea{
 <div class="modal-content">
 
     <div class="modal-title">
-        Dati del turno
+        Chiudi turno
     </div>
 
-
-    <label>
-        Incasso (€)
-    </label>
+    <label>Incasso totale (€)</label>
 
     <input
         id="shiftRevenue"
@@ -1260,42 +1019,31 @@ textarea{
         step="0.01"
     >
 
-
-    <label>
-        Clienti
-    </label>
+    <label>Clienti</label>
 
     <input
         id="shiftCustomers"
         type="number"
     >
 
-
-    <label>
-        Note
-    </label>
+    <label>Note</label>
 
     <textarea
         id="shiftNotes"
-        placeholder="Com'è andato il turno?"
-    ></textarea>
-
+        placeholder="Note sul turno...">
+    </textarea>
 
     <button class="primary" onclick="saveShift()">
-        Chiudi turno
+        Salva turno
     </button>
 
-
-    <button
-        class="secondary"
+    <button class="secondary"
         style="width:100%;margin-top:8px"
-        onclick="closeModal('shiftModal')"
-    >
+        onclick="closeModal('shiftModal')">
         Annulla
     </button>
 
 </div>
-
 </div>
 
 
@@ -1309,21 +1057,21 @@ textarea{
 ===================================================== */
 
 let ingredients =
-JSON.parse(localStorage.getItem("baros_ingredients")) || [];
+    JSON.parse(localStorage.getItem("baros_ingredients")) || [];
 
 let cocktails =
-JSON.parse(localStorage.getItem("baros_cocktails")) || [];
+    JSON.parse(localStorage.getItem("baros_cocktails")) || [];
 
 let stock =
-JSON.parse(localStorage.getItem("baros_stock")) || [];
+    JSON.parse(localStorage.getItem("baros_stock")) || [];
 
 let sales =
-JSON.parse(localStorage.getItem("baros_sales")) || {};
+    JSON.parse(localStorage.getItem("baros_sales")) || {};
 
 let history =
-JSON.parse(localStorage.getItem("baros_history")) || {};
+    JSON.parse(localStorage.getItem("baros_history")) || {};
 
-let today=getDateKey();
+let today = getDateKey();
 
 
 /* =====================================================
@@ -1332,7 +1080,7 @@ let today=getDateKey();
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-    document.getElementById("todayDate").textContent=
+    document.getElementById("todayDate").textContent =
         new Date().toLocaleDateString("it-IT",{
             weekday:"short",
             day:"numeric",
@@ -1380,7 +1128,17 @@ function saveData(){
 
 function getDateKey(date=new Date()){
 
-    return date.toISOString().split("T")[0];
+    const y=date.getFullYear();
+
+    const m=String(
+        date.getMonth()+1
+    ).padStart(2,"0");
+
+    const d=String(
+        date.getDate()
+    ).padStart(2,"0");
+
+    return `${y}-${m}-${d}`;
 
 }
 
@@ -1398,45 +1156,28 @@ function money(value){
 function getIngredient(id){
 
     return ingredients.find(
-        i=>i.id==id
+        i=>Number(i.id)===Number(id)
     );
 
 }
 
 
-/*
-    COSTO AL ML
+function ingredientCostPerMl(i){
 
-    Esempio:
-
-    Bottiglia €28
-    Bottiglia 700ml
-
-    28 / 700 = €0,04/ml
-*/
-
-function ingredientCostPerMl(ingredient){
-
-    if(!ingredient || !ingredient.ml)
+    if(!i || !i.ml)
         return 0;
 
-    return ingredient.price / ingredient.ml;
+    return Number(i.price)/Number(i.ml);
 
 }
 
 
-/*
-    COSTO REALE DEL COCKTAIL
+function cocktailCost(c){
 
-    quantità utilizzata × costo/ml
-*/
-
-function cocktailCost(cocktail){
-
-    if(!cocktail || !cocktail.ingredients)
+    if(!c || !c.ingredients)
         return 0;
 
-    return cocktail.ingredients.reduce(
+    return c.ingredients.reduce(
         (total,item)=>{
 
             const ingredient=
@@ -1445,9 +1186,11 @@ function cocktailCost(cocktail){
             if(!ingredient)
                 return total;
 
-            return total +
-                Number(item.qty||0) *
-                ingredientCostPerMl(ingredient);
+            return total+
+                Number(item.qty||0)*
+                ingredientCostPerMl(
+                    ingredient
+                );
 
         },
         0
@@ -1456,25 +1199,25 @@ function cocktailCost(cocktail){
 }
 
 
-function cocktailMargin(cocktail){
+function cocktailMargin(c){
 
-    return Number(cocktail.price||0)
-        - cocktailCost(cocktail);
+    return Number(c.price||0)-
+        cocktailCost(c);
 
 }
 
 
 function showToast(text){
 
-    const toast=
+    const t=
         document.getElementById("toast");
 
-    toast.textContent=text;
+    t.textContent=text;
 
-    toast.classList.add("show");
+    t.classList.add("show");
 
     setTimeout(()=>{
-        toast.classList.remove("show");
+        t.classList.remove("show");
     },1800);
 
 }
@@ -1486,14 +1229,21 @@ function showToast(text){
 
 function showPage(page,button){
 
-    document.querySelectorAll(".page")
-        .forEach(p=>p.classList.remove("active"));
+    document
+        .querySelectorAll(".page")
+        .forEach(p=>
+            p.classList.remove("active")
+        );
 
-    document.getElementById(page)
+    document
+        .getElementById(page)
         .classList.add("active");
 
-    document.querySelectorAll(".nav-btn")
-        .forEach(b=>b.classList.remove("active"));
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(b=>
+            b.classList.remove("active")
+        );
 
     button.classList.add("active");
 
@@ -1503,8 +1253,50 @@ function showPage(page,button){
 
 
 /* =====================================================
-   INGREDIENTS
+   INGREDIENTI
 ===================================================== */
+
+function ingredientPreview(){
+
+    const ml=
+        Number(
+            document.getElementById(
+                "ingredientMl"
+            ).value
+        );
+
+    const price=
+        Number(
+            document.getElementById(
+                "ingredientPrice"
+            ).value
+        );
+
+    const box=
+        document.getElementById(
+            "ingredientPreviewBox"
+        );
+
+    if(ml>0 && price>=0){
+
+        box.style.display="block";
+
+        document.getElementById(
+            "ingredientPreviewValue"
+        ).textContent=
+            "€"+
+            (price/ml)
+            .toFixed(4)
+            .replace(".",",");
+
+    }else{
+
+        box.style.display="none";
+
+    }
+
+}
+
 
 function openIngredientModal(id=null){
 
@@ -1512,11 +1304,9 @@ function openIngredientModal(id=null){
         .getElementById("ingredientModal")
         .classList.add("active");
 
-
     if(id){
 
-        const ingredient=
-            getIngredient(id);
+        const i=getIngredient(id);
 
         document.getElementById(
             "editIngredientId"
@@ -1524,17 +1314,17 @@ function openIngredientModal(id=null){
 
         document.getElementById(
             "ingredientName"
-        ).value=ingredient.name;
+        ).value=i.name;
 
         document.getElementById(
             "ingredientMl"
-        ).value=ingredient.ml;
+        ).value=i.ml;
 
         document.getElementById(
             "ingredientPrice"
-        ).value=ingredient.price;
+        ).value=i.price;
 
-        calculateIngredientPreview();
+        ingredientPreview();
 
     }else{
 
@@ -1555,65 +1345,8 @@ function openIngredientModal(id=null){
         ).value="";
 
         document.getElementById(
-            "ingredientPreview"
+            "ingredientPreviewBox"
         ).style.display="none";
-
-    }
-
-}
-
-
-function calculateIngredientPreview(){
-
-    const ml=
-        Number(
-            document.getElementById(
-                "ingredientMl"
-            ).value
-        );
-
-    const price=
-        Number(
-            document.getElementById(
-                "ingredientPrice"
-            ).value
-        );
-
-    const preview=
-        document.getElementById(
-            "ingredientPreview"
-        );
-
-    if(ml>0 && price>=0){
-
-        const costPerMl=price/ml;
-
-        preview.style.display="block";
-
-        preview.innerHTML=`
-
-            <div style="color:var(--muted);font-size:12px">
-                COSTO REALE
-            </div>
-
-            <div style="
-                font-size:25px;
-                font-weight:800;
-                margin-top:5px;
-                color:var(--accent)
-            ">
-                €${costPerMl.toFixed(4).replace(".",",")} / ml
-            </div>
-
-            <div style="
-                color:var(--muted);
-                font-size:11px;
-                margin-top:5px
-            ">
-                €${price.toFixed(2)} ÷ ${ml} ml
-            </div>
-
-        `;
 
     }
 
@@ -1641,7 +1374,6 @@ function saveIngredient(){
             ).value
         );
 
-
     if(!name){
 
         showToast("Inserisci il nome");
@@ -1649,7 +1381,6 @@ function saveIngredient(){
         return;
 
     }
-
 
     if(ml<=0){
 
@@ -1659,7 +1390,6 @@ function saveIngredient(){
 
     }
 
-
     if(price<0){
 
         showToast("Costo non valido");
@@ -1668,33 +1398,23 @@ function saveIngredient(){
 
     }
 
-
     const id=
         document.getElementById(
             "editIngredientId"
         ).value;
 
-
     const data={
-
-        id:id
-            ?Number(id)
-            :Date.now(),
-
-        name:name,
-
-        ml:ml,
-
-        price:price
-
+        id:id?Number(id):Date.now(),
+        name,
+        ml,
+        price
     };
-
 
     if(id){
 
         const index=
             ingredients.findIndex(
-                i=>i.id==id
+                i=>Number(i.id)===Number(id)
             );
 
         ingredients[index]=data;
@@ -1704,7 +1424,6 @@ function saveIngredient(){
         ingredients.push(data);
 
     }
-
 
     saveData();
 
@@ -1717,60 +1436,6 @@ function saveIngredient(){
 }
 
 
-function editIngredient(id){
-
-    openIngredientModal(id);
-
-}
-
-
-function deleteIngredient(id){
-
-    const ingredient=
-        getIngredient(id);
-
-    const used=
-        cocktails.some(c=>
-            c.ingredients.some(
-                i=>i.ingredientId==id
-            )
-        );
-
-
-    if(used){
-
-        alert(
-            "Questo ingrediente è utilizzato da uno o più cocktail. " +
-            "Modificalo invece di eliminarlo."
-        );
-
-        return;
-
-    }
-
-
-    if(
-        !confirm(
-            `Eliminare ${ingredient.name}?`
-        )
-    )
-        return;
-
-
-    ingredients=
-        ingredients.filter(
-            i=>i.id!=id
-        );
-
-    saveData();
-
-    renderAll();
-
-    showToast("Ingrediente eliminato");
-
-}
-
-
 function renderIngredients(){
 
     const container=
@@ -1778,16 +1443,13 @@ function renderIngredients(){
             "ingredientList"
         );
 
-
     if(!ingredients.length){
 
         container.innerHTML=`
 
             <div class="card empty">
 
-                <div class="empty-icon">
-                    🧪
-                </div>
+                <div class="empty-icon">🧪</div>
 
                 Nessun ingrediente inserito.
 
@@ -1799,21 +1461,20 @@ function renderIngredients(){
 
     }
 
-
     container.innerHTML=
         ingredients.map(i=>{
 
             const cost=
                 ingredientCostPerMl(i);
 
-
-            const usedIn=
+            const used=
                 cocktails.filter(c=>
                     c.ingredients.some(
-                        x=>x.ingredientId==i.id
+                        x=>
+                            Number(x.ingredientId)===
+                            Number(i.id)
                     )
                 ).length;
-
 
             return `
 
@@ -1823,58 +1484,37 @@ function renderIngredients(){
 
                     <div>
 
-                        <div class="cocktail-name">
-                            ${i.name}
+                        <div class="title">
+                            ${escapeHtml(i.name)}
                         </div>
 
-                        <div class="ingredient-info">
-                            ${i.ml} ml ·
-                            ${money(i.price)}
+                        <div class="category">
+                            ${i.ml} ml · ${money(i.price)}
                         </div>
 
                     </div>
 
-                    <div
-                        style="
-                            color:var(--accent);
-                            font-weight:750
-                        "
-                    >
-                        ${money(cost)}
+                    <div class="green">
+                        €${cost.toFixed(4).replace(".",",")}
                     </div>
 
                 </div>
-
-
-                <div class="ingredient-cost">
-
-                    ${money(cost)} / ml
-
-                </div>
-
 
                 <div
                     style="
                         color:var(--muted);
                         font-size:11px;
-                        margin-top:6px
+                        margin-top:7px
                     "
                 >
-
-                    Utilizzato in ${usedIn}
-                    cocktail
-
+                    costo per ml · usato in ${used} cocktail
                 </div>
 
-
-                <div
-                    class="row"
-                    style="margin-top:13px"
-                >
+                <div class="row" style="margin-top:12px">
 
                     <button
                         class="secondary"
-                        onclick="editIngredient(${i.id})"
+                        onclick="openIngredientModal(${i.id})"
                     >
                         Modifica
                     </button>
@@ -1897,83 +1537,124 @@ function renderIngredients(){
 }
 
 
+function deleteIngredient(id){
+
+    const used=
+        cocktails.some(c=>
+            c.ingredients.some(
+                x=>
+                    Number(x.ingredientId)===
+                    Number(id)
+            )
+        );
+
+    if(used){
+
+        alert(
+            "Questo ingrediente è utilizzato da un cocktail. Modificalo invece di eliminarlo."
+        );
+
+        return;
+
+    }
+
+    const i=getIngredient(id);
+
+    if(!confirm(
+        `Eliminare ${i.name}?`
+    ))
+        return;
+
+    ingredients=
+        ingredients.filter(
+            x=>Number(x.id)!==Number(id)
+        );
+
+    saveData();
+
+    renderAll();
+
+}
+
+
 /* =====================================================
    COCKTAIL
 ===================================================== */
 
 function openCocktailModal(id=null){
 
+    if(!ingredients.length){
+
+        showToast(
+            "Prima crea almeno un ingrediente"
+        );
+
+        return;
+
+    }
+
     document
         .getElementById("cocktailModal")
         .classList.add("active");
 
+    const rows=
+        document.getElementById(
+            "cocktailIngredientRows"
+        );
 
-    document.getElementById(
-        "ingredientRows"
-    ).innerHTML="";
-
+    rows.innerHTML="";
 
     if(id){
 
         const c=
             cocktails.find(
-                x=>x.id==id
+                x=>Number(x.id)===Number(id)
             );
-
 
         document.getElementById(
             "cocktailModalTitle"
         ).textContent=
             "Modifica cocktail";
 
-
         document.getElementById(
             "editCocktailId"
         ).value=id;
-
 
         document.getElementById(
             "cocktailName"
         ).value=c.name;
 
-
         document.getElementById(
             "cocktailCategory"
         ).value=c.category;
-
 
         document.getElementById(
             "cocktailPrice"
         ).value=c.price;
 
-
         document.getElementById(
             "cocktailTechnique"
         ).value=c.technique;
-
 
         document.getElementById(
             "cocktailGlass"
         ).value=c.glass;
 
-
         document.getElementById(
             "cocktailIce"
         ).value=c.ice;
-
 
         document.getElementById(
             "cocktailGarnish"
         ).value=c.garnish;
 
-
         document.getElementById(
             "cocktailNotes"
-        ).value=c.notes;
-
+        ).value=c.notes||"";
 
         c.ingredients.forEach(
-            i=>addCocktailIngredientRow(i)
+            item=>
+                addCocktailIngredientRow(item)
         );
 
     }else{
@@ -1983,64 +1664,44 @@ function openCocktailModal(id=null){
         ).textContent=
             "Nuovo cocktail";
 
-
         document.getElementById(
             "editCocktailId"
         ).value="";
-
 
         document.getElementById(
             "cocktailName"
         ).value="";
 
-
         document.getElementById(
             "cocktailPrice"
         ).value="";
-
 
         document.getElementById(
             "cocktailGlass"
         ).value="";
 
-
         document.getElementById(
             "cocktailIce"
         ).value="";
-
 
         document.getElementById(
             "cocktailGarnish"
         ).value="";
 
-
         document.getElementById(
             "cocktailNotes"
         ).value="";
-
 
         addCocktailIngredientRow();
 
     }
 
-
-    updateLiveCocktailCost();
+    updateCocktailCostPreview();
 
 }
 
 
 function addCocktailIngredientRow(data={}){
-
-    if(!ingredients.length){
-
-        showToast(
-            "Prima inserisci almeno un ingrediente"
-        );
-
-        return;
-
-    }
-
 
     const row=
         document.createElement("div");
@@ -2048,35 +1709,36 @@ function addCocktailIngredientRow(data={}){
     row.className=
         "ingredient-row";
 
-
     const options=
         ingredients.map(i=>`
 
             <option
                 value="${i.id}"
-                ${data.ingredientId==i.id?"selected":""}
+                ${
+                    Number(data.ingredientId)===
+                    Number(i.id)
+                    ?"selected":""
+                }
             >
-                ${i.name}
+                ${escapeHtml(i.name)}
             </option>
 
         `).join("");
-
 
     row.innerHTML=`
 
         <select
             class="cocktail-ing-select"
-            onchange="updateLiveCocktailCost()"
+            onchange="updateCocktailCostPreview()"
         >
 
             <option value="">
-                Seleziona
+                Ingrediente
             </option>
 
             ${options}
 
         </select>
-
 
         <input
             class="cocktail-ing-qty"
@@ -2085,15 +1747,14 @@ function addCocktailIngredientRow(data={}){
             step="0.5"
             placeholder="ml"
             value="${data.qty||""}"
-            oninput="updateLiveCocktailCost()"
+            oninput="updateCocktailCostPreview()"
         >
-
 
         <button
             class="remove"
             onclick="
                 this.parentElement.remove();
-                updateLiveCocktailCost();
+                updateCocktailCostPreview();
             "
         >
             ×
@@ -2101,54 +1762,46 @@ function addCocktailIngredientRow(data={}){
 
     `;
 
-
     document
         .getElementById(
-            "ingredientRows"
+            "cocktailIngredientRows"
         )
         .appendChild(row);
-
-
-    updateLiveCocktailCost();
 
 }
 
 
-function updateLiveCocktailCost(){
+function calculateCurrentCocktailCost(){
 
     let total=0;
 
-
     document
-        .querySelectorAll(".ingredient-row")
+        .querySelectorAll(
+            "#cocktailIngredientRows .ingredient-row"
+        )
         .forEach(row=>{
 
             const id=
                 Number(
                     row.querySelector(
                         ".cocktail-ing-select"
-                    )?.value
+                    ).value
                 );
 
             const qty=
                 Number(
                     row.querySelector(
                         ".cocktail-ing-qty"
-                    )?.value
+                    ).value
                 )||0;
-
 
             const ingredient=
                 getIngredient(id);
 
-
-            if(
-                ingredient &&
-                qty>0
-            ){
+            if(ingredient && qty>0){
 
                 total+=
-                    qty *
+                    qty*
                     ingredientCostPerMl(
                         ingredient
                     );
@@ -2157,6 +1810,15 @@ function updateLiveCocktailCost(){
 
         });
 
+    return total;
+
+}
+
+
+function updateCocktailCostPreview(){
+
+    const cost=
+        calculateCurrentCocktailCost();
 
     const price=
         Number(
@@ -2165,59 +1827,45 @@ function updateLiveCocktailCost(){
             ).value
         )||0;
 
-
     const margin=
-        price-total;
+        price-cost;
 
-
-    const percentage=
-        price
+    const pct=
+        price>0
             ?(margin/price)*100
             :0;
 
-
     document.getElementById(
         "liveCocktailCost"
+    ).textContent=
+        money(cost);
+
+    document.getElementById(
+        "liveCocktailMargin"
     ).innerHTML=`
 
-        ${money(total)}
-
-        <div style="
-            color:${margin>=0
-                ?"var(--accent)"
-                :"var(--danger)"};
-            font-size:12px;
-            font-weight:500;
-            margin-top:4px
-        ">
-
-            Margine:
+        Margine:
+        <strong class="${
+            margin>=0
+                ?"green"
+                :"red"
+        }">
             ${money(margin)}
-            ·
-            ${percentage.toFixed(1)}%
+        </strong>
 
-        </div>
+        ·
+
+        <strong class="${
+            margin>=0
+                ?"green"
+                :"red"
+        }">
+            ${pct.toFixed(1)}%
+        </strong>
 
     `;
 
 }
-
-
-document.addEventListener(
-    "input",
-    function(e){
-
-        if(
-            e.target.id===
-            "cocktailPrice"
-        ){
-
-            updateLiveCocktailCost();
-
-        }
-
-    }
-);
 
 
 function saveCocktail(){
@@ -2227,21 +1875,19 @@ function saveCocktail(){
             "cocktailName"
         ).value.trim();
 
-
     if(!name){
 
         showToast(
-            "Inserisci il nome del cocktail"
+            "Inserisci il nome"
         );
 
         return;
 
     }
 
-
-    const ingredientsUsed=
+    const used=
         [...document.querySelectorAll(
-            ".ingredient-row"
+            "#cocktailIngredientRows .ingredient-row"
         )]
         .map(row=>({
 
@@ -2261,11 +1907,10 @@ function saveCocktail(){
 
         }))
         .filter(
-            i=>i.ingredientId && i.qty>0
+            x=>x.ingredientId && x.qty>0
         );
 
-
-    if(!ingredientsUsed.length){
+    if(!used.length){
 
         showToast(
             "Inserisci almeno un ingrediente"
@@ -2275,20 +1920,16 @@ function saveCocktail(){
 
     }
 
-
     const id=
         document.getElementById(
             "editCocktailId"
         ).value;
 
-
     const data={
 
-        id:id
-            ?Number(id)
-            :Date.now(),
+        id:id?Number(id):Date.now(),
 
-        name:name,
+        name,
 
         category:
             document.getElementById(
@@ -2327,17 +1968,15 @@ function saveCocktail(){
                 "cocktailNotes"
             ).value,
 
-        ingredients:
-            ingredientsUsed
+        ingredients:used
 
     };
-
 
     if(id){
 
         const index=
             cocktails.findIndex(
-                c=>c.id==id
+                c=>Number(c.id)===Number(id)
             );
 
         cocktails[index]=data;
@@ -2348,57 +1987,14 @@ function saveCocktail(){
 
     }
 
-
     saveData();
 
-    closeModal(
-        "cocktailModal"
-    );
+    closeModal("cocktailModal");
 
     renderAll();
 
     showToast(
         "Cocktail salvato ✓"
-    );
-
-}
-
-
-function editCocktail(id){
-
-    openCocktailModal(id);
-
-}
-
-
-function deleteCocktail(id){
-
-    const c=
-        cocktails.find(
-            x=>x.id==id
-        );
-
-
-    if(
-        !confirm(
-            `Eliminare ${c.name}?`
-        )
-    )
-        return;
-
-
-    cocktails=
-        cocktails.filter(
-            x=>x.id!=id
-        );
-
-
-    saveData();
-
-    renderAll();
-
-    showToast(
-        "Cocktail eliminato"
     );
 
 }
@@ -2411,44 +2007,37 @@ function renderCocktails(){
             "cocktailSearch"
         )?.value.toLowerCase()||"";
 
-
     const list=
         cocktails.filter(c=>{
 
             const text=[
 
                 c.name,
-
                 c.category,
 
                 ...c.ingredients.map(
-                    item=>
+                    x=>
                         getIngredient(
-                            item.ingredientId
+                            x.ingredientId
                         )?.name||""
                 )
 
-            ]
-            .join(" ")
-            .toLowerCase();
-
+            ].join(" ").toLowerCase();
 
             return text.includes(search);
 
         });
-
 
     const container=
         document.getElementById(
             "cocktailList"
         );
 
-
     if(!list.length){
 
         container.innerHTML=`
 
-            <div class="empty">
+            <div class="card empty">
 
                 Nessun cocktail trovato.
 
@@ -2460,7 +2049,6 @@ function renderCocktails(){
 
     }
 
-
     container.innerHTML=
         list.map(c=>{
 
@@ -2470,11 +2058,10 @@ function renderCocktails(){
             const margin=
                 cocktailMargin(c);
 
-            const marginPct=
+            const pct=
                 c.price
-                    ?(margin/c.price)*100
+                    ?margin/c.price*100
                     :0;
-
 
             return `
 
@@ -2484,22 +2071,21 @@ function renderCocktails(){
 
                     <div>
 
-                        <div class="cocktail-name">
-                            ${c.name}
+                        <div class="title">
+                            ${escapeHtml(c.name)}
                         </div>
 
                         <div class="category">
 
-                            ${c.category}
+                            ${escapeHtml(c.category)}
                             ·
-                            ${c.technique}
+                            ${escapeHtml(c.technique)}
                             ·
-                            ${c.glass}
+                            ${escapeHtml(c.glass||"")}
 
                         </div>
 
                     </div>
-
 
                     <div class="price">
                         ${money(c.price)}
@@ -2508,41 +2094,34 @@ function renderCocktails(){
                 </div>
 
 
-                <div class="ingredients">
+                <div style="margin-top:12px">
 
-                    ${c.ingredients.map(item=>{
+                    ${c.ingredients.map(x=>{
 
-                        const ingredient=
+                        const i=
                             getIngredient(
-                                item.ingredientId
+                                x.ingredientId
                             );
 
-                        const lineCost=
-                            ingredient
-                                ?item.qty*
-                                ingredientCostPerMl(
-                                    ingredient
-                                )
+                        const line=
+                            i
+                                ?x.qty*
+                                ingredientCostPerMl(i)
                                 :0;
 
                         return `
 
-                        <div class="cost-line">
+                        <div class="ingredient-line">
 
                             <span>
-
-                                ${ingredient?.name||"Ingrediente"}
-
-                                <span style="
-                                    color:var(--muted)
-                                ">
-                                    ${item.qty} ml
-                                </span>
-
+                                ${escapeHtml(
+                                    i?.name||"Ingrediente"
+                                )}
+                                · ${x.qty} ml
                             </span>
 
                             <span>
-                                ${money(lineCost)}
+                                ${money(line)}
                             </span>
 
                         </div>
@@ -2554,49 +2133,50 @@ function renderCocktails(){
                 </div>
 
 
-                <div class="margin">
+                <div class="divider">
 
-                    <span>
+                    <div class="ingredient-line">
 
-                        Costo
+                        <span>
+                            Costo reale
+                        </span>
+
                         <strong>
                             ${money(cost)}
                         </strong>
 
-                    </span>
+                    </div>
 
+                    <div class="ingredient-line">
 
-                    <span class="${
-                        marginPct>=65
-                        ?"good"
-                        :"bad"
-                    }">
+                        <span>
+                            Margine
+                        </span>
 
-                        Margine
-                        <strong>
+                        <strong class="${
+                            pct>=65
+                                ?"green"
+                                :"red"
+                        }">
+
                             ${money(margin)}
+                            · ${pct.toFixed(1)}%
+
                         </strong>
 
-                        ·
-                        ${marginPct.toFixed(1)}%
-
-                    </span>
+                    </div>
 
                 </div>
 
 
-                <div
-                    class="row"
-                    style="margin-top:13px"
-                >
+                <div class="row" style="margin-top:12px">
 
                     <button
                         class="secondary"
-                        onclick="editCocktail(${c.id})"
+                        onclick="openCocktailModal(${c.id})"
                     >
                         Modifica
                     </button>
-
 
                     <button
                         class="secondary danger"
@@ -2616,377 +2196,26 @@ function renderCocktails(){
 }
 
 
-/* =====================================================
-   SALES
-===================================================== */
+function deleteCocktail(id){
 
-function openSaleModal(){
-
-    if(!cocktails.length){
-
-        showToast(
-            "Prima crea un cocktail"
+    const c=
+        cocktails.find(
+            x=>Number(x.id)===Number(id)
         );
 
+    if(!confirm(
+        `Eliminare ${c.name}?`
+    ))
         return;
 
-    }
-
-
-    const select=
-        document.getElementById(
-            "saleCocktail"
+    cocktails=
+        cocktails.filter(
+            x=>Number(x.id)!==Number(id)
         );
-
-
-    select.innerHTML=
-        cocktails.map(c=>`
-
-            <option value="${c.id}">
-
-                ${c.name}
-                —
-                ${money(c.price)}
-
-            </option>
-
-        `).join("");
-
-
-    document.getElementById(
-        "saleQuantity"
-    ).value=1;
-
-
-    document
-        .getElementById("saleModal")
-        .classList.add("active");
-
-}
-
-
-function registerSale(){
-
-    const cocktailId=
-        Number(
-            document.getElementById(
-                "saleCocktail"
-            ).value
-        );
-
-
-    const quantity=
-        Number(
-            document.getElementById(
-                "saleQuantity"
-            ).value
-        )||1;
-
-
-    if(!sales[today])
-        sales[today]=[];
-
-
-    sales[today].push({
-
-        cocktailId,
-
-        quantity,
-
-        time:
-            new Date().toLocaleTimeString(
-                "it-IT",
-                {
-                    hour:"2-digit",
-                    minute:"2-digit"
-                }
-            )
-
-    });
-
 
     saveData();
 
-    closeModal(
-        "saleModal"
-    );
-
     renderAll();
-
-    showToast(
-        "Vendita registrata 🍸"
-    );
-
-}
-
-
-/* =====================================================
-   DAILY
-===================================================== */
-
-function getTodaySales(){
-
-    return sales[today]||[];
-
-}
-
-
-function todayStats(){
-
-    const list=
-        getTodaySales();
-
-
-    let cocktailsSold=0;
-
-    let revenue=0;
-
-    let margin=0;
-
-
-    list.forEach(s=>{
-
-        const c=
-            cocktails.find(
-                x=>x.id==s.cocktailId
-            );
-
-
-        if(!c)
-            return;
-
-
-        cocktailsSold+=
-            s.quantity;
-
-
-        revenue+=
-            c.price*
-            s.quantity;
-
-
-        margin+=
-            cocktailMargin(c)*
-            s.quantity;
-
-    });
-
-
-    const day=
-        history[today];
-
-
-    const customers=
-        day?.customers||0;
-
-
-    if(
-        day?.revenueOverride!==undefined
-    ){
-
-        revenue=
-            day.revenueOverride;
-
-    }
-
-
-    return{
-
-        cocktailsSold,
-
-        revenue,
-
-        margin,
-
-        customers
-
-    };
-
-}
-
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-function renderDashboard(){
-
-    const s=
-        todayStats();
-
-
-    document.getElementById(
-        "dashboardRevenue"
-    ).textContent=
-        money(s.revenue);
-
-
-    document.getElementById(
-        "dashCocktails"
-    ).textContent=
-        s.cocktailsSold;
-
-
-    document.getElementById(
-        "dashCustomers"
-    ).textContent=
-        s.customers;
-
-
-    document.getElementById(
-        "dashMargin"
-    ).textContent=
-        money(s.margin);
-
-
-    const avg=
-        s.customers
-            ?s.revenue/s.customers
-            :0;
-
-
-    document.getElementById(
-        "dashAverage"
-    ).textContent=
-        money(avg);
-
-
-    let performance=
-        "Turno non ancora iniziato";
-
-
-    if(s.revenue>0){
-
-        if(
-            s.cocktailsSold>=40
-        ){
-
-            performance=
-                "🔥 Turno molto intenso";
-
-        }else if(
-            s.cocktailsSold>=20
-        ){
-
-            performance=
-                "⚡ Buon ritmo";
-
-        }else{
-
-            performance=
-                "🟢 Turno iniziato";
-
-        }
-
-    }
-
-
-    document.getElementById(
-        "performanceText"
-    ).textContent=
-        performance;
-
-
-    renderTopCocktails();
-
-}
-
-
-function renderTopCocktails(){
-
-    const container=
-        document.getElementById(
-            "topCocktails"
-        );
-
-
-    const counts={};
-
-
-    getTodaySales().forEach(s=>{
-
-        counts[s.cocktailId]=
-            (counts[s.cocktailId]||0)
-            +s.quantity;
-
-    });
-
-
-    const sorted=
-        Object.entries(counts)
-        .sort((a,b)=>b[1]-a[1])
-        .slice(0,5);
-
-
-    if(!sorted.length){
-
-        container.innerHTML=`
-
-            <div class="card empty">
-
-                <div class="empty-icon">
-                    🍸
-                </div>
-
-                Nessuna vendita registrata oggi.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    container.innerHTML=
-        sorted.map(
-            ([id,count],index)=>{
-
-                const c=
-                    cocktails.find(
-                        x=>x.id==id
-                    );
-
-
-                return `
-
-                <div class="card">
-
-                    <div class="card-header">
-
-                        <div>
-
-                            <div class="cocktail-name">
-
-                                ${index+1}.
-                                ${c?.name||"Cocktail"}
-
-                            </div>
-
-                            <div class="category">
-
-                                ${c?.category||""}
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="price">
-
-                            ${count}×
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                `;
-
-            }
-        ).join("");
 
 }
 
@@ -2995,49 +2224,133 @@ function renderTopCocktails(){
    STOCK
 ===================================================== */
 
+/*
+    IMPORTANTE:
+
+    Non salviamo lo stock "consumato".
+
+    Salviamo lo stock iniziale.
+
+    Lo stock disponibile viene sempre:
+
+    STOCK INIZIALE
+    -
+    CONSUMI DELLE VENDITE
+
+    Questo rende sicure le modifiche
+    e le cancellazioni delle vendite.
+*/
+
+function stockUsedForIngredient(id){
+
+    let used=0;
+
+    Object.values(sales)
+        .forEach(daySales=>{
+
+            daySales.forEach(sale=>{
+
+                const c=
+                    cocktails.find(
+                        x=>
+                            Number(x.id)===
+                            Number(sale.cocktailId)
+                    );
+
+                if(!c)
+                    return;
+
+                c.ingredients.forEach(item=>{
+
+                    if(
+                        Number(item.ingredientId)===
+                        Number(id)
+                    ){
+
+                        used+=
+                            Number(item.qty||0)*
+                            Number(sale.quantity||0);
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    return used;
+
+}
+
+
+function getStockAvailable(stockItem){
+
+    return Math.max(
+        0,
+        Number(stockItem.initial||0)-
+        stockUsedForIngredient(
+            stockItem.ingredientId
+        )
+    );
+
+}
+
+
 function openStockModal(id=null){
+
+    if(!ingredients.length){
+
+        showToast(
+            "Prima inserisci un ingrediente"
+        );
+
+        return;
+
+    }
+
+    const select=
+        document.getElementById(
+            "stockIngredient"
+        );
+
+    select.innerHTML=
+        ingredients.map(i=>`
+
+            <option value="${i.id}">
+                ${escapeHtml(i.name)}
+            </option>
+
+        `).join("");
 
     document
         .getElementById("stockModal")
         .classList.add("active");
 
-
     if(id){
 
         const s=
             stock.find(
-                x=>x.id==id
+                x=>Number(x.id)===Number(id)
             );
-
 
         document.getElementById(
             "editStockId"
         ).value=id;
 
+        select.value=s.ingredientId;
 
         document.getElementById(
-            "stockName"
-        ).value=s.name;
-
-
-        document.getElementById(
-            "stockQuantity"
-        ).value=s.quantity;
-
+            "stockInitial"
+        ).value=s.initial;
 
         document.getElementById(
             "stockUnit"
         ).value=s.unit;
 
-
         document.getElementById(
             "stockMinimum"
         ).value=s.minimum;
-
-
-        document.getElementById(
-            "stockCost"
-        ).value=s.cost;
 
     }else{
 
@@ -3046,20 +2359,12 @@ function openStockModal(id=null){
         ).value="";
 
         document.getElementById(
-            "stockName"
-        ).value="";
-
-        document.getElementById(
-            "stockQuantity"
+            "stockInitial"
         ).value="";
 
         document.getElementById(
             "stockMinimum"
-        ).value=1;
-
-        document.getElementById(
-            "stockCost"
-        ).value="";
+        ).value=100;
 
     }
 
@@ -3068,43 +2373,52 @@ function openStockModal(id=null){
 
 function saveStock(){
 
-    const name=
-        document.getElementById(
-            "stockName"
-        ).value.trim();
+    const ingredientId=
+        Number(
+            document.getElementById(
+                "stockIngredient"
+            ).value
+        );
 
+    const initial=
+        Number(
+            document.getElementById(
+                "stockInitial"
+            ).value
+        );
 
-    if(!name){
+    if(!ingredientId){
 
         showToast(
-            "Inserisci il prodotto"
+            "Seleziona un ingrediente"
         );
 
         return;
 
     }
 
+    if(initial<=0){
+
+        showToast(
+            "Inserisci la quantità"
+        );
+
+        return;
+
+    }
 
     const id=
         document.getElementById(
             "editStockId"
         ).value;
 
-
     const data={
 
-        id:id
-            ?Number(id)
-            :Date.now(),
+        id:id?Number(id):Date.now(),
 
-        name:name,
+        ingredientId,
 
-        quantity:
-            Number(
-                document.getElementById(
-                    "stockQuantity"
-                ).value
-            )||0,
+        initial,
 
         unit:
             document.getElementById(
@@ -3116,75 +2430,55 @@ function saveStock(){
                 document.getElementById(
                     "stockMinimum"
                 ).value
-            )||0,
-
-        cost:
-            Number(
-                document.getElementById(
-                    "stockCost"
-                ).value
             )||0
 
     };
-
 
     if(id){
 
         const index=
             stock.findIndex(
-                s=>s.id==id
+                x=>Number(x.id)===Number(id)
             );
 
         stock[index]=data;
 
     }else{
 
-        stock.push(data);
+        /*
+            Evita due record per lo stesso ingrediente.
+        */
+
+        const existing=
+            stock.find(
+                x=>
+                    Number(x.ingredientId)===
+                    ingredientId
+            );
+
+        if(existing){
+
+            existing.initial=initial;
+            existing.unit=data.unit;
+            existing.minimum=data.minimum;
+
+        }else{
+
+            stock.push(data);
+
+        }
 
     }
 
-
     saveData();
 
-    closeModal(
-        "stockModal"
-    );
+    closeModal("stockModal");
 
     renderAll();
 
     showToast(
-        "Magazzino aggiornato"
+        "Stock aggiornato ✓"
     );
-
-}
-
-
-function editStock(id){
-
-    openStockModal(id);
-
-}
-
-
-function deleteStock(id){
-
-    if(
-        !confirm(
-            "Eliminare questo prodotto?"
-        )
-    )
-        return;
-
-
-    stock=
-        stock.filter(
-            s=>s.id!=id
-        );
-
-
-    saveData();
-
-    renderAll();
 
 }
 
@@ -3196,7 +2490,6 @@ function renderStock(){
             "stockList"
         );
 
-
     if(!stock.length){
 
         container.innerHTML=`
@@ -3207,7 +2500,7 @@ function renderStock(){
                     📦
                 </div>
 
-                Nessun prodotto nel magazzino.
+                Nessuno stock inserito.
 
             </div>
 
@@ -3217,31 +2510,34 @@ function renderStock(){
 
     }
 
-
     container.innerHTML=
         stock.map(s=>{
 
-            let status="";
+            const ingredient=
+                getIngredient(
+                    s.ingredientId
+                );
 
+            const available=
+                getStockAvailable(s);
 
-            if(s.quantity<=0){
+            let statusClass="green";
 
-                status=
-                    `<span class="out">
-                        Esaurito
-                    </span>`;
+            let status="OK";
+
+            if(available<=0){
+
+                statusClass="red";
+                status="ESAURITO";
 
             }else if(
-                s.quantity<=s.minimum
+                available<=Number(s.minimum)
             ){
 
-                status=
-                    `<span class="low">
-                        Quasi finito
-                    </span>`;
+                statusClass="yellow";
+                status="QUASI FINITO";
 
             }
-
 
             return `
 
@@ -3250,30 +2546,34 @@ function renderStock(){
                 <div>
 
                     <div class="stock-name">
-                        ${s.name}
+                        ${escapeHtml(
+                            ingredient?.name||"Ingrediente"
+                        )}
                     </div>
 
                     <div class="stock-detail">
 
-                        ${money(s.cost)}
-                        /
-                        ${s.unit}
+                        iniziale:
+                        ${s.initial} ml
+
+                        · consumati:
+                        ${Math.round(
+                            stockUsedForIngredient(
+                                s.ingredientId
+                            )
+                        )} ml
 
                     </div>
 
                 </div>
 
 
-                <div class="stock-qty">
+                <div class="stock-right">
 
-                    ${s.quantity}
-                    ${s.unit}
+                    ${Math.round(available)} ml
 
                     <div
-                        style="
-                            font-size:10px;
-                            margin-top:3px
-                        "
+                        class="stock-remaining ${statusClass}"
                     >
                         ${status}
                     </div>
@@ -3283,18 +2583,14 @@ function renderStock(){
             </div>
 
 
-            <div
-                class="row"
-                style="margin-bottom:12px"
-            >
+            <div class="row" style="margin-bottom:11px">
 
                 <button
                     class="secondary"
-                    onclick="editStock(${s.id})"
+                    onclick="openStockModal(${s.id})"
                 >
                     Modifica
                 </button>
-
 
                 <button
                     class="secondary danger"
@@ -3312,8 +2608,902 @@ function renderStock(){
 }
 
 
+function deleteStock(id){
+
+    if(!confirm(
+        "Eliminare questo stock?"
+    ))
+        return;
+
+    stock=
+        stock.filter(
+            x=>Number(x.id)!==Number(id)
+        );
+
+    saveData();
+
+    renderAll();
+
+}
+
+
 /* =====================================================
-   SHIFT
+   VENDITE
+===================================================== */
+
+function openSaleModal(id=null){
+
+    if(!cocktails.length){
+
+        showToast(
+            "Prima crea un cocktail"
+        );
+
+        return;
+
+    }
+
+    const select=
+        document.getElementById(
+            "saleCocktail"
+        );
+
+    select.innerHTML=
+        cocktails.map(c=>`
+
+            <option value="${c.id}">
+                ${escapeHtml(c.name)}
+                · ${money(c.price)}
+            </option>
+
+        `).join("");
+
+    document
+        .getElementById("saleModal")
+        .classList.add("active");
+
+    document.getElementById(
+        "saleModalTitle"
+    ).textContent=
+        id
+            ?"Modifica vendita"
+            :"Registra vendita";
+
+    document.getElementById(
+        "editSaleId"
+    ).value=
+        id||"";
+
+    if(id){
+
+        const sale=
+            findSale(id);
+
+        select.value=
+            sale.cocktailId;
+
+        document.getElementById(
+            "saleQuantity"
+        ).value=
+            sale.quantity;
+
+    }else{
+
+        document.getElementById(
+            "saleQuantity"
+        ).value=1;
+
+    }
+
+    updateSalePreview();
+
+}
+
+
+document.getElementById(
+    "saleCocktail"
+).addEventListener(
+    "change",
+    updateSalePreview
+);
+
+
+document.getElementById(
+    "saleQuantity"
+).addEventListener(
+    "input",
+    updateSalePreview
+);
+
+
+function updateSalePreview(){
+
+    const id=
+        Number(
+            document.getElementById(
+                "saleCocktail"
+            ).value
+        );
+
+    const qty=
+        Number(
+            document.getElementById(
+                "saleQuantity"
+            ).value
+        )||1;
+
+    const c=
+        cocktails.find(
+            x=>Number(x.id)===id
+        );
+
+    if(!c)
+        return;
+
+    const cost=
+        cocktailCost(c)*qty;
+
+    const revenue=
+        c.price*qty;
+
+    const margin=
+        revenue-cost;
+
+    document.getElementById(
+        "salePreview"
+    ).innerHTML=`
+
+        ${qty} × ${escapeHtml(c.name)}
+
+        <br>
+
+        Incasso:
+        <strong>${money(revenue)}</strong>
+
+        · Costo:
+        <strong>${money(cost)}</strong>
+
+        · Margine:
+        <strong class="green">
+            ${money(margin)}
+        </strong>
+
+    `;
+
+}
+
+
+function saveSale(){
+
+    const cocktailId=
+        Number(
+            document.getElementById(
+                "saleCocktail"
+            ).value
+        );
+
+    const quantity=
+        Number(
+            document.getElementById(
+                "saleQuantity"
+            ).value
+        );
+
+    if(!cocktailId){
+
+        showToast(
+            "Seleziona un cocktail"
+        );
+
+        return;
+
+    }
+
+    if(quantity<=0){
+
+        showToast(
+            "Quantità non valida"
+        );
+
+        return;
+
+    }
+
+    const editId=
+        document.getElementById(
+            "editSaleId"
+        ).value;
+
+    /*
+        MODIFICA
+    */
+
+    if(editId){
+
+        const sale=
+            findSale(editId);
+
+        if(!sale)
+            return;
+
+        sale.cocktailId=cocktailId;
+        sale.quantity=quantity;
+
+        /*
+            Lo stock NON viene modificato qui.
+
+            Viene ricalcolato automaticamente
+            dalle vendite.
+        */
+
+    }else{
+
+        if(!sales[today])
+            sales[today]=[];
+
+        sales[today].push({
+
+            id:Date.now(),
+
+            cocktailId,
+
+            quantity,
+
+            time:
+                new Date().toLocaleTimeString(
+                    "it-IT",
+                    {
+                        hour:"2-digit",
+                        minute:"2-digit"
+                    }
+                )
+
+        });
+
+    }
+
+    saveData();
+
+    closeModal("saleModal");
+
+    renderAll();
+
+    showToast(
+        editId
+            ?"Vendita modificata ✓"
+            :"Vendita registrata 🍸"
+    );
+
+}
+
+
+function findSale(id){
+
+    for(
+        const day of Object.keys(sales)
+    ){
+
+        const sale=
+            sales[day].find(
+                x=>Number(x.id)===Number(id)
+            );
+
+        if(sale)
+            return sale;
+
+    }
+
+    return null;
+
+}
+
+
+function deleteSale(id){
+
+    const sale=
+        findSale(id);
+
+    if(!sale)
+        return;
+
+    const c=
+        cocktails.find(
+            x=>Number(x.id)===
+            Number(sale.cocktailId)
+        );
+
+    if(!confirm(
+        `Eliminare ${sale.quantity} × ${c?.name||"cocktail"}?`
+    ))
+        return;
+
+    /*
+        Non dobbiamo reintegrare manualmente
+        lo stock.
+
+        Rimuovendo la vendita,
+        il consumo viene automaticamente
+        ricalcolato.
+    */
+
+    Object.keys(sales)
+        .forEach(day=>{
+
+            sales[day]=
+                sales[day].filter(
+                    x=>Number(x.id)!==Number(id)
+                );
+
+        });
+
+    saveData();
+
+    renderAll();
+
+    showToast(
+        "Vendita eliminata ✓"
+    );
+
+}
+
+
+/* =====================================================
+   DAILY SALES
+===================================================== */
+
+function renderTodaySales(){
+
+    const list=
+        sales[today]||[];
+
+    const html=
+        renderSalesCards(list);
+
+    document.getElementById(
+        "todaySales"
+    ).innerHTML=html;
+
+    document.getElementById(
+        "salesPageList"
+    ).innerHTML=html;
+
+}
+
+
+function renderSalesCards(list){
+
+    if(!list.length){
+
+        return `
+
+            <div class="card empty">
+
+                <div class="empty-icon">
+                    🧾
+                </div>
+
+                Nessuna vendita oggi.
+
+            </div>
+
+        `;
+
+    }
+
+    return list
+        .slice()
+        .reverse()
+        .map(sale=>{
+
+            const c=
+                cocktails.find(
+                    x=>Number(x.id)===
+                    Number(sale.cocktailId)
+                );
+
+            if(!c)
+                return "";
+
+            const revenue=
+                c.price*sale.quantity;
+
+            const cost=
+                cocktailCost(c)*
+                sale.quantity;
+
+            const margin=
+                revenue-cost;
+
+            return `
+
+            <div class="sale-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <div class="sale-time">
+                            ${sale.time||""}
+                        </div>
+
+                        <div class="sale-name">
+                            ${escapeHtml(c.name)}
+                        </div>
+
+                    </div>
+
+                    <div class="sale-quantity">
+                        ×${sale.quantity}
+                    </div>
+
+                </div>
+
+
+                <div
+                    style="
+                        margin-top:10px;
+                        color:var(--muted);
+                        font-size:11px
+                    "
+                >
+
+                    ${money(revenue)}
+                    incasso
+
+                    ·
+
+                    ${money(cost)}
+                    costo
+
+                    ·
+
+                    <span class="green">
+                        ${money(margin)}
+                        margine
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="row"
+                    style="margin-top:11px"
+                >
+
+                    <button
+                        class="secondary"
+                        onclick="openSaleModal(${sale.id})"
+                    >
+                        Modifica
+                    </button>
+
+                    <button
+                        class="secondary danger"
+                        onclick="deleteSale(${sale.id})"
+                    >
+                        Elimina
+                    </button>
+
+                </div>
+
+            </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+function todayStats(){
+
+    const list=
+        sales[today]||[];
+
+    let revenue=0;
+    let cost=0;
+    let cocktailsSold=0;
+
+    list.forEach(sale=>{
+
+        const c=
+            cocktails.find(
+                x=>Number(x.id)===
+                Number(sale.cocktailId)
+            );
+
+        if(!c)
+            return;
+
+        revenue+=
+            c.price*
+            sale.quantity;
+
+        cost+=
+            cocktailCost(c)*
+            sale.quantity;
+
+        cocktailsSold+=
+            sale.quantity;
+
+    });
+
+    const customers=
+        history[today]?.customers||0;
+
+    /*
+        Se è stato chiuso il turno,
+        l'incasso inserito manualmente
+        rimane quello ufficiale.
+    */
+
+    if(
+        history[today]?.revenueOverride
+        !==undefined
+    ){
+
+        revenue=
+            Number(
+                history[today]
+                .revenueOverride
+            );
+
+    }
+
+    return{
+
+        revenue,
+
+        cost,
+
+        margin:
+            revenue-cost,
+
+        cocktailsSold,
+
+        customers
+
+    };
+
+}
+
+
+function renderDashboard(){
+
+    const s=
+        todayStats();
+
+    document.getElementById(
+        "dashboardRevenue"
+    ).textContent=
+        money(s.revenue);
+
+    document.getElementById(
+        "dashCocktails"
+    ).textContent=
+        s.cocktailsSold;
+
+    document.getElementById(
+        "dashCustomers"
+    ).textContent=
+        s.customers;
+
+    document.getElementById(
+        "dashCost"
+    ).textContent=
+        money(s.cost);
+
+    document.getElementById(
+        "dashMargin"
+    ).textContent=
+        money(s.margin);
+
+    let text=
+        "Nessuna vendita registrata";
+
+    if(s.cocktailsSold>=40)
+        text="🔥 Turno molto intenso";
+    else if(s.cocktailsSold>=20)
+        text="⚡ Ottimo ritmo";
+    else if(s.cocktailsSold>0)
+        text="🟢 Turno iniziato";
+
+    document.getElementById(
+        "performanceText"
+    ).textContent=text;
+
+    renderTodaySales();
+
+}
+
+
+/* =====================================================
+   STATISTICHE
+===================================================== */
+
+function renderStats(){
+
+    let revenue=0;
+    let cost=0;
+    let cocktailsSold=0;
+
+    Object.keys(sales)
+        .forEach(day=>{
+
+            sales[day].forEach(sale=>{
+
+                const c=
+                    cocktails.find(
+                        x=>Number(x.id)===
+                        Number(sale.cocktailId)
+                    );
+
+                if(!c)
+                    return;
+
+                revenue+=
+                    c.price*
+                    sale.quantity;
+
+                cost+=
+                    cocktailCost(c)*
+                    sale.quantity;
+
+                cocktailsSold+=
+                    sale.quantity;
+
+            });
+
+        });
+
+    document.getElementById(
+        "statRevenue"
+    ).textContent=
+        money(revenue);
+
+    document.getElementById(
+        "statCocktails"
+    ).textContent=
+        cocktailsSold;
+
+    document.getElementById(
+        "statCost"
+    ).textContent=
+        money(cost);
+
+    document.getElementById(
+        "statMargin"
+    ).textContent=
+        money(revenue-cost);
+
+    renderChart();
+
+    renderHistory();
+
+}
+
+
+function renderChart(){
+
+    const chart=
+        document.getElementById(
+            "revenueChart"
+        );
+
+    const days=[];
+
+    for(let i=6;i>=0;i--){
+
+        const d=
+            new Date();
+
+        d.setDate(
+            d.getDate()-i
+        );
+
+        const key=
+            getDateKey(d);
+
+        let revenue=0;
+
+        if(
+            history[key]
+            ?.revenueOverride
+            !==undefined
+        ){
+
+            revenue=
+                Number(
+                    history[key]
+                    .revenueOverride
+                );
+
+        }else{
+
+            (sales[key]||[])
+                .forEach(sale=>{
+
+                    const c=
+                        cocktails.find(
+                            x=>Number(x.id)===
+                            Number(sale.cocktailId)
+                        );
+
+                    if(c){
+
+                        revenue+=
+                            c.price*
+                            sale.quantity;
+
+                    }
+
+                });
+
+        }
+
+        days.push({
+
+            label:
+                d.toLocaleDateString(
+                    "it-IT",
+                    {
+                        weekday:"short"
+                    }
+                ).slice(0,2),
+
+            revenue
+
+        });
+
+    }
+
+    const max=
+        Math.max(
+            ...days.map(
+                x=>x.revenue
+            ),
+            1
+        );
+
+    chart.innerHTML=
+        days.map(d=>`
+
+            <div
+                class="bar"
+                style="
+                    height:
+                    ${Math.max(
+                        3,
+                        d.revenue/max*150
+                    )}px
+                "
+                title="${money(d.revenue)}"
+            >
+
+                <span>
+                    ${d.label}
+                </span>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+function renderHistory(){
+
+    const container=
+        document.getElementById(
+            "history"
+        );
+
+    const days=
+        Object.keys(history)
+        .sort()
+        .reverse()
+        .slice(0,10);
+
+    if(!days.length){
+
+        container.innerHTML=`
+
+            <div class="card empty">
+                Nessun turno chiuso.
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    container.innerHTML=
+        days.map(day=>{
+
+            const h=
+                history[day];
+
+            const date=
+                new Date(
+                    day+"T12:00:00"
+                )
+                .toLocaleDateString(
+                    "it-IT",
+                    {
+                        day:"numeric",
+                        month:"long",
+                        year:"numeric"
+                    }
+                );
+
+            const sold=
+                (sales[day]||[])
+                .reduce(
+                    (sum,s)=>
+                        sum+Number(s.quantity||0),
+                    0
+                );
+
+            return `
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <div class="title">
+                            ${date}
+                        </div>
+
+                        <div class="category">
+                            ${h.customers||0}
+                            clienti
+                            ·
+                            ${sold}
+                            cocktail
+                        </div>
+
+                    </div>
+
+                    <div class="price">
+                        ${money(
+                            h.revenueOverride||0
+                        )}
+                    </div>
+
+                </div>
+
+                ${
+                    h.notes
+                    ?`
+                    <div style="
+                        margin-top:10px;
+                        color:var(--muted);
+                        font-size:12px
+                    ">
+                        ${escapeHtml(h.notes)}
+                    </div>
+                    `
+                    :""
+                }
+
+            </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =====================================================
+   TURNI
 ===================================================== */
 
 function openShiftModal(){
@@ -3321,24 +3511,20 @@ function openShiftModal(){
     const s=
         todayStats();
 
-
     document.getElementById(
         "shiftRevenue"
     ).value=
         s.revenue||"";
 
-
     document.getElementById(
         "shiftCustomers"
     ).value=
-        s.customers||"";
-
+        history[today]?.customers||"";
 
     document.getElementById(
         "shiftNotes"
     ).value=
         history[today]?.notes||"";
-
 
     document
         .getElementById("shiftModal")
@@ -3374,12 +3560,9 @@ function saveShift(){
 
     };
 
-
     saveData();
 
-    closeModal(
-        "shiftModal"
-    );
+    closeModal("shiftModal");
 
     renderAll();
 
@@ -3391,331 +3574,7 @@ function saveShift(){
 
 
 /* =====================================================
-   STATS
-===================================================== */
-
-function renderStats(){
-
-    let revenue=0;
-
-    let cocktailsSold=0;
-
-    let margin=0;
-
-    let customers=0;
-
-
-    Object.keys(sales)
-        .forEach(day=>{
-
-            sales[day].forEach(s=>{
-
-                const c=
-                    cocktails.find(
-                        x=>x.id==s.cocktailId
-                    );
-
-
-                if(!c)
-                    return;
-
-
-                cocktailsSold+=
-                    s.quantity;
-
-
-                revenue+=
-                    c.price*
-                    s.quantity;
-
-
-                margin+=
-                    cocktailMargin(c)*
-                    s.quantity;
-
-            });
-
-        });
-
-
-    Object.values(history)
-        .forEach(h=>{
-
-            customers+=
-                h.customers||0;
-
-        });
-
-
-    document.getElementById(
-        "statRevenue"
-    ).textContent=
-        money(revenue);
-
-
-    document.getElementById(
-        "statCocktails"
-    ).textContent=
-        cocktailsSold;
-
-
-    document.getElementById(
-        "statMargin"
-    ).textContent=
-        money(margin);
-
-
-    document.getElementById(
-        "statCustomers"
-    ).textContent=
-        customers;
-
-
-    renderChart();
-
-    renderHistory();
-
-}
-
-
-function renderChart(){
-
-    const chart=
-        document.getElementById(
-            "revenueChart"
-        );
-
-
-    const days=[];
-
-
-    for(let i=6;i>=0;i--){
-
-        const d=
-            new Date();
-
-
-        d.setDate(
-            d.getDate()-i
-        );
-
-
-        const key=
-            getDateKey(d);
-
-
-        let revenue=0;
-
-
-        if(
-            history[key]
-            ?.revenueOverride
-            !==undefined
-        ){
-
-            revenue=
-                history[key]
-                .revenueOverride;
-
-        }else{
-
-            (sales[key]||[])
-                .forEach(s=>{
-
-                    const c=
-                        cocktails.find(
-                            x=>x.id==s.cocktailId
-                        );
-
-
-                    if(c){
-
-                        revenue+=
-                            c.price*
-                            s.quantity;
-
-                    }
-
-                });
-
-        }
-
-
-        days.push({
-
-            key,
-
-            label:
-                d.toLocaleDateString(
-                    "it-IT",
-                    {
-                        weekday:"short"
-                    }
-                ).slice(0,2),
-
-            revenue
-
-        });
-
-    }
-
-
-    const max=
-        Math.max(
-            ...days.map(
-                d=>d.revenue
-            ),
-            1
-        );
-
-
-    chart.innerHTML=
-        days.map(d=>`
-
-            <div
-                class="bar"
-                style="
-                    height:
-                    ${Math.max(
-                        3,
-                        (d.revenue/max)*150
-                    )}px
-                "
-                title="${money(d.revenue)}"
-            >
-
-                <span>
-                    ${d.label}
-                </span>
-
-            </div>
-
-        `).join("");
-
-}
-
-
-function renderHistory(){
-
-    const container=
-        document.getElementById(
-            "history"
-        );
-
-
-    const days=
-        Object.keys(history)
-        .sort()
-        .reverse()
-        .slice(0,10);
-
-
-    if(!days.length){
-
-        container.innerHTML=`
-
-            <div class="card empty">
-
-                Nessun turno chiuso.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    container.innerHTML=
-        days.map(day=>{
-
-            const h=
-                history[day];
-
-
-            const date=
-                new Date(
-                    day+"T12:00:00"
-                )
-                .toLocaleDateString(
-                    "it-IT",
-                    {
-                        day:"numeric",
-                        month:"long"
-                    }
-                );
-
-
-            const sold=
-                (sales[day]||[])
-                .reduce(
-                    (sum,s)=>
-                        sum+s.quantity,
-                    0
-                );
-
-
-            return `
-
-            <div class="card">
-
-                <div class="card-header">
-
-                    <div>
-
-                        <div class="cocktail-name">
-                            ${date}
-                        </div>
-
-                        <div class="category">
-
-                            ${h.customers||0}
-                            clienti
-                            ·
-                            ${sold}
-                            cocktail
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="price">
-
-                        ${money(
-                            h.revenueOverride||0
-                        )}
-
-                    </div>
-
-                </div>
-
-
-                ${
-                    h.notes
-                    ?
-                    `<div style="
-                        margin-top:12px;
-                        color:var(--muted);
-                        font-size:13px
-                    ">
-                        ${h.notes}
-                    </div>`
-                    :""
-                }
-
-            </div>
-
-            `;
-
-        }).join("");
-
-}
-
-
-/* =====================================================
-   MODALS
+   MODAL
 ===================================================== */
 
 function closeModal(id){
@@ -3728,7 +3587,23 @@ function closeModal(id){
 
 
 /* =====================================================
-   RENDER ALL
+   SECURITY / HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(value??"")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   RENDER
 ===================================================== */
 
 function renderAll(){
