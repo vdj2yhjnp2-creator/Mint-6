@@ -2,4712 +2,3050 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-<title>BAR OS 3.0</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BAR OS</title>
 
 <style>
-
 :root{
-    --bg:#0b0d0e;
-    --card:#151819;
-    --card2:#1c2022;
-    --text:#f5f5f5;
-    --muted:#8d9598;
-    --accent:#9ee6c0;
-    --accent2:#55c58d;
-    --danger:#ff7070;
-    --warning:#ffc857;
-    --border:#292e30;
+  --bg:#0b0d0e;
+  --card:#151819;
+  --card2:#1d2122;
+  --text:#f5f5f5;
+  --muted:#899194;
+  --green:#9ee6c0;
+  --green2:#55c58d;
+  --yellow:#ffc857;
+  --red:#ff7070;
+  --border:#292e30;
 }
 
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
-    padding-bottom:92px;
-}
-
-button,
-input,
-select,
-textarea{
-    font:inherit;
-}
-
-button{
-    border:0;
-    cursor:pointer;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif;
+  padding-bottom:90px;
 }
 
 .app{
-    width:100%;
-    max-width:700px;
-    margin:auto;
-    padding:18px 16px;
+  max-width:720px;
+  margin:auto;
+  padding:18px 15px;
 }
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:22px;
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:850;
-    letter-spacing:2px;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 
 .version{
-    color:var(--muted);
-    font-size:10px;
+  color:var(--muted);
+  font-size:9px;
+  margin-top:2px;
 }
 
 .date{
-    color:var(--muted);
-    font-size:12px;
+  color:var(--muted);
+  font-size:11px;
 }
 
-.page{
-    display:none;
+.page{display:none}
+.page.active{display:block}
+
+h2{
+  font-size:19px;
+  margin:0 0 12px;
 }
 
-.page.active{
-    display:block;
+.section-title{
+  font-size:16px;
+  font-weight:800;
+  margin:23px 0 10px;
 }
-
-/* HERO */
 
 .hero{
-    background:linear-gradient(145deg,#17231d,#121716);
-    border:1px solid #26372f;
-    border-radius:25px;
-    padding:22px;
-    margin-bottom:13px;
+  background:linear-gradient(145deg,#17231d,#121716);
+  border:1px solid #294035;
+  border-radius:24px;
+  padding:21px;
+  margin-bottom:10px;
 }
 
-.hero-label{
-    color:var(--muted);
-    font-size:11px;
+.label{
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
 }
 
 .hero-value{
-    font-size:43px;
-    font-weight:850;
-    letter-spacing:-2px;
-    margin-top:5px;
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:-2px;
+  margin:5px 0;
 }
 
-.hero-sub{
-    color:var(--accent);
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* GRID */
+.green{color:var(--green)}
+.yellow{color:var(--yellow)}
+.red{color:var(--red)}
 
 .grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
 }
 
 .stat{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:16px;
-}
-
-.stat-label{
-    color:var(--muted);
-    font-size:10px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:15px;
 }
 
 .stat-value{
-    font-size:23px;
-    font-weight:800;
-    margin-top:6px;
-}
-
-.stat-small{
-    color:var(--muted);
-    font-size:10px;
-    margin-top:3px;
-}
-
-/* SECTIONS */
-
-.section-title{
-    margin:25px 2px 11px;
-    font-size:17px;
-    font-weight:800;
+  font-size:23px;
+  font-weight:850;
+  margin-top:5px;
 }
 
 .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:19px;
-    padding:16px;
-    margin-bottom:10px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:9px;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  font:inherit;
 }
 
 .primary{
-    width:100%;
-    background:var(--accent);
-    color:#09140e;
-    padding:15px;
-    border-radius:14px;
-    font-weight:800;
-    margin-top:9px;
+  width:100%;
+  padding:14px;
+  border-radius:13px;
+  background:var(--green);
+  color:#09140e;
+  font-weight:850;
+  margin-top:8px;
 }
 
 .secondary{
-    background:var(--card2);
-    color:var(--text);
-    border:1px solid var(--border);
-    padding:12px 14px;
-    border-radius:12px;
+  padding:11px 13px;
+  border-radius:11px;
+  background:var(--card2);
+  color:white;
+  border:1px solid var(--border);
 }
 
 .danger{
-    background:#311c1e;
-    color:#ff8989;
+  color:#ff8585;
 }
 
 .row{
-    display:flex;
-    gap:8px;
+  display:flex;
+  gap:7px;
 }
 
-.row>*{
-    flex:1;
+.row>*{flex:1}
+
+input,select,textarea{
+  width:100%;
+  background:#0f1213;
+  border:1px solid var(--border);
+  color:white;
+  border-radius:12px;
+  padding:13px;
+  outline:none;
 }
 
-/* SEARCH */
-
-.search{
-    width:100%;
-    background:var(--card);
-    color:white;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:14px;
-    outline:none;
+textarea{
+  min-height:80px;
+  resize:vertical;
 }
-
-.search:focus,
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:var(--accent2);
-}
-
-/* FORMS */
 
 label{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
-    margin:13px 0 6px;
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin:12px 0 6px;
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    background:#0f1213;
-    color:white;
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:13px;
-    outline:none;
+.search{
+  margin-bottom:8px;
 }
 
-textarea{
-    min-height:80px;
-    resize:vertical;
+.item-title{
+  font-size:16px;
+  font-weight:800;
 }
 
-/* COCKTAIL */
-
-.cocktail-header{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
+.item-sub{
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px;
 }
 
-.title{
-    font-size:17px;
-    font-weight:780;
-}
-
-.subtitle{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:4px;
-}
-
-.ingredient-line{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    padding:5px 0;
-    font-size:13px;
+.item-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
 }
 
 .divider{
-    border-top:1px solid var(--border);
-    margin-top:9px;
-    padding-top:9px;
+  border-top:1px solid var(--border);
+  margin-top:10px;
+  padding-top:10px;
 }
 
-.green{
-    color:var(--accent);
-}
-
-.red{
-    color:var(--danger);
-}
-
-.yellow{
-    color:var(--warning);
+.line{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:4px 0;
+  font-size:12px;
 }
 
 .cost-box{
-    margin-top:14px;
-    background:#101515;
-    border:1px solid #26372f;
-    border-radius:14px;
-    padding:14px;
+  background:#101515;
+  border:1px solid #26372f;
+  border-radius:13px;
+  padding:13px;
+  margin-top:11px;
 }
 
-.cost-big{
-    font-size:27px;
-    font-weight:850;
-    margin-top:4px;
+.cost{
+  font-size:25px;
+  font-weight:900;
+  margin-top:3px;
 }
 
-/* INGREDIENT ROW */
-
-.cocktail-ing-row{
-    display:grid;
-    grid-template-columns:1fr 80px 38px;
-    gap:7px;
-    margin-bottom:7px;
+.ingredient-row{
+  display:grid;
+  grid-template-columns:1fr 75px 38px;
+  gap:6px;
+  margin-bottom:7px;
 }
 
 .remove{
-    border-radius:10px;
-    background:#311c1e;
-    color:#ff8585;
-}
-
-/* STOCK */
-
-.stock-row{
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    padding:13px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.stock-row:last-child{
-    border-bottom:0;
-}
-
-.stock-name{
-    font-weight:750;
-}
-
-.stock-info{
-    color:var(--muted);
-    font-size:10px;
-    margin-top:4px;
-}
-
-.stock-right{
-    text-align:right;
-    font-weight:800;
-}
-
-.stock-percent{
-    font-size:10px;
-    margin-top:3px;
+  background:#321d20;
+  color:#ff8585;
+  border-radius:10px;
 }
 
 .progress{
-    height:5px;
-    background:#272c2e;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:8px;
-    width:150px;
+  height:5px;
+  background:#292e30;
+  border-radius:5px;
+  overflow:hidden;
+  margin-top:8px;
 }
 
-.progress-inner{
-    height:100%;
-    background:var(--accent2);
+.progress div{
+  height:100%;
+  background:var(--green2);
 }
 
-/* SALE */
-
-.sale-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:14px;
-    margin-bottom:9px;
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:30px 10px;
 }
 
-.sale-top{
-    display:flex;
-    justify-content:space-between;
+.sale{
+  padding:13px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  margin-bottom:8px;
 }
 
-.sale-time{
-    color:var(--muted);
-    font-size:10px;
+.sale-head{
+  display:flex;
+  justify-content:space-between;
 }
-
-.sale-name{
-    font-weight:750;
-    margin-top:3px;
-}
-
-.sale-qty{
-    color:var(--accent);
-    font-weight:850;
-}
-
-.sale-info{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:9px;
-}
-
-/* ORDER */
-
-.order-item{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding:12px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.order-item:last-child{
-    border-bottom:0;
-}
-
-/* ANALYSIS */
-
-.analysis{
-    border-left:3px solid var(--accent2);
-}
-
-.analysis-item{
-    padding:10px 0;
-    border-bottom:1px solid var(--border);
-    font-size:13px;
-    line-height:1.45;
-}
-
-.analysis-item:last-child{
-    border-bottom:0;
-}
-
-/* CHART */
 
 .chart{
-    height:175px;
-    display:flex;
-    align-items:flex-end;
-    gap:7px;
-    padding:10px 5px 0;
+  height:180px;
+  display:flex;
+  align-items:flex-end;
+  gap:7px;
+  padding:5px 4px 22px;
 }
 
 .bar{
-    flex:1;
-    background:var(--accent2);
-    border-radius:7px 7px 2px 2px;
-    min-height:3px;
-    position:relative;
+  flex:1;
+  background:var(--green2);
+  border-radius:6px 6px 2px 2px;
+  min-height:3px;
+  position:relative;
 }
 
 .bar span{
-    position:absolute;
-    bottom:-20px;
-    left:50%;
-    transform:translateX(-50%);
-    color:var(--muted);
-    font-size:9px;
+  position:absolute;
+  bottom:-19px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:8px;
+  color:var(--muted);
 }
 
-/* MODAL */
+.analysis{
+  border-left:3px solid var(--green2);
+}
+
+.analysis-line{
+  padding:11px 0;
+  border-bottom:1px solid var(--border);
+  font-size:12px;
+  line-height:1.5;
+}
+
+.analysis-line:last-child{
+  border:0;
+}
 
 .modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.82);
-    display:none;
-    align-items:flex-end;
-    z-index:100;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.84);
+  display:none;
+  align-items:flex-end;
+  z-index:100;
 }
 
-.modal.active{
-    display:flex;
-}
+.modal.open{display:flex}
 
-.modal-content{
-    width:100%;
-    max-width:700px;
-    max-height:94vh;
-    overflow:auto;
-    background:#151819;
-    border:1px solid var(--border);
-    border-radius:25px 25px 0 0;
-    padding:20px;
-    margin:auto;
+.modal-box{
+  width:100%;
+  max-width:720px;
+  max-height:94vh;
+  overflow:auto;
+  background:#151819;
+  border-radius:24px 24px 0 0;
+  border:1px solid var(--border);
+  padding:20px;
+  margin:auto;
 }
 
 .modal-title{
-    font-size:20px;
-    font-weight:850;
-    margin-bottom:14px;
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:10px;
 }
 
-/* EMPTY */
-
-.empty{
-    text-align:center;
-    color:var(--muted);
-    padding:30px 10px;
-}
-
-.empty-icon{
-    font-size:35px;
-    margin-bottom:8px;
-}
-
-/* NAV */
-
-.bottom-nav{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:50;
-    background:rgba(12,14,15,.97);
-    backdrop-filter:blur(18px);
-    border-top:1px solid var(--border);
-    padding-bottom:max(7px,env(safe-area-inset-bottom));
+.nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(11,13,14,.97);
+  border-top:1px solid var(--border);
+  z-index:50;
+  padding-bottom:max(5px,env(safe-area-inset-bottom));
 }
 
 .nav-inner{
-    max-width:700px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
+  max-width:720px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
 }
 
-.nav-btn{
-    background:none;
-    color:var(--muted);
-    font-size:8px;
-    padding:8px 1px 6px;
+.nav button{
+  background:none;
+  color:var(--muted);
+  padding:7px 1px;
+  font-size:7px;
 }
 
-.nav-btn.active{
-    color:var(--accent);
+.nav button.active{
+  color:var(--green);
 }
 
 .nav-icon{
-    display:block;
-    font-size:18px;
-    margin-bottom:2px;
+  display:block;
+  font-size:17px;
+  margin-bottom:2px;
 }
-
-/* TOAST */
 
 .toast{
-    position:fixed;
-    left:50%;
-    bottom:100px;
-    transform:translateX(-50%) translateY(15px);
-    background:#f2f2f2;
-    color:#111;
-    padding:11px 17px;
-    border-radius:13px;
-    font-size:12px;
-    font-weight:750;
-    opacity:0;
-    pointer-events:none;
-    transition:.25s;
-    z-index:200;
+  position:fixed;
+  bottom:100px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  color:#111;
+  padding:10px 16px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+  z-index:200;
 }
 
-.toast.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-}
+.toast.show{opacity:1}
 
 @media(max-width:390px){
-
-    .nav-btn{
-        font-size:7px;
-    }
-
-    .nav-icon{
-        font-size:17px;
-    }
-
-    .hero-value{
-        font-size:37px;
-    }
-
-    .progress{
-        width:100px;
-    }
-
+  .hero-value{font-size:36px}
+  .nav button{font-size:6px}
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="app">
 
-<header class="header">
-
-    <div>
-        <div class="logo">BAR OS</div>
-        <div class="version">WORK EDITION 3.0</div>
-    </div>
-
-    <div class="date" id="todayDate"></div>
-
+<header>
+  <div>
+    <div class="logo">BAR OS</div>
+    <div class="version">WORK EDITION</div>
+  </div>
+  <div class="date" id="date"></div>
 </header>
 
 
-<!-- ==================================================
-     DASHBOARD
-================================================== -->
+<!-- HOME -->
+<section id="home" class="page active">
 
-<section id="dashboard" class="page active">
+  <div class="hero">
+    <div class="label">Incasso di oggi</div>
+    <div class="hero-value" id="homeRevenue">€0,00</div>
+    <div class="green" id="homeMessage">Nessuna vendita</div>
+  </div>
 
-    <div class="hero">
+  <div class="grid">
 
-        <div class="hero-label">
-            INCASSO DI OGGI
-        </div>
-
-        <div
-            class="hero-value"
-            id="dashboardRevenue">
-            €0,00
-        </div>
-
-        <div
-            class="hero-sub"
-            id="performanceText">
-            Nessuna vendita registrata
-        </div>
-
+    <div class="stat">
+      <div class="label">Cocktail</div>
+      <div class="stat-value" id="homeCocktails">0</div>
     </div>
 
-
-    <div class="grid">
-
-        <div class="stat">
-
-            <div class="stat-label">
-                COCKTAIL
-            </div>
-
-            <div
-                class="stat-value"
-                id="dashCocktails">
-                0
-            </div>
-
-            <div class="stat-small">
-                venduti
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-label">
-                COSTI
-            </div>
-
-            <div
-                class="stat-value"
-                id="dashCost">
-                €0
-            </div>
-
-            <div class="stat-small">
-                ingredienti
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-label">
-                MARGINE
-            </div>
-
-            <div
-                class="stat-value"
-                id="dashMargin">
-                €0
-            </div>
-
-            <div class="stat-small">
-                lordo
-            </div>
-
-        </div>
-
-
-        <div class="stat">
-
-            <div class="stat-label">
-                CLIENTI
-            </div>
-
-            <div
-                class="stat-value"
-                id="dashCustomers">
-                0
-            </div>
-
-            <div class="stat-small">
-                oggi
-            </div>
-
-        </div>
-
+    <div class="stat">
+      <div class="label">Costi</div>
+      <div class="stat-value" id="homeCost">€0</div>
     </div>
 
-
-    <div class="section-title">
-        Controllo rapido
+    <div class="stat">
+      <div class="label">Margine</div>
+      <div class="stat-value" id="homeMargin">€0</div>
     </div>
 
-    <div id="dashboardAlerts"></div>
-
-
-    <div class="section-title">
-        Vendite di oggi
+    <div class="stat">
+      <div class="label">Clienti</div>
+      <div class="stat-value" id="homeCustomers">0</div>
     </div>
 
-    <div id="todaySales"></div>
+  </div>
+
+  <div class="section-title">Controllo rapido</div>
+  <div id="homeAlerts"></div>
+
+  <div class="section-title">Vendite recenti</div>
+  <div id="homeSales"></div>
+
+  <button class="primary" onclick="openShift()">
+    Chiudi turno
+  </button>
 
 </section>
 
 
-<!-- ==================================================
-     COCKTAIL
-================================================== -->
-
+<!-- COCKTAIL -->
 <section id="cocktails" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Cocktail Lab
-    </div>
+  <h2>Cocktail</h2>
 
-    <input
-        id="cocktailSearch"
-        class="search"
-        placeholder="🔎 Cerca cocktail o ingrediente..."
-        oninput="renderCocktails()"
-    >
+  <input
+    class="search"
+    id="cocktailSearch"
+    placeholder="🔎 Cerca cocktail..."
+    oninput="renderCocktails()">
 
-    <button
-        class="primary"
-        onclick="openCocktailModal()">
-        ＋ Nuovo cocktail
-    </button>
+  <button class="primary" onclick="openCocktail()">
+    ＋ Nuovo cocktail
+  </button>
 
-    <div
-        id="cocktailList"
-        style="margin-top:17px">
-    </div>
+  <div id="cocktailList" style="margin-top:15px"></div>
 
 </section>
 
 
-<!-- ==================================================
-     INGREDIENTI
-================================================== -->
-
+<!-- INGREDIENTI -->
 <section id="ingredients" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Ingredienti
+  <h2>Ingredienti</h2>
+
+  <div class="card">
+    <div style="color:var(--muted);font-size:11px;line-height:1.5">
+      Inserisci nome, ml della bottiglia e costo.
+      BAR OS calcolerà automaticamente il costo per ml.
     </div>
+  </div>
 
-    <div class="card">
+  <button class="primary" onclick="openIngredient()">
+    ＋ Nuovo ingrediente
+  </button>
 
-        <div style="
-            color:var(--muted);
-            font-size:12px;
-            line-height:1.5">
-
-            Inserisci il contenuto della bottiglia
-            e il suo costo. BAR OS calcolerà
-            automaticamente il costo per ml.
-
-        </div>
-
-    </div>
-
-    <button
-        class="primary"
-        onclick="openIngredientModal()">
-        ＋ Nuovo ingrediente
-    </button>
-
-    <div
-        id="ingredientList"
-        style="margin-top:17px">
-    </div>
+  <div id="ingredientList" style="margin-top:15px"></div>
 
 </section>
 
 
-<!-- ==================================================
-     STOCK
-================================================== -->
-
+<!-- STOCK -->
 <section id="stock" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Inventario
-    </div>
+  <h2>Inventario</h2>
 
-    <div id="stockSummary"></div>
+  <div id="stockSummary"></div>
 
-    <button
-        class="primary"
-        onclick="openStockModal()">
-        ＋ Carica / aggiorna stock
-    </button>
+  <button class="primary" onclick="openStock()">
+    ＋ Carica stock
+  </button>
 
-    <div
-        id="stockList"
-        style="margin-top:17px">
-    </div>
+  <div id="stockList" style="margin-top:15px"></div>
 
 </section>
 
 
-<!-- ==================================================
-     VENDITE
-================================================== -->
-
+<!-- VENDITE -->
 <section id="sales" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Vendite
-    </div>
+  <h2>Vendite</h2>
 
-    <button
-        class="primary"
-        onclick="openSaleModal()">
-        ＋ Registra vendita
-    </button>
+  <button class="primary" onclick="openSale()">
+    ＋ Registra vendita
+  </button>
 
-    <div class="section-title">
-        Vendite di oggi
-    </div>
+  <div class="section-title">Oggi</div>
 
-    <div id="salesPageList"></div>
+  <div id="salesList"></div>
 
 </section>
 
 
-<!-- ==================================================
-     ORDINI
-================================================== -->
-
+<!-- ORDINI -->
 <section id="orders" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Ordini
+  <h2>Ordini</h2>
+
+  <div class="card">
+    <div style="font-size:11px;color:var(--muted)">
+      Prodotti che hanno raggiunto la soglia minima.
     </div>
+  </div>
 
-    <div class="card">
-
-        <div style="
-            font-size:12px;
-            color:var(--muted);
-            line-height:1.5">
-
-            Qui trovi automaticamente gli ingredienti
-            che sono sotto la soglia minima.
-
-        </div>
-
-    </div>
-
-    <div id="orderList"></div>
+  <div id="orderList"></div>
 
 </section>
 
 
-<!-- ==================================================
-     ANALISI
-================================================== -->
-
+<!-- ANALISI -->
 <section id="analysis" class="page">
 
-    <div class="section-title" style="margin-top:0">
-        Analisi
-    </div>
+  <h2>Analisi</h2>
 
-    <div id="analysisContent"></div>
+  <div id="analysisList"></div>
 
-</section>
+  <div class="section-title">
+    Più venduti
+  </div>
 
+  <div id="topSold"></div>
 
-<!-- ==================================================
-     STATS
-================================================== -->
+  <div class="section-title">
+    Più redditizi
+  </div>
 
-<section id="stats" class="page">
-
-    <div class="section-title" style="margin-top:0">
-        Statistiche
-    </div>
-
-    <div class="grid">
-
-        <div class="stat">
-            <div class="stat-label">INCASSO</div>
-            <div
-                class="stat-value"
-                id="statRevenue">
-                €0
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-label">COCKTAIL</div>
-            <div
-                class="stat-value"
-                id="statCocktails">
-                0
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-label">COSTI</div>
-            <div
-                class="stat-value"
-                id="statCost">
-                €0
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-label">MARGINE</div>
-            <div
-                class="stat-value"
-                id="statMargin">
-                €0
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="section-title">
-        Incasso ultimi 7 giorni
-    </div>
-
-    <div class="card">
-
-        <div
-            class="chart"
-            id="revenueChart">
-        </div>
-
-    </div>
+  <div id="topProfit"></div>
 
 </section>
 
 
-<!-- ==================================================
-     NAVIGATION
-================================================== -->
+<!-- SPRECHI -->
+<section id="waste" class="page">
 
-<nav class="bottom-nav">
+  <h2>Sprechi</h2>
+
+  <button class="primary" onclick="openWaste()">
+    ＋ Registra spreco
+  </button>
+
+  <div class="section-title">
+    Sprechi di oggi
+  </div>
+
+  <div id="wasteList"></div>
+
+  <div class="card">
+    <div class="label">Costo sprechi oggi</div>
+    <div class="cost red" id="wasteTotal">€0,00</div>
+  </div>
+
+</section>
+
+
+<!-- NAV -->
+<nav class="nav">
 
 <div class="nav-inner">
 
-    <button
-        class="nav-btn active"
-        onclick="showPage('dashboard',this)">
-        <span class="nav-icon">⌂</span>
-        Home
-    </button>
+<button class="active" onclick="page('home',this)">
+  <span class="nav-icon">⌂</span>
+  Home
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('cocktails',this)">
-        <span class="nav-icon">🍸</span>
-        Cocktail
-    </button>
+<button onclick="page('cocktails',this)">
+  <span class="nav-icon">🍸</span>
+  Cocktail
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('ingredients',this)">
-        <span class="nav-icon">🧪</span>
-        Ingredienti
-    </button>
+<button onclick="page('ingredients',this)">
+  <span class="nav-icon">🧪</span>
+  Ingredienti
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('stock',this)">
-        <span class="nav-icon">📦</span>
-        Stock
-    </button>
+<button onclick="page('stock',this)">
+  <span class="nav-icon">📦</span>
+  Stock
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('sales',this)">
-        <span class="nav-icon">🧾</span>
-        Vendite
-    </button>
+<button onclick="page('sales',this)">
+  <span class="nav-icon">🧾</span>
+  Vendite
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('orders',this)">
-        <span class="nav-icon">🛒</span>
-        Ordini
-    </button>
+<button onclick="page('orders',this)">
+  <span class="nav-icon">🛒</span>
+  Ordini
+</button>
 
-    <button
-        class="nav-btn"
-        onclick="showPage('analysis',this)">
-        <span class="nav-icon">🧠</span>
-        Analisi
-    </button>
+<button onclick="page('analysis',this)">
+  <span class="nav-icon">📊</span>
+  Analisi
+</button>
 
 </div>
-
 </nav>
 
 </div>
 
 
-<!-- ==================================================
-     INGREDIENT MODAL
-================================================== -->
-
+<!-- INGREDIENT MODAL -->
 <div class="modal" id="ingredientModal">
 
-<div class="modal-content">
+<div class="modal-box">
 
-    <div class="modal-title">
-        Ingrediente
-    </div>
+<div class="modal-title">
+  <span id="ingredientModalTitle">Nuovo ingrediente</span>
+</div>
 
-    <input
-        type="hidden"
-        id="editIngredientId">
+<input type="hidden" id="ingredientId">
 
-    <label>
-        Nome ingrediente
-    </label>
+<label>Nome</label>
+<input id="ingredientName" placeholder="Es. Gin">
 
-    <input
-        id="ingredientName"
-        placeholder="Es. Gin Monkey 47">
+<label>Contenuto bottiglia (ml)</label>
+<input id="ingredientMl" type="number" placeholder="700">
 
-    <label>
-        Contenuto bottiglia (ml)
-    </label>
+<label>Costo bottiglia (€)</label>
+<input id="ingredientPrice" type="number" step="0.01" placeholder="35">
 
-    <input
-        id="ingredientMl"
-        type="number"
-        placeholder="700"
-        oninput="updateIngredientPreview()">
+<div class="cost-box">
+  <div class="label">Costo per ml</div>
+  <div class="cost green" id="ingredientCostPreview">€0,0000</div>
+</div>
 
-    <label>
-        Costo bottiglia (€)
-    </label>
+<button class="primary" onclick="saveIngredient()">
+  Salva
+</button>
 
-    <input
-        id="ingredientPrice"
-        type="number"
-        step="0.01"
-        placeholder="35"
-        oninput="updateIngredientPreview()">
-
-    <div
-        class="cost-box"
-        id="ingredientPreviewBox"
-        style="display:none">
-
-        <div style="
-            color:var(--muted);
-            font-size:10px">
-            COSTO PER ML
-        </div>
-
-        <div
-            class="cost-big green"
-            id="ingredientPreview">
-            €0,0000
-        </div>
-
-    </div>
-
-    <button
-        class="primary"
-        onclick="saveIngredient()">
-        Salva ingrediente
-    </button>
-
-    <button
-        class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="closeModal('ingredientModal')">
-        Annulla
-    </button>
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('ingredientModal')">
+  Annulla
+</button>
 
 </div>
 </div>
 
 
-<!-- ==================================================
-     COCKTAIL MODAL
-================================================== -->
-
+<!-- COCKTAIL MODAL -->
 <div class="modal" id="cocktailModal">
 
-<div class="modal-content">
+<div class="modal-box">
 
-    <div
-        class="modal-title"
-        id="cocktailModalTitle">
-        Nuovo cocktail
-    </div>
+<div class="modal-title">
+  <span id="cocktailModalTitle">Nuovo cocktail</span>
+</div>
 
-    <input
-        type="hidden"
-        id="editCocktailId">
+<input type="hidden" id="cocktailId">
 
-    <label>
-        Nome cocktail
-    </label>
+<label>Nome</label>
+<input id="cocktailName" placeholder="Es. Negroni">
 
-    <input
-        id="cocktailName"
-        placeholder="Es. Negroni">
+<label>Categoria</label>
+<select id="cocktailCategory">
+  <option>Classic</option>
+  <option>Signature</option>
+  <option>Spritz</option>
+  <option>Sour</option>
+  <option>Long Drink</option>
+  <option>Martini</option>
+  <option>Analcolico</option>
+</select>
 
-    <label>
-        Categoria
-    </label>
+<label>Prezzo di vendita (€)</label>
+<input id="cocktailPrice" type="number" step="0.01">
 
-    <select id="cocktailCategory">
-        <option>Classic</option>
-        <option>Signature</option>
-        <option>Spritz</option>
-        <option>Sour</option>
-        <option>Long Drink</option>
-        <option>Martini</option>
-        <option>Analcolico</option>
-    </select>
+<label>Ingredienti</label>
+<div id="cocktailIngredients"></div>
 
-    <label>
-        Prezzo di vendita (€)
-    </label>
+<button class="secondary" style="width:100%"
+onclick="addCocktailRow()">
+  ＋ Aggiungi ingrediente
+</button>
 
-    <input
-        id="cocktailPrice"
-        type="number"
-        step="0.01"
-        placeholder="10"
-        oninput="updateCocktailCostPreview()">
+<div class="cost-box">
+  <div class="label">Costo cocktail</div>
+  <div class="cost" id="cocktailCost">€0,00</div>
+  <div id="cocktailMargin" style="font-size:11px;margin-top:3px"></div>
+</div>
 
-    <label>
-        Tecnica
-    </label>
+<label>Tecnica</label>
+<select id="cocktailTechnique">
+  <option>Shake</option>
+  <option>Stir</option>
+  <option>Build</option>
+  <option>Throw</option>
+  <option>Blend</option>
+</select>
 
-    <select id="cocktailTechnique">
-        <option>Shake</option>
-        <option>Stir</option>
-        <option>Build</option>
-        <option>Throw</option>
-        <option>Blend</option>
-    </select>
+<label>Bicchiere</label>
+<input id="cocktailGlass" placeholder="Es. Rocks">
 
-    <label>
-        Bicchiere
-    </label>
+<label>Ghiaccio</label>
+<input id="cocktailIce" placeholder="Es. Cubi">
 
-    <input
-        id="cocktailGlass"
-        placeholder="Es. Rocks">
+<label>Garnish</label>
+<input id="cocktailGarnish" placeholder="Es. Scorza d'arancia">
 
-    <label>
-        Ingredienti
-    </label>
+<label>Note</label>
+<textarea id="cocktailNotes"></textarea>
 
-    <div id="cocktailIngredientRows"></div>
+<button class="primary" onclick="saveCocktail()">
+  Salva cocktail
+</button>
 
-    <button
-        class="secondary"
-        style="width:100%"
-        onclick="addCocktailIngredientRow()">
-        ＋ Aggiungi ingrediente
-    </button>
-
-
-    <div class="cost-box">
-
-        <div style="
-            color:var(--muted);
-            font-size:10px">
-            COSTO REALE
-        </div>
-
-        <div
-            class="cost-big"
-            id="liveCocktailCost">
-            €0,00
-        </div>
-
-        <div
-            id="liveCocktailMargin"
-            style="font-size:12px;margin-top:4px">
-            Margine: €0,00
-        </div>
-
-    </div>
-
-
-    <label>
-        Ghiaccio
-    </label>
-
-    <input
-        id="cocktailIce"
-        placeholder="Es. cubi">
-
-    <label>
-        Garnish
-    </label>
-
-    <input
-        id="cocktailGarnish"
-        placeholder="Es. scorza d'arancia">
-
-    <label>
-        Note
-    </label>
-
-    <textarea
-        id="cocktailNotes"
-        placeholder="Note..."></textarea>
-
-    <button
-        class="primary"
-        onclick="saveCocktail()">
-        Salva cocktail
-    </button>
-
-    <button
-        class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="closeModal('cocktailModal')">
-        Annulla
-    </button>
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('cocktailModal')">
+  Annulla
+</button>
 
 </div>
 </div>
 
 
-<!-- ==================================================
-     SALE MODAL
-================================================== -->
-
+<!-- SALE MODAL -->
 <div class="modal" id="saleModal">
 
-<div class="modal-content">
+<div class="modal-box">
 
-    <div
-        class="modal-title"
-        id="saleModalTitle">
-        Registra vendita
-    </div>
+<div class="modal-title">
+  <span id="saleModalTitle">Nuova vendita</span>
+</div>
 
-    <input
-        type="hidden"
-        id="editSaleId">
+<input type="hidden" id="saleId">
 
-    <label>
-        Cocktail
-    </label>
+<label>Cocktail</label>
+<select id="saleCocktail"></select>
 
-    <select id="saleCocktail"></select>
+<label>Quantità</label>
+<input id="saleQuantity" type="number" min="1" value="1">
 
-    <label>
-        Quantità
-    </label>
+<div class="cost-box">
+  <div class="label">Riepilogo</div>
+  <div id="salePreview" style="font-size:12px;margin-top:5px"></div>
+</div>
 
-    <input
-        id="saleQuantity"
-        type="number"
-        min="1"
-        value="1">
+<button class="primary" onclick="saveSale()">
+  Salva vendita
+</button>
 
-    <div class="cost-box">
-
-        <div style="
-            color:var(--muted);
-            font-size:10px">
-            RIEPILOGO
-        </div>
-
-        <div
-            id="salePreview"
-            style="font-size:13px;margin-top:5px">
-        </div>
-
-    </div>
-
-    <button
-        class="primary"
-        onclick="saveSale()">
-        Salva vendita
-    </button>
-
-    <button
-        class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="closeModal('saleModal')">
-        Annulla
-    </button>
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('saleModal')">
+  Annulla
+</button>
 
 </div>
 </div>
 
 
-<!-- ==================================================
-     STOCK MODAL
-================================================== -->
-
+<!-- STOCK MODAL -->
 <div class="modal" id="stockModal">
 
-<div class="modal-content">
+<div class="modal-box">
 
-    <div class="modal-title">
-        Stock
-    </div>
+<div class="modal-title">
+  Stock ingrediente
+</div>
 
-    <input
-        type="hidden"
-        id="editStockId">
+<input type="hidden" id="stockId">
 
-    <label>
-        Ingrediente
-    </label>
+<label>Ingrediente</label>
+<select id="stockIngredient"></select>
 
-    <select id="stockIngredient"></select>
+<label>Quantità presente iniziale (ml)</label>
+<input id="stockInitial" type="number">
 
-    <label>
-        Quantità presente (ml)
-    </label>
+<label>Soglia minima (ml)</label>
+<input id="stockMinimum" type="number" value="150">
 
-    <input
-        id="stockInitial"
-        type="number"
-        step="1"
-        placeholder="1400">
+<button class="primary" onclick="saveStock()">
+  Salva
+</button>
 
-    <label>
-        Soglia minima (ml)
-    </label>
-
-    <input
-        id="stockMinimum"
-        type="number"
-        value="150">
-
-    <button
-        class="primary"
-        onclick="saveStock()">
-        Salva stock
-    </button>
-
-    <button
-        class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="closeModal('stockModal')">
-        Annulla
-    </button>
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('stockModal')">
+  Annulla
+</button>
 
 </div>
 </div>
 
 
-<!-- ==================================================
-     SHIFT MODAL
-================================================== -->
+<!-- WASTE MODAL -->
+<div class="modal" id="wasteModal">
 
+<div class="modal-box">
+
+<div class="modal-title">
+  Registra spreco
+</div>
+
+<label>Ingrediente</label>
+<select id="wasteIngredient"></select>
+
+<label>Quantità sprecata (ml)</label>
+<input id="wasteMl" type="number">
+
+<label>Motivo</label>
+<select id="wasteReason">
+  <option>Errore cocktail</option>
+  <option>Prodotto scaduto</option>
+  <option>Rottura</option>
+  <option>Versamento</option>
+  <option>Altro</option>
+</select>
+
+<button class="primary" onclick="saveWaste()">
+  Registra
+</button>
+
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('wasteModal')">
+  Annulla
+</button>
+
+</div>
+</div>
+
+
+<!-- SHIFT MODAL -->
 <div class="modal" id="shiftModal">
 
-<div class="modal-content">
+<div class="modal-box">
 
-    <div class="modal-title">
-        Chiusura turno
-    </div>
+<div class="modal-title">
+  Chiusura turno
+</div>
 
-    <label>
-        Incasso reale (€)
-    </label>
+<label>Incasso reale (€)</label>
+<input id="shiftRevenue" type="number" step="0.01">
 
-    <input
-        id="shiftRevenue"
-        type="number"
-        step="0.01">
+<label>Clienti</label>
+<input id="shiftCustomers" type="number">
 
-    <label>
-        Clienti
-    </label>
+<label>Note</label>
+<textarea id="shiftNotes"></textarea>
 
-    <input
-        id="shiftCustomers"
-        type="number">
+<button class="primary" onclick="saveShift()">
+  Salva chiusura
+</button>
 
-    <label>
-        Note
-    </label>
-
-    <textarea
-        id="shiftNotes"
-        placeholder="Note sul turno..."></textarea>
-
-    <button
-        class="primary"
-        onclick="saveShift()">
-        Chiudi turno
-    </button>
-
-    <button
-        class="secondary"
-        style="width:100%;margin-top:8px"
-        onclick="closeModal('shiftModal')">
-        Annulla
-    </button>
+<button class="secondary" style="width:100%;margin-top:7px"
+onclick="closeModal('shiftModal')">
+  Annulla
+</button>
 
 </div>
 </div>
 
 
-<div
-    class="toast"
-    id="toast">
-</div>
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-/* =====================================================
+/* ======================================================
    DATABASE
-===================================================== */
+====================================================== */
 
-let ingredients =
-    JSON.parse(
-        localStorage.getItem(
-            "baros_ingredients"
-        )
-    ) || [];
+const KEY = "BAR_OS_3";
 
-let cocktails =
-    JSON.parse(
-        localStorage.getItem(
-            "baros_cocktails"
-        )
-    ) || [];
-
-let stock =
-    JSON.parse(
-        localStorage.getItem(
-            "baros_stock"
-        )
-    ) || [];
-
-let sales =
-    JSON.parse(
-        localStorage.getItem(
-            "baros_sales"
-        )
-    ) || {};
-
-let history =
-    JSON.parse(
-        localStorage.getItem(
-            "baros_history"
-        )
-    ) || {};
-
-let today=getDateKey();
+let db = JSON.parse(localStorage.getItem(KEY)) || {
+  ingredients:[],
+  cocktails:[],
+  stock:[],
+  sales:{},
+  waste:{},
+  shifts:{}
+};
 
 
-/* =====================================================
-   INIT
-===================================================== */
+/* ======================================================
+   UTILITY
+====================================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
-
-        document.getElementById(
-            "todayDate"
-        ).textContent=
-            new Date().toLocaleDateString(
-                "it-IT",
-                {
-                    weekday:"short",
-                    day:"numeric",
-                    month:"short"
-                }
-            );
-
-        renderAll();
-
-    }
-);
-
-
-/* =====================================================
-   HELPERS
-===================================================== */
-
-function saveData(){
-
-    localStorage.setItem(
-        "baros_ingredients",
-        JSON.stringify(ingredients)
-    );
-
-    localStorage.setItem(
-        "baros_cocktails",
-        JSON.stringify(cocktails)
-    );
-
-    localStorage.setItem(
-        "baros_stock",
-        JSON.stringify(stock)
-    );
-
-    localStorage.setItem(
-        "baros_sales",
-        JSON.stringify(sales)
-    );
-
-    localStorage.setItem(
-        "baros_history",
-        JSON.stringify(history)
-    );
-
+function save(){
+  localStorage.setItem(KEY,JSON.stringify(db));
 }
 
-
-function getDateKey(date=new Date()){
-
-    const y=date.getFullYear();
-
-    const m=String(
-        date.getMonth()+1
-    ).padStart(2,"0");
-
-    const d=String(
-        date.getDate()
-    ).padStart(2,"0");
-
-    return `${y}-${m}-${d}`;
-
+function id(){
+  return Date.now()+Math.floor(Math.random()*1000);
 }
 
+function today(){
 
-function money(value){
+  const d=new Date();
 
-    return "€"+
-        Number(value||0)
-        .toFixed(2)
-        .replace(".",",");
-
+  return d.getFullYear()+"-"+
+    String(d.getMonth()+1).padStart(2,"0")+"-"+
+    String(d.getDate()).padStart(2,"0");
 }
 
-
-function getIngredient(id){
-
-    return ingredients.find(
-        x=>
-            Number(x.id)===
-            Number(id)
-    );
-
+function money(n){
+  return "€"+Number(n||0)
+    .toFixed(2)
+    .replace(".",",");
 }
 
-
-function ingredientCostPerMl(i){
-
-    if(!i || !i.ml)
-        return 0;
-
-    return Number(i.price)/
-        Number(i.ml);
-
+function ingredient(id){
+  return db.ingredients.find(
+    x=>Number(x.id)===Number(id)
+  );
 }
 
+function cocktail(id){
+  return db.cocktails.find(
+    x=>Number(x.id)===Number(id)
+  );
+}
+
+function costPerMl(i){
+
+  if(!i || !i.ml) return 0;
+
+  return Number(i.price)/Number(i.ml);
+}
 
 function cocktailCost(c){
 
-    if(!c?.ingredients)
-        return 0;
+  if(!c) return 0;
 
-    return c.ingredients.reduce(
-        (total,item)=>{
+  return (c.ingredients||[]).reduce((sum,x)=>{
 
-            const i=
-                getIngredient(
-                    item.ingredientId
-                );
+    const i=ingredient(x.ingredientId);
 
-            if(!i)
-                return total;
+    if(!i) return sum;
 
-            return total+
-                Number(item.qty||0)*
-                ingredientCostPerMl(i);
+    return sum+
+      Number(x.ml||0)*
+      costPerMl(i);
 
-        },
-        0
-    );
+  },0);
+}
+
+function margin(c){
+
+  return Number(c.price||0)-cocktailCost(c);
+}
+
+function escape(text){
+
+  return String(text||"")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;");
+
+}
+
+function toast(text){
+
+  const t=document.getElementById("toast");
+
+  t.textContent=text;
+  t.classList.add("show");
+
+  setTimeout(()=>{
+    t.classList.remove("show");
+  },1700);
+
+}
+
+function closeModal(id){
+
+  document.getElementById(id).classList.remove("open");
 
 }
 
 
-function cocktailMargin(c){
+/* ======================================================
+   NAVIGATION
+====================================================== */
 
-    return Number(c.price||0)-
-        cocktailCost(c);
+function page(name,button){
 
-}
+  document.querySelectorAll(".page")
+    .forEach(x=>x.classList.remove("active"));
 
+  document.getElementById(name)
+    .classList.add("active");
 
-function escapeHtml(value){
+  document.querySelectorAll(".nav button")
+    .forEach(x=>x.classList.remove("active"));
 
-    return String(value??"")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+  button.classList.add("active");
 
-}
-
-
-function showToast(text){
-
-    const t=
-        document.getElementById(
-            "toast"
-        );
-
-    t.textContent=text;
-
-    t.classList.add("show");
-
-    setTimeout(
-        ()=>{
-            t.classList.remove("show");
-        },
-        1800
-    );
+  renderAll();
 
 }
 
 
-/* =====================================================
-   NAV
-===================================================== */
-
-function showPage(page,button){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(
-            p=>
-                p.classList.remove(
-                    "active"
-                )
-        );
-
-    document
-        .getElementById(page)
-        .classList.add("active");
-
-    document
-        .querySelectorAll(".nav-btn")
-        .forEach(
-            b=>
-                b.classList.remove(
-                    "active"
-                )
-        );
-
-    button.classList.add("active");
-
-    renderAll();
-
-}
-
-
-/* =====================================================
+/* ======================================================
    INGREDIENTI
-===================================================== */
+====================================================== */
 
-function openIngredientModal(id=null){
+function openIngredient(editId=null){
 
-    document
-        .getElementById(
-            "ingredientModal"
-        )
-        .classList.add("active");
+  document.getElementById("ingredientModal")
+    .classList.add("open");
 
-    if(id){
+  document.getElementById("ingredientId").value=
+    editId||"";
 
-        const i=getIngredient(id);
+  if(editId){
 
-        document.getElementById(
-            "editIngredientId"
-        ).value=id;
+    const i=ingredient(editId);
 
-        document.getElementById(
-            "ingredientName"
-        ).value=i.name;
+    document.getElementById("ingredientModalTitle")
+      .textContent="Modifica ingrediente";
 
-        document.getElementById(
-            "ingredientMl"
-        ).value=i.ml;
+    document.getElementById("ingredientName").value=i.name;
+    document.getElementById("ingredientMl").value=i.ml;
+    document.getElementById("ingredientPrice").value=i.price;
 
-        document.getElementById(
-            "ingredientPrice"
-        ).value=i.price;
+  }else{
 
-        updateIngredientPreview();
+    document.getElementById("ingredientModalTitle")
+      .textContent="Nuovo ingrediente";
 
-    }else{
+    document.getElementById("ingredientName").value="";
+    document.getElementById("ingredientMl").value="";
+    document.getElementById("ingredientPrice").value="";
 
-        document.getElementById(
-            "editIngredientId"
-        ).value="";
+  }
 
-        document.getElementById(
-            "ingredientName"
-        ).value="";
-
-        document.getElementById(
-            "ingredientMl"
-        ).value="";
-
-        document.getElementById(
-            "ingredientPrice"
-        ).value="";
-
-        document.getElementById(
-            "ingredientPreviewBox"
-        ).style.display="none";
-
-    }
+  updateIngredientPreview();
 
 }
+
+
+document.addEventListener("input",e=>{
+
+  if(
+    e.target.id==="ingredientMl" ||
+    e.target.id==="ingredientPrice"
+  ){
+    updateIngredientPreview();
+  }
+
+});
 
 
 function updateIngredientPreview(){
 
-    const ml=
-        Number(
-            document.getElementById(
-                "ingredientMl"
-            ).value
-        );
+  const ml=Number(
+    document.getElementById("ingredientMl").value
+  );
 
-    const price=
-        Number(
-            document.getElementById(
-                "ingredientPrice"
-            ).value
-        );
+  const price=Number(
+    document.getElementById("ingredientPrice").value
+  );
 
-    const box=
-        document.getElementById(
-            "ingredientPreviewBox"
-        );
-
-    if(ml>0 && price>=0){
-
-        box.style.display="block";
-
-        document.getElementById(
-            "ingredientPreview"
-        ).textContent=
-            "€"+
-            (price/ml)
-            .toFixed(4)
-            .replace(".",",");
-
-    }else{
-
-        box.style.display="none";
-
-    }
+  document.getElementById("ingredientCostPreview")
+    .textContent=
+      ml>0
+        ?"€"+(price/ml).toFixed(4).replace(".",",")
+        :"€0,0000";
 
 }
 
 
 function saveIngredient(){
 
-    const name=
-        document.getElementById(
-            "ingredientName"
-        ).value.trim();
+  const name=document.getElementById("ingredientName")
+    .value.trim();
 
-    const ml=
-        Number(
-            document.getElementById(
-                "ingredientMl"
-            ).value
-        );
+  const ml=Number(
+    document.getElementById("ingredientMl").value
+  );
 
-    const price=
-        Number(
-            document.getElementById(
-                "ingredientPrice"
-            ).value
-        );
+  const price=Number(
+    document.getElementById("ingredientPrice").value
+  );
 
-    if(!name){
+  if(!name || ml<=0){
 
-        showToast(
-            "Inserisci il nome"
-        );
+    toast("Compila tutti i campi");
 
-        return;
+    return;
+  }
 
-    }
+  const editId=Number(
+    document.getElementById("ingredientId").value
+  );
 
-    if(ml<=0){
+  if(editId){
 
-        showToast(
-            "Inserisci gli ml"
-        );
+    const i=ingredient(editId);
 
-        return;
+    i.name=name;
+    i.ml=ml;
+    i.price=price;
 
-    }
+  }else{
 
-    if(price<0){
+    db.ingredients.push({
+      id:id(),
+      name:name,
+      ml:ml,
+      price:price
+    });
 
-        showToast(
-            "Costo non valido"
-        );
+  }
 
-        return;
+  save();
+  closeModal("ingredientModal");
+  renderAll();
 
-    }
-
-    const id=
-        document.getElementById(
-            "editIngredientId"
-        ).value;
-
-    const data={
-        id:id
-            ?Number(id)
-            :Date.now(),
-        name,
-        ml,
-        price
-    };
-
-    if(id){
-
-        const index=
-            ingredients.findIndex(
-                x=>
-                    Number(x.id)===
-                    Number(id)
-            );
-
-        ingredients[index]=data;
-
-    }else{
-
-        ingredients.push(data);
-
-    }
-
-    saveData();
-
-    closeModal(
-        "ingredientModal"
-    );
-
-    renderAll();
-
-    showToast(
-        "Ingrediente salvato ✓"
-    );
+  toast("Ingrediente salvato ✓");
 
 }
 
 
 function deleteIngredient(id){
 
-    const used=
-        cocktails.some(
-            c=>
-                c.ingredients.some(
-                    x=>
-                        Number(x.ingredientId)===
-                        Number(id)
-                )
-        );
+  const used=db.cocktails.some(c=>
+    (c.ingredients||[]).some(
+      x=>Number(x.ingredientId)===Number(id)
+    )
+  );
 
-    if(used){
+  if(used){
 
-        alert(
-            "Questo ingrediente è utilizzato da un cocktail."
-        );
+    toast("Ingrediente usato in un cocktail");
 
-        return;
+    return;
+  }
 
-    }
+  if(!confirm("Eliminare ingrediente?")) return;
 
-    const i=getIngredient(id);
+  db.ingredients=db.ingredients.filter(
+    x=>Number(x.id)!==Number(id)
+  );
 
-    if(!confirm(
-        `Eliminare ${i.name}?`
-    ))
-        return;
+  db.stock=db.stock.filter(
+    x=>Number(x.ingredientId)!==Number(id)
+  );
 
-    ingredients=
-        ingredients.filter(
-            x=>
-                Number(x.id)!==
-                Number(id)
-        );
-
-    stock=
-        stock.filter(
-            x=>
-                Number(x.ingredientId)!==
-                Number(id)
-        );
-
-    saveData();
-
-    renderAll();
+  save();
+  renderAll();
 
 }
 
 
 function renderIngredients(){
 
-    const container=
-        document.getElementById(
-            "ingredientList"
-        );
+  const box=document.getElementById("ingredientList");
 
-    if(!ingredients.length){
+  if(!db.ingredients.length){
 
-        container.innerHTML=`
+    box.innerHTML=
+      `<div class="card empty">Nessun ingrediente.</div>`;
 
-            <div class="card empty">
+    return;
+  }
 
-                <div class="empty-icon">
-                    🧪
-                </div>
+  box.innerHTML=db.ingredients.map(i=>`
 
-                Nessun ingrediente.
+    <div class="card">
 
-            </div>
+      <div class="item-head">
 
-        `;
+        <div>
+          <div class="item-title">${escape(i.name)}</div>
 
-        return;
+          <div class="item-sub">
+            ${i.ml} ml · ${money(i.price)}
+          </div>
+        </div>
 
-    }
+        <strong class="green">
+          €${costPerMl(i).toFixed(4).replace(".",",")}/ml
+        </strong>
 
-    container.innerHTML=
-        ingredients.map(i=>{
+      </div>
 
-            const cost=
-                ingredientCostPerMl(i);
+      <div class="row" style="margin-top:12px">
 
-            const used=
-                cocktails.filter(
-                    c=>
-                        c.ingredients.some(
-                            x=>
-                                Number(x.ingredientId)===
-                                Number(i.id)
-                        )
-                ).length;
-
-            return `
-
-            <div class="card">
-
-                <div class="cocktail-header">
-
-                    <div>
-
-                        <div class="title">
-                            ${escapeHtml(i.name)}
-                        </div>
-
-                        <div class="subtitle">
-
-                            ${i.ml} ml
-                            ·
-                            ${money(i.price)}
-
-                        </div>
-
-                    </div>
-
-                    <div class="green">
-
-                        €${cost.toFixed(4)
-                            .replace(".",",")}
-
-                        <div style="
-                            color:var(--muted);
-                            font-size:9px;
-                            text-align:right">
-                            / ml
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div style="
-                    color:var(--muted);
-                    font-size:10px;
-                    margin-top:7px">
-
-                    Usato in ${used} cocktail
-
-                </div>
-
-
-                <div
-                    class="row"
-                    style="margin-top:12px">
-
-                    <button
-                        class="secondary"
-                        onclick="openIngredientModal(${i.id})">
-
-                        Modifica
-
-                    </button>
-
-                    <button
-                        class="secondary danger"
-                        onclick="deleteIngredient(${i.id})">
-
-                        Elimina
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            `;
-
-        }).join("");
-
-}
-
-
-/* =====================================================
-   COCKTAIL
-===================================================== */
-
-function openCocktailModal(id=null){
-
-    if(!ingredients.length){
-
-        showToast(
-            "Prima crea un ingrediente"
-        );
-
-        return;
-
-    }
-
-    document
-        .getElementById(
-            "cocktailModal"
-        )
-        .classList.add("active");
-
-    const rows=
-        document.getElementById(
-            "cocktailIngredientRows"
-        );
-
-    rows.innerHTML="";
-
-    if(id){
-
-        const c=
-            cocktails.find(
-                x=>
-                    Number(x.id)===
-                    Number(id)
-            );
-
-        document.getElementById(
-            "cocktailModalTitle"
-        ).textContent=
-            "Modifica cocktail";
-
-        document.getElementById(
-            "editCocktailId"
-        ).value=id;
-
-        document.getElementById(
-            "cocktailName"
-        ).value=c.name;
-
-        document.getElementById(
-            "cocktailCategory"
-        ).value=c.category;
-
-        document.getElementById(
-            "cocktailPrice"
-        ).value=c.price;
-
-        document.getElementById(
-            "cocktailTechnique"
-        ).value=c.technique;
-
-        document.getElementById(
-            "cocktailGlass"
-        ).value=c.glass;
-
-        document.getElementById(
-            "cocktailIce"
-        ).value=c.ice;
-
-        document.getElementById(
-            "cocktailGarnish"
-        ).value=c.garnish;
-
-        document.getElementById(
-            "cocktailNotes"
-        ).value=c.notes||"";
-
-        c.ingredients.forEach(
-            x=>
-                addCocktailIngredientRow(x)
-        );
-
-    }else{
-
-        document.getElementById(
-            "cocktailModalTitle"
-        ).textContent=
-            "Nuovo cocktail";
-
-        document.getElementById(
-            "editCocktailId"
-        ).value="";
-
-        document.getElementById(
-            "cocktailName"
-        ).value="";
-
-        document.getElementById(
-            "cocktailPrice"
-        ).value="";
-
-        document.getElementById(
-            "cocktailGlass"
-        ).value="";
-
-        document.getElementById(
-            "cocktailIce"
-        ).value="";
-
-        document.getElementById(
-            "cocktailGarnish"
-        ).value="";
-
-        document.getElementById(
-            "cocktailNotes"
-        ).value="";
-
-        addCocktailIngredientRow();
-
-    }
-
-    updateCocktailCostPreview();
-
-}
-
-
-function addCocktailIngredientRow(data={}){
-
-    const row=
-        document.createElement("div");
-
-    row.className=
-        "cocktail-ing-row";
-
-    const options=
-        ingredients.map(i=>`
-
-            <option
-                value="${i.id}"
-                ${
-                    Number(data.ingredientId)===
-                    Number(i.id)
-                    ?"selected":""
-                }>
-
-                ${escapeHtml(i.name)}
-
-            </option>
-
-        `).join("");
-
-    row.innerHTML=`
-
-        <select
-            class="cocktail-ing-select"
-            onchange="updateCocktailCostPreview()">
-
-            <option value="">
-                Ingrediente
-            </option>
-
-            ${options}
-
-        </select>
-
-        <input
-            class="cocktail-ing-qty"
-            type="number"
-            min="0"
-            step="0.5"
-            placeholder="ml"
-            value="${data.qty||""}"
-            oninput="updateCocktailCostPreview()">
-
-        <button
-            class="remove"
-            onclick="
-                this.parentElement.remove();
-                updateCocktailCostPreview();
-            ">
-
-            ×
-
+        <button class="secondary"
+          onclick="openIngredient(${i.id})">
+          Modifica
         </button>
 
+        <button class="secondary danger"
+          onclick="deleteIngredient(${i.id})">
+          Elimina
+        </button>
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+
+/* ======================================================
+   COCKTAIL
+====================================================== */
+
+function openCocktail(editId=null){
+
+  if(!db.ingredients.length){
+
+    toast("Prima inserisci un ingrediente");
+
+    return;
+  }
+
+  document.getElementById("cocktailModal")
+    .classList.add("open");
+
+  document.getElementById("cocktailId").value=
+    editId||"";
+
+  const rows=document.getElementById(
+    "cocktailIngredients"
+  );
+
+  rows.innerHTML="";
+
+  if(editId){
+
+    const c=cocktail(editId);
+
+    document.getElementById("cocktailModalTitle")
+      .textContent="Modifica cocktail";
+
+    document.getElementById("cocktailName").value=c.name;
+    document.getElementById("cocktailPrice").value=c.price;
+    document.getElementById("cocktailCategory").value=c.category||"Classic";
+    document.getElementById("cocktailTechnique").value=c.technique||"Shake";
+    document.getElementById("cocktailGlass").value=c.glass||"";
+    document.getElementById("cocktailIce").value=c.ice||"";
+    document.getElementById("cocktailGarnish").value=c.garnish||"";
+    document.getElementById("cocktailNotes").value=c.notes||"";
+
+    (c.ingredients||[]).forEach(x=>
+      addCocktailRow(x)
+    );
+
+  }else{
+
+    document.getElementById("cocktailModalTitle")
+      .textContent="Nuovo cocktail";
+
+    document.getElementById("cocktailName").value="";
+    document.getElementById("cocktailPrice").value="";
+    document.getElementById("cocktailGlass").value="";
+    document.getElementById("cocktailIce").value="";
+    document.getElementById("cocktailGarnish").value="";
+    document.getElementById("cocktailNotes").value="";
+
+    addCocktailRow();
+
+  }
+
+  updateCocktailPreview();
+
+}
+
+
+function addCocktailRow(data={}){
+
+  const row=document.createElement("div");
+
+  row.className="ingredient-row";
+
+  let options=`<option value="">Ingrediente</option>`;
+
+  db.ingredients.forEach(i=>{
+
+    options+=`
+      <option value="${i.id}"
+      ${Number(data.ingredientId)===Number(i.id)?"selected":""}>
+        ${escape(i.name)}
+      </option>
     `;
 
-    document
-        .getElementById(
-            "cocktailIngredientRows"
-        )
-        .appendChild(row);
+  });
+
+  row.innerHTML=`
+
+    <select class="cocktailIngredient">
+      ${options}
+    </select>
+
+    <input
+      class="cocktailMl"
+      type="number"
+      min="0"
+      step="0.5"
+      placeholder="ml"
+      value="${data.ml||""}">
+
+    <button class="remove">×</button>
+
+  `;
+
+  row.querySelector(".remove").onclick=()=>{
+
+    row.remove();
+    updateCocktailPreview();
+
+  };
+
+  row.querySelector(".cocktailIngredient")
+    .onchange=updateCocktailPreview;
+
+  row.querySelector(".cocktailMl")
+    .oninput=updateCocktailPreview;
+
+  document.getElementById("cocktailIngredients")
+    .appendChild(row);
 
 }
 
 
-function calculateCurrentCocktailCost(){
+function currentCocktailIngredients(){
 
-    let total=0;
+  return [...document.querySelectorAll(
+    "#cocktailIngredients .ingredient-row"
+  )]
+  .map(row=>({
 
-    document
-        .querySelectorAll(
-            "#cocktailIngredientRows .cocktail-ing-row"
-        )
-        .forEach(row=>{
+    ingredientId:Number(
+      row.querySelector(".cocktailIngredient").value
+    ),
 
-            const id=
-                Number(
-                    row.querySelector(
-                        ".cocktail-ing-select"
-                    ).value
-                );
+    ml:Number(
+      row.querySelector(".cocktailMl").value
+    )
 
-            const qty=
-                Number(
-                    row.querySelector(
-                        ".cocktail-ing-qty"
-                    ).value
-                )||0;
-
-            const i=
-                getIngredient(id);
-
-            if(i && qty>0){
-
-                total+=
-                    qty*
-                    ingredientCostPerMl(i);
-
-            }
-
-        });
-
-    return total;
+  }))
+  .filter(x=>x.ingredientId && x.ml>0);
 
 }
 
 
-function updateCocktailCostPreview(){
+function updateCocktailPreview(){
 
-    const cost=
-        calculateCurrentCocktailCost();
+  const list=currentCocktailIngredients();
 
-    const price=
-        Number(
-            document.getElementById(
-                "cocktailPrice"
-            ).value
-        )||0;
+  let total=0;
 
-    const margin=
-        price-cost;
+  list.forEach(x=>{
 
-    const pct=
-        price>0
-            ?margin/price*100
-            :0;
+    const i=ingredient(x.ingredientId);
 
-    document.getElementById(
-        "liveCocktailCost"
-    ).textContent=
-        money(cost);
+    if(i){
 
-    document.getElementById(
-        "liveCocktailMargin"
-    ).innerHTML=`
+      total+=x.ml*costPerMl(i);
 
-        Margine:
+    }
 
-        <strong class="${
-            margin>=0
-                ?"green"
-                :"red"
-        }">
+  });
 
-            ${money(margin)}
+  const price=Number(
+    document.getElementById("cocktailPrice").value
+  )||0;
 
-        </strong>
+  const m=price-total;
 
+  document.getElementById("cocktailCost")
+    .textContent=money(total);
+
+  document.getElementById("cocktailMargin")
+    .innerHTML=`
+      Margine:
+      <strong class="${m>=0?"green":"red"}">
+        ${money(m)}
         ·
-
-        <strong class="${
-            margin>=0
-                ?"green"
-                :"red"
-        }">
-
-            ${pct.toFixed(1)}%
-
-        </strong>
-
+        ${price>0?(m/price*100).toFixed(1):"0"}%
+      </strong>
     `;
 
 }
+
+
+document.addEventListener("input",e=>{
+
+  if(
+    e.target.id==="cocktailPrice" ||
+    e.target.classList.contains("cocktailMl")
+  ){
+
+    updateCocktailPreview();
+
+  }
+
+});
 
 
 function saveCocktail(){
 
-    const name=
-        document.getElementById(
-            "cocktailName"
-        ).value.trim();
+  const name=document.getElementById("cocktailName")
+    .value.trim();
 
-    if(!name){
+  const price=Number(
+    document.getElementById("cocktailPrice").value
+  )||0;
 
-        showToast(
-            "Inserisci il nome"
-        );
+  const list=currentCocktailIngredients();
 
-        return;
+  if(!name){
 
-    }
+    toast("Inserisci il nome");
 
-    const used=
-        [...document.querySelectorAll(
-            "#cocktailIngredientRows .cocktail-ing-row"
-        )]
-        .map(row=>({
+    return;
+  }
 
-            ingredientId:
-                Number(
-                    row.querySelector(
-                        ".cocktail-ing-select"
-                    ).value
-                ),
+  if(!list.length){
 
-            qty:
-                Number(
-                    row.querySelector(
-                        ".cocktail-ing-qty"
-                    ).value
-                )||0
+    toast("Inserisci almeno un ingrediente");
 
-        }))
-        .filter(
-            x=>
-                x.ingredientId &&
-                x.qty>0
-        );
+    return;
+  }
 
-    if(!used.length){
+  const editId=Number(
+    document.getElementById("cocktailId").value
+  );
 
-        showToast(
-            "Inserisci almeno un ingrediente"
-        );
+  const data={
 
-        return;
+    id:editId||id(),
 
-    }
+    name:name,
 
-    const id=
-        document.getElementById(
-            "editCocktailId"
-        ).value;
+    price:price,
 
-    const data={
+    category:
+      document.getElementById("cocktailCategory").value,
 
-        id:
-            id
-                ?Number(id)
-                :Date.now(),
+    technique:
+      document.getElementById("cocktailTechnique").value,
 
-        name,
+    glass:
+      document.getElementById("cocktailGlass").value,
 
-        category:
-            document.getElementById(
-                "cocktailCategory"
-            ).value,
+    ice:
+      document.getElementById("cocktailIce").value,
 
-        price:
-            Number(
-                document.getElementById(
-                    "cocktailPrice"
-                ).value
-            )||0,
+    garnish:
+      document.getElementById("cocktailGarnish").value,
 
-        technique:
-            document.getElementById(
-                "cocktailTechnique"
-            ).value,
+    notes:
+      document.getElementById("cocktailNotes").value,
 
-        glass:
-            document.getElementById(
-                "cocktailGlass"
-            ).value,
+    ingredients:list
 
-        ice:
-            document.getElementById(
-                "cocktailIce"
-            ).value,
+  };
 
-        garnish:
-            document.getElementById(
-                "cocktailGarnish"
-            ).value,
+  if(editId){
 
-        notes:
-            document.getElementById(
-                "cocktailNotes"
-            ).value,
-
-        ingredients:used
-
-    };
-
-    if(id){
-
-        const index=
-            cocktails.findIndex(
-                x=>
-                    Number(x.id)===
-                    Number(id)
-            );
-
-        cocktails[index]=data;
-
-    }else{
-
-        cocktails.push(data);
-
-    }
-
-    saveData();
-
-    closeModal(
-        "cocktailModal"
+    const index=db.cocktails.findIndex(
+      x=>Number(x.id)===editId
     );
 
-    renderAll();
+    db.cocktails[index]=data;
 
-    showToast(
-        "Cocktail salvato ✓"
-    );
+  }else{
+
+    db.cocktails.push(data);
+
+  }
+
+  save();
+  closeModal("cocktailModal");
+  renderAll();
+
+  toast("Cocktail salvato ✓");
 
 }
 
 
 function deleteCocktail(id){
 
-    const c=
-        cocktails.find(
-            x=>
-                Number(x.id)===
-                Number(id)
-        );
+  if(!confirm("Eliminare cocktail?")) return;
 
-    if(!confirm(
-        `Eliminare ${c.name}?`
-    ))
-        return;
+  db.cocktails=db.cocktails.filter(
+    x=>Number(x.id)!==Number(id)
+  );
 
-    cocktails=
-        cocktails.filter(
-            x=>
-                Number(x.id)!==
-                Number(id)
-        );
-
-    saveData();
-
-    renderAll();
+  save();
+  renderAll();
 
 }
 
 
 function renderCocktails(){
 
-    const search=
-        document.getElementById(
-            "cocktailSearch"
-        )?.value.toLowerCase()||"";
+  const box=document.getElementById("cocktailList");
 
-    const list=
-        cocktails.filter(c=>{
+  const search=
+    (document.getElementById("cocktailSearch")?.value||"")
+    .toLowerCase();
 
-            const text=[
+  const list=db.cocktails.filter(c=>
+    c.name.toLowerCase().includes(search)
+  );
 
-                c.name,
-                c.category,
+  if(!list.length){
 
-                ...c.ingredients.map(
-                    x=>
-                        getIngredient(
-                            x.ingredientId
-                        )?.name||""
-                )
+    box.innerHTML=
+      `<div class="card empty">Nessun cocktail.</div>`;
 
-            ]
-            .join(" ")
-            .toLowerCase();
+    return;
+  }
 
-            return text.includes(search);
+  box.innerHTML=list.map(c=>{
 
-        });
+    const cost=cocktailCost(c);
+    const m=margin(c);
+    const pct=c.price?m/c.price*100:0;
 
-    const container=
-        document.getElementById(
-            "cocktailList"
-        );
+    return `
 
-    if(!list.length){
+    <div class="card">
 
-        container.innerHTML=`
+      <div class="item-head">
 
-            <div class="card empty">
+        <div>
+          <div class="item-title">
+            ${escape(c.name)}
+          </div>
 
-                Nessun cocktail trovato.
+          <div class="item-sub">
+            ${escape(c.category||"Classic")}
+            ·
+            ${escape(c.technique||"")}
+          </div>
+        </div>
 
+        <strong>
+          ${money(c.price)}
+        </strong>
+
+      </div>
+
+      <div style="margin-top:10px">
+
+        ${(c.ingredients||[]).map(x=>{
+
+          const i=ingredient(x.ingredientId);
+
+          return `
+            <div class="line">
+              <span>
+                ${escape(i?.name||"Ingrediente")}
+                · ${x.ml} ml
+              </span>
+
+              <span>
+                ${money(
+                  x.ml*(i?costPerMl(i):0)
+                )}
+              </span>
             </div>
+          `;
 
-        `;
+        }).join("")}
 
-        return;
+      </div>
 
-    }
+      <div class="divider">
 
-    container.innerHTML=
-        list.map(c=>{
+        <div class="line">
+          <span>Costo reale</span>
+          <strong>${money(cost)}</strong>
+        </div>
 
-            const cost=
-                cocktailCost(c);
+        <div class="line">
+          <span>Margine</span>
 
-            const margin=
-                cocktailMargin(c);
+          <strong class="${m>=0?"green":"red"}">
+            ${money(m)}
+            ·
+            ${pct.toFixed(1)}%
+          </strong>
+        </div>
 
-            const pct=
-                c.price
-                    ?margin/c.price*100
-                    :0;
+      </div>
 
-            return `
+      <div class="row" style="margin-top:11px">
 
-            <div class="card">
+        <button class="secondary"
+          onclick="openCocktail(${c.id})">
+          Modifica
+        </button>
 
-                <div class="cocktail-header">
+        <button class="secondary danger"
+          onclick="deleteCocktail(${c.id})">
+          Elimina
+        </button>
 
-                    <div>
+      </div>
 
-                        <div class="title">
-                            ${escapeHtml(c.name)}
-                        </div>
+    </div>
 
-                        <div class="subtitle">
+    `;
 
-                            ${escapeHtml(c.category)}
-                            ·
-                            ${escapeHtml(c.technique)}
-                            ·
-                            ${escapeHtml(c.glass||"")}
-
-                        </div>
-
-                    </div>
-
-                    <div class="price">
-                        ${money(c.price)}
-                    </div>
-
-                </div>
-
-
-                <div style="margin-top:11px">
-
-                    ${c.ingredients.map(x=>{
-
-                        const i=
-                            getIngredient(
-                                x.ingredientId
-                            );
-
-                        const line=
-                            i
-                                ?x.qty*
-                                ingredientCostPerMl(i)
-                                :0;
-
-                        return `
-
-                        <div class="ingredient-line">
-
-                            <span>
-
-                                ${escapeHtml(
-                                    i?.name||
-                                    "Ingrediente"
-                                )}
-
-                                · ${x.qty} ml
-
-                            </span>
-
-                            <span>
-                                ${money(line)}
-                            </span>
-
-                        </div>
-
-                        `;
-
-                    }).join("")}
-
-                </div>
-
-
-                <div class="divider">
-
-                    <div class="ingredient-line">
-
-                        <span>
-                            Costo reale
-                        </span>
-
-                        <strong>
-                            ${money(cost)}
-                        </strong>
-
-                    </div>
-
-
-                    <div class="ingredient-line">
-
-                        <span>
-                            Margine
-                        </span>
-
-                        <strong class="${
-                            pct>=65
-                                ?"green"
-                                :"red"
-                        }">
-
-                            ${money(margin)}
-                            ·
-                            ${pct.toFixed(1)}%
-
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="row" style="margin-top:11px">
-
-                    <button
-                        class="secondary"
-                        onclick="openCocktailModal(${c.id})">
-
-                        Modifica
-
-                    </button>
-
-                    <button
-                        class="secondary danger"
-                        onclick="deleteCocktail(${c.id})">
-
-                        Elimina
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            `;
-
-        }).join("");
+  }).join("");
 
 }
 
 
-/* =====================================================
-   STOCK INTELLIGENTE
-===================================================== */
+/* ======================================================
+   STOCK
+====================================================== */
 
-function stockConsumed(ingredientId){
+function stockItem(ingredientId){
 
-    let consumed=0;
+  return db.stock.find(
+    x=>Number(x.ingredientId)===Number(ingredientId)
+  );
 
-    Object.values(sales)
-        .forEach(daySales=>{
+}
 
-            daySales.forEach(sale=>{
+function consumedIngredient(ingredientId){
 
-                const c=
-                    cocktails.find(
-                        x=>
-                            Number(x.id)===
-                            Number(sale.cocktailId)
-                    );
+  let total=0;
 
-                if(!c)
-                    return;
+  Object.values(db.sales).forEach(day=>{
 
-                c.ingredients.forEach(item=>{
+    day.forEach(s=>{
 
-                    if(
-                        Number(item.ingredientId)===
-                        Number(ingredientId)
-                    ){
+      const c=cocktail(s.cocktailId);
 
-                        consumed+=
-                            Number(item.qty||0)*
-                            Number(sale.quantity||0);
+      if(!c) return;
 
-                    }
+      (c.ingredients||[]).forEach(x=>{
 
-                });
+        if(
+          Number(x.ingredientId)===
+          Number(ingredientId)
+        ){
 
-            });
+          total+=
+            Number(x.ml)*
+            Number(s.quantity);
 
-        });
+        }
 
-    return consumed;
+      });
+
+    });
+
+  });
+
+  /* aggiunge anche gli sprechi */
+
+  Object.values(db.waste).forEach(day=>{
+
+    day.forEach(w=>{
+
+      if(
+        Number(w.ingredientId)===
+        Number(ingredientId)
+      ){
+
+        total+=Number(w.ml);
+
+      }
+
+    });
+
+  });
+
+  return total;
 
 }
 
 
-function getAvailableStock(stockItem){
+function available(ingredientId){
 
-    return Math.max(
-        0,
-        Number(stockItem.initial||0)-
-        stockConsumed(
-            stockItem.ingredientId
-        )
+  const s=stockItem(ingredientId);
+
+  if(!s) return 0;
+
+  return Math.max(
+    0,
+    Number(s.initial)-consumedIngredient(ingredientId)
+  );
+
+}
+
+
+function cocktailsAvailable(c){
+
+  if(!c.ingredients?.length)
+    return 0;
+
+  let result=Infinity;
+
+  c.ingredients.forEach(x=>{
+
+    const a=available(x.ingredientId);
+
+    const possible=Math.floor(
+      a/x.ml
     );
 
+    result=Math.min(result,possible);
+
+  });
+
+  return result===Infinity?0:result;
+
 }
 
 
-function getStockItem(ingredientId){
+function openStock(editId=null){
 
-    return stock.find(
-        x=>
-            Number(x.ingredientId)===
-            Number(ingredientId)
+  const select=
+    document.getElementById("stockIngredient");
+
+  select.innerHTML=db.ingredients.map(i=>`
+
+    <option value="${i.id}">
+      ${escape(i.name)}
+    </option>
+
+  `).join("");
+
+  document.getElementById("stockModal")
+    .classList.add("open");
+
+  document.getElementById("stockId").value=
+    editId||"";
+
+  if(editId){
+
+    const s=db.stock.find(
+      x=>Number(x.id)===Number(editId)
     );
 
-}
+    select.value=s.ingredientId;
+    document.getElementById("stockInitial").value=s.initial;
+    document.getElementById("stockMinimum").value=s.minimum;
 
+  }else{
 
-function openStockModal(id=null){
+    document.getElementById("stockInitial").value="";
+    document.getElementById("stockMinimum").value=150;
 
-    if(!ingredients.length){
-
-        showToast(
-            "Prima crea un ingrediente"
-        );
-
-        return;
-
-    }
-
-    const select=
-        document.getElementById(
-            "stockIngredient"
-        );
-
-    select.innerHTML=
-        ingredients.map(i=>`
-
-            <option value="${i.id}">
-                ${escapeHtml(i.name)}
-            </option>
-
-        `).join("");
-
-    document
-        .getElementById(
-            "stockModal"
-        )
-        .classList.add("active");
-
-    if(id){
-
-        const s=
-            stock.find(
-                x=>
-                    Number(x.id)===
-                    Number(id)
-            );
-
-        select.value=
-            s.ingredientId;
-
-        document.getElementById(
-            "editStockId"
-        ).value=id;
-
-        document.getElementById(
-            "stockInitial"
-        ).value=s.initial;
-
-        document.getElementById(
-            "stockMinimum"
-        ).value=s.minimum;
-
-    }else{
-
-        document.getElementById(
-            "editStockId"
-        ).value="";
-
-        document.getElementById(
-            "stockInitial"
-        ).value="";
-
-        document.getElementById(
-            "stockMinimum"
-        ).value=150;
-
-    }
+  }
 
 }
 
 
 function saveStock(){
 
-    const ingredientId=
-        Number(
-            document.getElementById(
-                "stockIngredient"
-            ).value
-        );
+  const ingredientId=Number(
+    document.getElementById("stockIngredient").value
+  );
 
-    const initial=
-        Number(
-            document.getElementById(
-                "stockInitial"
-            ).value
-        );
+  const initial=Number(
+    document.getElementById("stockInitial").value
+  );
 
-    const minimum=
-        Number(
-            document.getElementById(
-                "stockMinimum"
-            ).value
-        )||0;
+  const minimum=Number(
+    document.getElementById("stockMinimum").value
+  )||0;
 
-    if(!ingredientId){
+  if(!ingredientId || initial<=0){
 
-        showToast(
-            "Seleziona ingrediente"
-        );
+    toast("Inserisci una quantità valida");
 
-        return;
+    return;
+  }
 
-    }
+  const editId=Number(
+    document.getElementById("stockId").value
+  );
 
-    if(initial<=0){
+  if(editId){
 
-        showToast(
-            "Inserisci la quantità"
-        );
+    const s=db.stock.find(
+      x=>Number(x.id)===editId
+    );
 
-        return;
+    s.ingredientId=ingredientId;
+    s.initial=initial;
+    s.minimum=minimum;
 
-    }
+  }else{
 
-    const editId=
-        document.getElementById(
-            "editStockId"
-        ).value;
+    const existing=stockItem(ingredientId);
 
-    if(editId){
+    if(existing){
 
-        const index=
-            stock.findIndex(
-                x=>
-                    Number(x.id)===
-                    Number(editId)
-            );
-
-        stock[index]={
-            ...stock[index],
-            ingredientId,
-            initial,
-            minimum
-        };
+      existing.initial=initial;
+      existing.minimum=minimum;
 
     }else{
 
-        const existing=
-            getStockItem(
-                ingredientId
-            );
-
-        if(existing){
-
-            existing.initial=
-                initial;
-
-            existing.minimum=
-                minimum;
-
-        }else{
-
-            stock.push({
-
-                id:Date.now(),
-
-                ingredientId,
-
-                initial,
-
-                minimum
-
-            });
-
-        }
+      db.stock.push({
+        id:id(),
+        ingredientId,
+        initial,
+        minimum
+      });
 
     }
 
-    saveData();
+  }
 
-    closeModal(
-        "stockModal"
-    );
+  save();
+  closeModal("stockModal");
+  renderAll();
 
-    renderAll();
-
-    showToast(
-        "Stock aggiornato ✓"
-    );
+  toast("Stock aggiornato ✓");
 
 }
 
 
 function deleteStock(id){
 
-    if(!confirm(
-        "Eliminare questo stock?"
-    ))
-        return;
+  if(!confirm("Eliminare questo stock?")) return;
 
-    stock=
-        stock.filter(
-            x=>
-                Number(x.id)!==
-                Number(id)
-        );
+  db.stock=db.stock.filter(
+    x=>Number(x.id)!==Number(id)
+  );
 
-    saveData();
-
-    renderAll();
-
-}
-
-
-function maxCocktailsAvailable(cocktail){
-
-    if(!cocktail?.ingredients?.length)
-        return 0;
-
-    let max=Infinity;
-
-    cocktail.ingredients.forEach(item=>{
-
-        const s=
-            getStockItem(
-                item.ingredientId
-            );
-
-        if(!s){
-
-            max=0;
-            return;
-
-        }
-
-        const available=
-            getAvailableStock(s);
-
-        const possible=
-            Math.floor(
-                available/
-                Number(item.qty||1)
-            );
-
-        max=
-            Math.min(
-                max,
-                possible
-            );
-
-    });
-
-    return max===Infinity
-        ?0
-        :max;
+  save();
+  renderAll();
 
 }
 
 
 function renderStock(){
 
-    const container=
-        document.getElementById(
-            "stockList"
-        );
+  const box=document.getElementById("stockList");
 
-    const summary=
-        document.getElementById(
-            "stockSummary"
-        );
+  const low=db.stock.filter(s=>
+    available(s.ingredientId)<=Number(s.minimum)
+  ).length;
 
-    if(!stock.length){
+  document.getElementById("stockSummary").innerHTML=`
 
-        summary.innerHTML="";
+    <div class="grid">
 
-        container.innerHTML=`
+      <div class="stat">
+        <div class="label">Prodotti</div>
+        <div class="stat-value">
+          ${db.stock.length}
+        </div>
+      </div>
 
-            <div class="card empty">
+      <div class="stat">
+        <div class="label">Da ordinare</div>
+        <div class="stat-value ${low?"yellow":"green"}">
+          ${low}
+        </div>
+      </div>
 
-                <div class="empty-icon">
-                    📦
-                </div>
+    </div>
 
-                Nessuno stock caricato.
+  `;
 
+  if(!db.stock.length){
+
+    box.innerHTML=
+      `<div class="card empty">Nessuno stock caricato.</div>`;
+
+    return;
+  }
+
+  box.innerHTML=db.stock.map(s=>{
+
+    const i=ingredient(s.ingredientId);
+    const a=available(s.ingredientId);
+
+    const pct=s.initial
+      ?Math.max(0,Math.min(100,a/s.initial*100))
+      :0;
+
+    const status=
+      a<=0
+        ?`<span class="red">ESAURITO</span>`
+        :a<=s.minimum
+          ?`<span class="yellow">DA ORDINARE</span>`
+          :`<span class="green">OK</span>`;
+
+    const related=db.cocktails.filter(c=>
+      c.ingredients.some(
+        x=>Number(x.ingredientId)===Number(s.ingredientId)
+      )
+    );
+
+    return `
+
+      <div class="card">
+
+        <div class="item-head">
+
+          <div>
+
+            <div class="item-title">
+              ${escape(i?.name||"")}
             </div>
 
-        `;
-
-        return;
-
-    }
-
-    const low=
-        stock.filter(
-            s=>
-                getAvailableStock(s)<=
-                Number(s.minimum)
-        ).length;
-
-    summary.innerHTML=`
-
-        <div class="grid">
-
-            <div class="stat">
-
-                <div class="stat-label">
-                    PRODOTTI
-                </div>
-
-                <div class="stat-value">
-                    ${stock.length}
-                </div>
-
+            <div class="item-sub">
+              Iniziale: ${s.initial} ml
+              · Consumato: ${Math.round(
+                consumedIngredient(s.ingredientId)
+              )} ml
             </div>
 
-            <div class="stat">
+          </div>
 
-                <div class="stat-label">
-                    DA ORDINARE
-                </div>
-
-                <div class="stat-value ${
-                    low
-                        ?"yellow"
-                        :"green"
-                }">
-
-                    ${low}
-
-                </div>
-
+          <div style="text-align:right">
+            <strong>${Math.round(a)} ml</strong>
+            <div style="font-size:9px;margin-top:3px">
+              ${status}
             </div>
+          </div>
 
         </div>
 
+        <div class="progress">
+          <div style="width:${pct}%"></div>
+        </div>
+
+        <div style="
+          color:var(--muted);
+          font-size:10px;
+          margin-top:11px">
+
+          <strong style="color:white">
+            Cocktail producibili
+          </strong>
+
+          <br>
+
+          ${
+            related.length
+              ?related.map(c=>`
+                ${escape(c.name)}:
+                ${cocktailsAvailable(c)}
+              `).join("<br>")
+              :"Nessuno"
+          }
+
+        </div>
+
+        <div class="row" style="margin-top:11px">
+
+          <button class="secondary"
+            onclick="openStock(${s.id})">
+            Modifica
+          </button>
+
+          <button class="secondary danger"
+            onclick="deleteStock(${s.id})">
+            Elimina
+          </button>
+
+        </div>
+
+      </div>
+
     `;
 
-    container.innerHTML=
-        stock.map(s=>{
-
-            const i=
-                getIngredient(
-                    s.ingredientId
-                );
-
-            const available=
-                getAvailableStock(s);
-
-            const percent=
-                s.initial
-                    ?Math.max(
-                        0,
-                        Math.min(
-                            100,
-                            available/
-                            s.initial*
-                            100
-                        )
-                    )
-                    :0;
-
-            let status=
-                "OK";
-
-            let cls=
-                "green";
-
-            if(available<=0){
-
-                status="ESAURITO";
-                cls="red";
-
-            }else if(
-                available<=s.minimum
-            ){
-
-                status="DA ORDINARE";
-                cls="yellow";
-
-            }
-
-            const possible=
-                cocktails
-                .filter(
-                    c=>
-                        c.ingredients.some(
-                            x=>
-                                Number(x.ingredientId)===
-                                Number(s.ingredientId)
-                        )
-                )
-                .map(c=>{
-
-                    return `
-                        ${escapeHtml(c.name)}:
-                        ${maxCocktailsAvailable(c)}
-                    `;
-
-                })
-                .join("<br>");
-
-            return `
-
-            <div class="card">
-
-                <div class="stock-row">
-
-                    <div style="flex:1">
-
-                        <div class="stock-name">
-
-                            ${escapeHtml(
-                                i?.name||
-                                "Ingrediente"
-                            )}
-
-                        </div>
-
-                        <div class="stock-info">
-
-                            Iniziale:
-                            ${s.initial} ml
-
-                            ·
-
-                            Consumato:
-                            ${Math.round(
-                                stockConsumed(
-                                    s.ingredientId
-                                )
-                            )} ml
-
-                        </div>
-
-                        <div class="progress">
-
-                            <div
-                                class="progress-inner"
-                                style="
-                                    width:${percent}%
-                                ">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="stock-right">
-
-                        ${Math.round(
-                            available
-                        )} ml
-
-                        <div
-                            class="stock-percent ${cls}">
-
-                            ${status}
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    style="
-                        margin-top:11px;
-                        color:var(--muted);
-                        font-size:10px;
-                        line-height:1.6">
-
-                    <strong style="color:white">
-                        Cocktail producibili
-                    </strong>
-
-                    <br>
-
-                    ${possible||"Nessuno"}
-
-                </div>
-
-
-                <div
-                    class="row"
-                    style="margin-top:12px">
-
-                    <button
-                        class="secondary"
-                        onclick="openStockModal(${s.id})">
-
-                        Modifica
-
-                    </button>
-
-                    <button
-                        class="secondary danger"
-                        onclick="deleteStock(${s.id})">
-
-                        Elimina
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            `;
-
-        }).join("");
+  }).join("");
 
 }
 
 
-/* =====================================================
+/* ======================================================
    VENDITE
-===================================================== */
+====================================================== */
+
+function getSales(){
+
+  return db.sales[today()]||[];
+
+}
+
 
 function findSale(id){
 
-    for(
-        const day of Object.keys(sales)
-    ){
+  for(const day in db.sales){
 
-        const sale=
-            sales[day].find(
-                x=>
-                    Number(x.id)===
-                    Number(id)
-            );
+    const found=db.sales[day].find(
+      x=>Number(x.id)===Number(id)
+    );
 
-        if(sale)
-            return sale;
+    if(found) return found;
 
-    }
+  }
 
-    return null;
+  return null;
 
 }
 
 
-function openSaleModal(id=null){
+function openSale(editId=null){
 
-    if(!cocktails.length){
+  if(!db.cocktails.length){
 
-        showToast(
-            "Prima crea un cocktail"
-        );
+    toast("Prima crea un cocktail");
 
-        return;
+    return;
+  }
 
-    }
+  const select=document.getElementById("saleCocktail");
 
-    const select=
-        document.getElementById(
-            "saleCocktail"
-        );
+  select.innerHTML=db.cocktails.map(c=>`
 
-    select.innerHTML=
-        cocktails.map(c=>`
+    <option value="${c.id}">
+      ${escape(c.name)} · ${money(c.price)}
+    </option>
 
-            <option value="${c.id}">
+  `).join("");
 
-                ${escapeHtml(c.name)}
-                ·
-                ${money(c.price)}
+  document.getElementById("saleModal")
+    .classList.add("open");
 
-            </option>
+  document.getElementById("saleId").value=
+    editId||"";
 
-        `).join("");
+  if(editId){
 
-    document
-        .getElementById(
-            "saleModal"
-        )
-        .classList.add("active");
+    const s=findSale(editId);
 
-    document.getElementById(
-        "saleModalTitle"
-    ).textContent=
-        id
-            ?"Modifica vendita"
-            :"Registra vendita";
+    document.getElementById("saleModalTitle")
+      .textContent="Modifica vendita";
 
-    document.getElementById(
-        "editSaleId"
-    ).value=
-        id||"";
+    select.value=s.cocktailId;
 
-    if(id){
+    document.getElementById("saleQuantity").value=
+      s.quantity;
 
-        const sale=
-            findSale(id);
+  }else{
 
-        document.getElementById(
-            "saleCocktail"
-        ).value=
-            sale.cocktailId;
+    document.getElementById("saleModalTitle")
+      .textContent="Nuova vendita";
 
-        document.getElementById(
-            "saleQuantity"
-        ).value=
-            sale.quantity;
+    document.getElementById("saleQuantity").value=1;
 
-    }else{
+  }
 
-        document.getElementById(
-            "saleQuantity"
-        ).value=1;
+  updateSalePreview();
 
-    }
+}
 
+
+document.addEventListener("input",e=>{
+
+  if(e.target.id==="saleQuantity"){
     updateSalePreview();
+  }
 
-}
+});
 
+document.addEventListener("change",e=>{
 
-document
-    .getElementById("saleCocktail")
-    .addEventListener(
-        "change",
-        updateSalePreview
-    );
+  if(e.target.id==="saleCocktail"){
+    updateSalePreview();
+  }
 
-
-document
-    .getElementById("saleQuantity")
-    .addEventListener(
-        "input",
-        updateSalePreview
-    );
+});
 
 
 function updateSalePreview(){
 
-    const id=
-        Number(
-            document.getElementById(
-                "saleCocktail"
-            ).value
-        );
+  const c=cocktail(
+    Number(
+      document.getElementById("saleCocktail").value
+    )
+  );
 
-    const qty=
-        Number(
-            document.getElementById(
-                "saleQuantity"
-            ).value
-        )||1;
+  if(!c) return;
 
-    const c=
-        cocktails.find(
-            x=>
-                Number(x.id)===
-                id
-        );
+  const q=Number(
+    document.getElementById("saleQuantity").value
+  )||1;
 
-    if(!c)
-        return;
+  const revenue=c.price*q;
+  const cost=cocktailCost(c)*q;
+  const m=revenue-cost;
 
-    const revenue=
-        c.price*qty;
+  document.getElementById("salePreview").innerHTML=`
 
-    const cost=
-        cocktailCost(c)*qty;
+    Incasso:
+    <strong>${money(revenue)}</strong>
 
-    const margin=
-        revenue-cost;
+    <br>
 
-    const possible=
-        maxCocktailsAvailable(c);
+    Costo:
+    <strong>${money(cost)}</strong>
 
-    document.getElementById(
-        "salePreview"
-    ).innerHTML=`
+    <br>
 
-        <strong>
-            ${qty} × ${escapeHtml(c.name)}
-        </strong>
+    Margine:
+    <strong class="green">${money(m)}</strong>
 
-        <br><br>
+    <br><br>
 
-        Incasso:
-        <strong>${money(revenue)}</strong>
+    Disponibili:
+    <strong>${cocktailsAvailable(c)}</strong>
 
-        ·
-
-        Costo:
-        <strong>${money(cost)}</strong>
-
-        ·
-
-        Margine:
-        <strong class="green">
-            ${money(margin)}
-        </strong>
-
-        <br><br>
-
-        Disponibili ora:
-        <strong>
-            ${possible}
-        </strong>
-
-    `;
+  `;
 
 }
 
 
 function saveSale(){
 
-    const cocktailId=
-        Number(
-            document.getElementById(
-                "saleCocktail"
-            ).value
-        );
+  const cocktailId=Number(
+    document.getElementById("saleCocktail").value
+  );
 
-    const quantity=
-        Number(
-            document.getElementById(
-                "saleQuantity"
-            ).value
-        );
+  const quantity=Number(
+    document.getElementById("saleQuantity").value
+  );
 
-    if(!cocktailId){
+  if(!cocktailId || quantity<=0){
 
-        showToast(
-            "Seleziona cocktail"
-        );
+    toast("Dati non validi");
 
-        return;
+    return;
+  }
 
-    }
+  if(!db.sales[today()])
+    db.sales[today()]=[];
 
-    if(quantity<=0){
+  const editId=Number(
+    document.getElementById("saleId").value
+  );
 
-        showToast(
-            "Quantità non valida"
-        );
+  if(editId){
 
-        return;
+    const sale=findSale(editId);
 
-    }
+    sale.cocktailId=cocktailId;
+    sale.quantity=quantity;
 
-    const editId=
-        document.getElementById(
-            "editSaleId"
-        ).value;
+  }else{
 
-    if(editId){
+    db.sales[today()].push({
 
-        const sale=
-            findSale(editId);
+      id:id(),
 
-        if(!sale)
-            return;
+      cocktailId,
 
-        sale.cocktailId=
-            cocktailId;
+      quantity,
 
-        sale.quantity=
-            quantity;
+      time:new Date().toLocaleTimeString(
+        "it-IT",
+        {
+          hour:"2-digit",
+          minute:"2-digit"
+        }
+      )
 
-    }else{
+    });
 
-        if(!sales[today])
-            sales[today]=[];
+  }
 
-        sales[today].push({
+  save();
+  closeModal("saleModal");
+  renderAll();
 
-            id:Date.now(),
-
-            cocktailId,
-
-            quantity,
-
-            time:
-                new Date()
-                .toLocaleTimeString(
-                    "it-IT",
-                    {
-                        hour:"2-digit",
-                        minute:"2-digit"
-                    }
-                )
-
-        });
-
-    }
-
-    saveData();
-
-    closeModal(
-        "saleModal"
-    );
-
-    renderAll();
-
-    showToast(
-        editId
-            ?"Vendita modificata ✓"
-            :"Vendita registrata 🍸"
-    );
+  toast(
+    editId
+      ?"Vendita modificata ✓"
+      :"Vendita registrata ✓"
+  );
 
 }
 
 
 function deleteSale(id){
 
-    const sale=
-        findSale(id);
+  const s=findSale(id);
 
-    if(!sale)
-        return;
+  if(!s) return;
 
-    const c=
-        cocktails.find(
-            x=>
-                Number(x.id)===
-                Number(sale.cocktailId)
-        );
+  if(!confirm("Eliminare vendita?")) return;
 
-    if(!confirm(
-        `Eliminare ${sale.quantity} × ${c?.name||"cocktail"}?`
-    ))
-        return;
+  for(const day in db.sales){
 
-    Object.keys(sales)
-        .forEach(day=>{
-
-            sales[day]=
-                sales[day].filter(
-                    x=>
-                        Number(x.id)!==
-                        Number(id)
-                );
-
-        });
-
-    saveData();
-
-    renderAll();
-
-    showToast(
-        "Vendita eliminata"
+    db.sales[day]=db.sales[day].filter(
+      x=>Number(x.id)!==Number(id)
     );
 
+  }
+
+  save();
+  renderAll();
+
+  toast("Vendita eliminata");
+
 }
 
 
-function renderSales(list){
+function renderSales(){
 
-    if(!list.length){
+  const box=document.getElementById("salesList");
 
-        return `
+  const list=getSales();
 
-            <div class="card empty">
+  if(!list.length){
 
-                <div class="empty-icon">
-                    🧾
-                </div>
+    box.innerHTML=
+      `<div class="card empty">Nessuna vendita oggi.</div>`;
 
-                Nessuna vendita oggi.
+    return;
+  }
 
+  box.innerHTML=list.slice().reverse().map(s=>{
+
+    const c=cocktail(s.cocktailId);
+
+    if(!c) return "";
+
+    const revenue=c.price*s.quantity;
+    const cost=cocktailCost(c)*s.quantity;
+    const m=revenue-cost;
+
+    return `
+
+      <div class="sale">
+
+        <div class="sale-head">
+
+          <div>
+
+            <div style="
+              color:var(--muted);
+              font-size:9px">
+              ${s.time||""}
             </div>
 
-        `;
+            <strong>
+              ${escape(c.name)}
+            </strong>
 
-    }
+          </div>
 
-    return list
-        .slice()
-        .reverse()
-        .map(sale=>{
+          <strong class="green">
+            ×${s.quantity}
+          </strong>
 
-            const c=
-                cocktails.find(
-                    x=>
-                        Number(x.id)===
-                        Number(sale.cocktailId)
-                );
+        </div>
 
-            if(!c)
-                return "";
+        <div style="
+          color:var(--muted);
+          font-size:10px;
+          margin-top:8px">
 
-            const revenue=
-                c.price*
-                sale.quantity;
+          ${money(revenue)}
+          · costo ${money(cost)}
+          ·
 
-            const cost=
-                cocktailCost(c)*
-                sale.quantity;
+          <span class="green">
+            margine ${money(m)}
+          </span>
 
-            const margin=
-                revenue-cost;
+        </div>
 
-            return `
+        <div class="row" style="margin-top:9px">
 
-            <div class="sale-card">
+          <button class="secondary"
+            onclick="openSale(${s.id})">
+            Modifica
+          </button>
 
-                <div class="sale-top">
+          <button class="secondary danger"
+            onclick="deleteSale(${s.id})">
+            Elimina
+          </button>
 
-                    <div>
+        </div>
 
-                        <div class="sale-time">
-                            ${sale.time||""}
-                        </div>
+      </div>
 
-                        <div class="sale-name">
-                            ${escapeHtml(c.name)}
-                        </div>
+    `;
 
-                    </div>
-
-                    <div class="sale-qty">
-                        ×${sale.quantity}
-                    </div>
-
-                </div>
-
-
-                <div class="sale-info">
-
-                    ${money(revenue)}
-                    incasso
-
-                    ·
-
-                    ${money(cost)}
-                    costo
-
-                    ·
-
-                    <span class="green">
-
-                        ${money(margin)}
-                        margine
-
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="row"
-                    style="margin-top:10px">
-
-                    <button
-                        class="secondary"
-                        onclick="openSaleModal(${sale.id})">
-
-                        Modifica
-
-                    </button>
-
-                    <button
-                        class="secondary danger"
-                        onclick="deleteSale(${sale.id})">
-
-                        Elimina
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            `;
-
-        }).join("");
+  }).join("");
 
 }
 
 
-function renderTodaySales(){
-
-    const list=
-        sales[today]||[];
-
-    const html=
-        renderSales(list);
-
-    document.getElementById(
-        "todaySales"
-    ).innerHTML=html;
-
-    document.getElementById(
-        "salesPageList"
-    ).innerHTML=html;
-
-}
-
-
-/* =====================================================
-   DAILY STATS
-===================================================== */
-
-function getDayStats(day){
-
-    const list=
-        sales[day]||[];
-
-    let revenue=0;
-    let cost=0;
-    let cocktailsSold=0;
-
-    list.forEach(sale=>{
-
-        const c=
-            cocktails.find(
-                x=>
-                    Number(x.id)===
-                    Number(sale.cocktailId)
-            );
-
-        if(!c)
-            return;
-
-        revenue+=
-            c.price*
-            sale.quantity;
-
-        cost+=
-            cocktailCost(c)*
-            sale.quantity;
-
-        cocktailsSold+=
-            Number(sale.quantity||0);
-
-    });
-
-    if(
-        history[day]
-        ?.revenueOverride
-        !==undefined
-    ){
-
-        revenue=
-            Number(
-                history[day]
-                .revenueOverride
-            );
-
-    }
-
-    return{
-
-        revenue,
-
-        cost,
-
-        margin:
-            revenue-cost,
-
-        cocktailsSold,
-
-        customers:
-            history[day]
-                ?.customers||0
-
-    };
-
-}
-
-
-function todayStats(){
-
-    return getDayStats(today);
-
-}
-
-
-/* =====================================================
-   DASHBOARD
-===================================================== */
-
-function renderDashboard(){
-
-    const s=
-        todayStats();
-
-    document.getElementById(
-        "dashboardRevenue"
-    ).textContent=
-        money(s.revenue);
-
-    document.getElementById(
-        "dashCocktails"
-    ).textContent=
-        s.cocktailsSold;
-
-    document.getElementById(
-        "dashCost"
-    ).textContent=
-        money(s.cost);
-
-    document.getElementById(
-        "dashMargin"
-    ).textContent=
-        money(s.margin);
-
-    document.getElementById(
-        "dashCustomers"
-    ).textContent=
-        s.customers;
-
-    let performance=
-        "Nessuna vendita registrata";
-
-    if(s.cocktailsSold>=50)
-        performance=
-            "🔥 Turno molto intenso";
-    else if(s.cocktailsSold>=30)
-        performance=
-            "⚡ Ritmo molto alto";
-    else if(s.cocktailsSold>=15)
-        performance=
-            "🟢 Buon ritmo";
-    else if(s.cocktailsSold>0)
-        performance=
-            "🟢 Turno iniziato";
-
-    document.getElementById(
-        "performanceText"
-    ).textContent=
-        performance;
-
-    renderDashboardAlerts();
-
-    renderTodaySales();
-
-}
-
-
-function renderDashboardAlerts(){
-
-    const container=
-        document.getElementById(
-            "dashboardAlerts"
-        );
-
-    const alerts=[];
-
-    stock.forEach(s=>{
-
-        const available=
-            getAvailableStock(s);
-
-        const i=
-            getIngredient(
-                s.ingredientId
-            );
-
-        if(available<=0){
-
-            alerts.push(`
-
-                <div class="card">
-
-                    <span class="red">
-                        🔴 ${escapeHtml(i?.name||"Prodotto")}
-                    </span>
-
-                    <br>
-
-                    <span style="
-                        color:var(--muted);
-                        font-size:11px">
-
-                        Esaurito
-
-                    </span>
-
-                </div>
-
-            `);
-
-        }else if(
-            available<=s.minimum
-        ){
-
-            alerts.push(`
-
-                <div class="card">
-
-                    <span class="yellow">
-                        🟡 ${escapeHtml(i?.name||"Prodotto")}
-                    </span>
-
-                    <br>
-
-                    <span style="
-                        color:var(--muted);
-                        font-size:11px">
-
-                        ${Math.round(available)} ml rimasti
-                        · da ordinare
-
-                    </span>
-
-                </div>
-
-            `);
-
-        }
-
-    });
-
-    container.innerHTML=
-        alerts.length
-            ?alerts.join("")
-            :`
-
-            <div class="card">
-
-                <span class="green">
-                    🟢 Tutto sotto controllo
-                </span>
-
-                <div style="
-                    color:var(--muted);
-                    font-size:11px;
-                    margin-top:4px">
-
-                    Nessun prodotto sotto soglia.
-
-                </div>
-
-            </div>
-
-            `;
-
-}
-
-
-/* =====================================================
+/* ======================================================
    ORDINI
-===================================================== */
+====================================================== */
 
 function renderOrders(){
 
-    const container=
-        document.getElementById(
-            "orderList"
-        );
+  const box=document.getElementById("orderList");
 
-    const low=
-        stock.filter(
-            s=>
-                getAvailableStock(s)<=
-                Number(s.minimum)
-        );
+  const low=db.stock.filter(s=>
+    available(s.ingredientId)<=Number(s.minimum)
+  );
 
-    if(!low.length){
+  if(!low.length){
 
-        container.innerHTML=`
+    box.innerHTML=
+      `<div class="card empty">🟢 Nessun ordine necessario.</div>`;
 
-            <div class="card empty">
+    return;
+  }
 
-                <div class="empty-icon">
-                    🛒
-                </div>
+  box.innerHTML=`
 
-                Nessun ordine necessario.
+    <div class="card">
 
-            </div>
+      ${low.map(s=>{
+
+        const i=ingredient(s.ingredientId);
+
+        return `
+
+          <div class="line"
+            style="padding:12px 0;border-bottom:1px solid var(--border)">
+
+            <span>
+              ${escape(i?.name||"")}
+            </span>
+
+            <strong class="yellow">
+              ${Math.round(
+                available(s.ingredientId)
+              )} ml
+            </strong>
+
+          </div>
 
         `;
 
-        return;
+      }).join("")}
 
-    }
+    </div>
 
-    container.innerHTML=
+    <button class="primary" onclick="copyOrders()">
+      📋 Copia lista ordine
+    </button>
+
+  `;
+
+}
+
+
+function copyOrders(){
+
+  const low=db.stock.filter(s=>
+    available(s.ingredientId)<=Number(s.minimum)
+  );
+
+  const text=low.map(s=>{
+
+    const i=ingredient(s.ingredientId);
+
+    return `${i?.name||"Prodotto"} — ${Math.round(
+      available(s.ingredientId)
+    )} ml rimasti`;
+
+  }).join("\n");
+
+  if(navigator.clipboard){
+
+    navigator.clipboard.writeText(text)
+      .then(()=>toast("Lista copiata ✓"))
+      .catch(()=>alert(text));
+
+  }else{
+
+    alert(text);
+
+  }
+
+}
+
+
+/* ======================================================
+   SPRECHI
+====================================================== */
+
+function openWaste(){
+
+  if(!db.ingredients.length){
+
+    toast("Prima crea un ingrediente");
+
+    return;
+  }
+
+  document.getElementById("wasteIngredient")
+    .innerHTML=db.ingredients.map(i=>`
+
+      <option value="${i.id}">
+        ${escape(i.name)}
+      </option>
+
+    `).join("");
+
+  document.getElementById("wasteMl").value="";
+
+  document.getElementById("wasteModal")
+    .classList.add("open");
+
+}
+
+
+function saveWaste(){
+
+  const ingredientId=Number(
+    document.getElementById("wasteIngredient").value
+  );
+
+  const ml=Number(
+    document.getElementById("wasteMl").value
+  );
+
+  const reason=document.getElementById("wasteReason").value;
+
+  if(!ingredientId || ml<=0){
+
+    toast("Inserisci una quantità valida");
+
+    return;
+  }
+
+  if(!db.waste[today()])
+    db.waste[today()]=[];
+
+  db.waste[today()].push({
+
+    id:id(),
+    ingredientId,
+    ml,
+    reason
+
+  });
+
+  save();
+
+  closeModal("wasteModal");
+
+  renderAll();
+
+  toast("Spreco registrato");
+
+}
+
+
+function renderWaste(){
+
+  const list=db.waste[today()]||[];
+
+  const box=document.getElementById("wasteList");
+
+  let total=0;
+
+  if(!list.length){
+
+    box.innerHTML=
+      `<div class="card empty">Nessuno spreco oggi.</div>`;
+
+  }else{
+
+    box.innerHTML=list.map(w=>{
+
+      const i=ingredient(w.ingredientId);
+
+      const cost=w.ml*(i?costPerMl(i):0);
+
+      total+=cost;
+
+      return `
 
         <div class="card">
 
-            ${low.map(s=>{
+          <div class="item-head">
 
-                const i=
-                    getIngredient(
-                        s.ingredientId
-                    );
+            <div>
+              <div class="item-title">
+                ${escape(i?.name||"")}
+              </div>
 
-                const available=
-                    getAvailableStock(s);
+              <div class="item-sub">
+                ${w.ml} ml · ${escape(w.reason)}
+              </div>
+            </div>
 
-                return `
+            <strong class="red">
+              ${money(cost)}
+            </strong>
 
-                <div class="order-item">
-
-                    <div>
-
-                        <div class="title">
-
-                            ${escapeHtml(
-                                i?.name||
-                                "Prodotto"
-                            )}
-
-                        </div>
-
-                        <div class="subtitle">
-
-                            Rimasti:
-                            ${Math.round(available)} ml
-
-                        </div>
-
-                    </div>
-
-                    <div class="yellow">
-                        ⚠️
-                    </div>
-
-                </div>
-
-                `;
-
-            }).join("")}
+          </div>
 
         </div>
 
-        <button
-            class="primary"
-            onclick="copyOrderList()">
+      `;
 
-            📋 Copia lista ordine
+    }).join("");
 
-        </button>
+  }
 
-    ;
-
-}
-
-
-function copyOrderList(){
-
-    const low=
-        stock.filter(
-            s=>
-                getAvailableStock(s)<=
-                Number(s.minimum)
-        );
-
-    const text=
-        low.map(s=>{
-
-            const i=
-                getIngredient(
-                    s.ingredientId
-                );
-
-            const available=
-                getAvailableStock(s);
-
-            return `${i?.name||"Prodotto"} — ${Math.round(available)} ml rimasti`;
-
-        }).join("\n");
-
-    navigator.clipboard
-        ?.writeText(text)
-        .then(
-            ()=>{
-                showToast(
-                    "Lista copiata ✓"
-                );
-            }
-        )
-        .catch(
-            ()=>{
-                alert(text);
-            }
-        );
+  document.getElementById("wasteTotal")
+    .textContent=money(total);
 
 }
 
 
-/* =====================================================
-   ANALISI AUTOMATICA
-===================================================== */
+/* ======================================================
+   ANALISI
+====================================================== */
+
+function statsForDay(day){
+
+  let revenue=0;
+  let cost=0;
+  let quantity=0;
+
+  (db.sales[day]||[]).forEach(s=>{
+
+    const c=cocktail(s.cocktailId);
+
+    if(!c) return;
+
+    revenue+=c.price*s.quantity;
+    cost+=cocktailCost(c)*s.quantity;
+    quantity+=s.quantity;
+
+  });
+
+  const shift=db.shifts[day];
+
+  if(shift && shift.revenue!==undefined){
+
+    revenue=Number(shift.revenue);
+
+  }
+
+  return {
+    revenue,
+    cost,
+    margin:revenue-cost,
+    quantity,
+    customers:shift?.customers||0
+  };
+
+}
+
 
 function renderAnalysis(){
 
-    const container=
-        document.getElementById(
-            "analysisContent"
-        );
+  const s=statsForDay(today());
 
-    const s=
-        todayStats();
+  let html="";
 
-    const items=[];
+  if(s.quantity){
 
+    const pct=s.revenue
+      ?s.margin/s.revenue*100
+      :0;
 
-    /* REDDITIVITÀ */
+    html+=`
 
-    if(s.revenue>0){
+      <div class="card analysis">
 
-        const pct=
-            s.revenue
-                ?s.margin/
-                s.revenue*
-                100
-                :0;
+        <div class="analysis-line">
 
-        items.push(`
+          💰 <strong>Marginalità</strong><br>
 
-            <div class="analysis-item">
+          Oggi il margine è
+          <strong class="green">
+            ${pct.toFixed(1)}%
+          </strong>
 
-                💰 <strong>
-                    Marginalità
-                </strong>
-
-                <br>
-
-                Il margine lordo stimato è
-                <strong class="green">
-                    ${pct.toFixed(1)}%
-                </strong>
-
-                con
-                ${money(s.margin)}
-                di margine.
-
-            </div>
-
-        `);
-
-    }
-
-
-    /* TOP SELLERS */
-
-    const counts={};
-
-    (sales[today]||[])
-        .forEach(sale=>{
-
-            counts[sale.cocktailId]=
-                (counts[sale.cocktailId]||0)+
-                Number(sale.quantity||0);
-
-        });
-
-    const top=
-        Object.entries(counts)
-        .sort((a,b)=>b[1]-a[1])
-        [0];
-
-    if(top){
-
-        const c=
-            cocktails.find(
-                x=>
-                    Number(x.id)===
-                    Number(top[0])
-            );
-
-        if(c){
-
-            items.push(`
-
-                <div class="analysis-item">
-
-                    🍸 <strong>
-                        Più venduto
-                    </strong>
-
-                    <br>
-
-                    ${escapeHtml(c.name)}
-                    è il cocktail più venduto
-                    oggi con
-                    <strong>
-                        ${top[1]}
-                    </strong>
-                    unità.
-
-                </div>
-
-            `);
-
-        }
-
-    }
-
-
-    /* BEST MARGIN */
-
-    if(cocktails.length){
-
-        const best=
-            cocktails
-            .slice()
-            .sort(
-                (a,b)=>
-                    cocktailMargin(b)-
-                    cocktailMargin(a)
-            )[0];
-
-        if(best){
-
-            items.push(`
-
-                <div class="analysis-item">
-
-                    ⭐ <strong>
-                        Migliore marginalità
-                    </strong>
-
-                    <br>
-
-                    ${escapeHtml(best.name)}
-
-                    genera
-
-                    <strong class="green">
-
-                        ${money(
-                            cocktailMargin(best)
-                        )}
-
-                    </strong>
-
-                    di margine per cocktail.
-
-                </div>
-
-            `);
-
-        }
-
-    }
-
-
-    /* STOCK */
-
-    const low=
-        stock.filter(
-            s=>
-                getAvailableStock(s)<=
-                Number(s.minimum)
-        );
-
-    if(low.length){
-
-        items.push(`
-
-            <div class="analysis-item">
-
-                📦 <strong>
-                    Magazzino
-                </strong>
-
-                <br>
-
-                Ci sono
-                <strong class="yellow">
-                    ${low.length}
-                </strong>
-                prodotti sotto la soglia minima.
-
-            </div>
-
-        `);
-
-    }else{
-
-        items.push(`
-
-            <div class="analysis-item">
-
-                🟢 <strong>
-                    Magazzino
-                </strong>
-
-                <br>
-
-                Nessun prodotto richiede
-                un riordino immediato.
-
-            </div>
-
-        `);
-
-    }
-
-
-    /* COCKTAIL POSSIBILI */
-
-    const possible=
-        cocktails.filter(
-            c=>
-                maxCocktailsAvailable(c)>0
-        ).length;
-
-    items.push(`
-
-        <div class="analysis-item">
-
-            🍹 <strong>
-                Disponibilità menu
-            </strong>
-
-            <br>
-
-            Al momento puoi preparare
-            <strong>
-                ${possible}
-            </strong>
-            cocktail diversi.
-
-        </div>
-
-    `);
-
-
-    container.innerHTML=`
-
-        <div class="card analysis">
-
-            ${
-                items.length
-                    ?items.join("")
-                    :`
-                    <div class="empty">
-                        Non ci sono ancora
-                        abbastanza dati.
-                    </div>
-                    `
-            }
+          con
+          ${money(s.margin)}
+          di margine lordo.
 
         </div>
 
     `;
 
-}
+    const counts={};
 
+    getSales().forEach(x=>{
 
-/* =====================================================
-   STATS
-===================================================== */
+      counts[x.cocktailId]=
+        (counts[x.cocktailId]||0)+x.quantity;
 
-function renderStats(){
+    });
 
-    let revenue=0;
-    let cost=0;
-    let cocktailsSold=0;
+    const bestSold=Object.entries(counts)
+      .sort((a,b)=>b[1]-a[1])[0];
 
-    Object.keys(sales)
-        .forEach(day=>{
+    if(bestSold){
 
-            const s=
-                getDayStats(day);
+      const c=cocktail(bestSold[0]);
 
-            revenue+=
-                s.revenue;
+      html+=`
 
-            cost+=
-                s.cost;
+        <div class="analysis-line">
 
-            cocktailsSold+=
-                s.cocktailsSold;
+          🍸 <strong>Più venduto</strong><br>
 
-        });
+          ${escape(c?.name||"")}
+          · ${bestSold[1]} venduti
 
-    document.getElementById(
-        "statRevenue"
-    ).textContent=
-        money(revenue);
+        </div>
 
-    document.getElementById(
-        "statCost"
-    ).textContent=
-        money(cost);
-
-    document.getElementById(
-        "statMargin"
-    ).textContent=
-        money(revenue-cost);
-
-    document.getElementById(
-        "statCocktails"
-    ).textContent=
-        cocktailsSold;
-
-    renderChart();
-
-}
-
-
-function renderChart(){
-
-    const chart=
-        document.getElementById(
-            "revenueChart"
-        );
-
-    const days=[];
-
-    for(let i=6;i>=0;i--){
-
-        const d=
-            new Date();
-
-        d.setDate(
-            d.getDate()-i
-        );
-
-        const key=
-            getDateKey(d);
-
-        const s=
-            getDayStats(key);
-
-        days.push({
-
-            label:
-                d.toLocaleDateString(
-                    "it-IT",
-                    {
-                        weekday:"short"
-                    }
-                ).slice(0,2),
-
-            revenue:s.revenue
-
-        });
+      `;
 
     }
 
-    const max=
-        Math.max(
-            ...days.map(
-                x=>x.revenue
-            ),
-            1
-        );
+  }else{
 
-    chart.innerHTML=
-        days.map(d=>`
+    html+=`
 
-            <div
-                class="bar"
-                style="
-                    height:
-                    ${Math.max(
-                        3,
-                        d.revenue/max*150
-                    )}px
-                "
-                title="${money(d.revenue)}">
+      <div class="card analysis">
 
-                <span>
-                    ${d.label}
-                </span>
+        <div class="analysis-line">
+          📊 Non ci sono ancora abbastanza dati.
+        </div>
 
-            </div>
+    `;
 
-        `).join("");
+  }
+
+
+  const low=db.stock.filter(s=>
+    available(s.ingredientId)<=s.minimum
+  );
+
+  html+=`
+
+    <div class="analysis-line">
+
+      📦 <strong>Magazzino</strong><br>
+
+      ${
+        low.length
+          ?`<span class="yellow">
+              ${low.length} prodotti da ordinare.
+            </span>`
+          :"🟢 Nessun prodotto sotto soglia."
+      }
+
+    </div>
+
+  `;
+
+
+  const possible=db.cocktails.filter(c=>
+    cocktailsAvailable(c)>0
+  ).length;
+
+  html+=`
+
+    <div class="analysis-line">
+
+      🍹 <strong>Menu disponibile</strong><br>
+
+      Puoi preparare
+      <strong>${possible}</strong>
+      cocktail diversi.
+
+    </div>
+
+  `;
+
+  html+=`</div>`;
+
+  document.getElementById("analysisList")
+    .innerHTML=html;
+
+
+  renderRankings();
 
 }
 
 
-/* =====================================================
+function renderRankings(){
+
+  const counts={};
+  const profits={};
+
+  Object.values(db.sales).forEach(day=>{
+
+    day.forEach(s=>{
+
+      const c=cocktail(s.cocktailId);
+
+      if(!c) return;
+
+      counts[c.id]=
+        (counts[c.id]||0)+s.quantity;
+
+      profits[c.id]=
+        (profits[c.id]||0)+
+        margin(c)*s.quantity;
+
+    });
+
+  });
+
+
+  const sold=Object.entries(counts)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,5);
+
+
+  const profit=Object.entries(profits)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,5);
+
+
+  document.getElementById("topSold")
+    .innerHTML=rankHTML(
+      sold,
+      "quantità"
+    );
+
+
+  document.getElementById("topProfit")
+    .innerHTML=rankHTML(
+      profit,
+      "margine",
+      true
+    );
+
+}
+
+
+function rankHTML(list,type,isMoney=false){
+
+  if(!list.length){
+
+    return `<div class="card empty">
+      Nessun dato.
+    </div>`;
+
+  }
+
+  return `
+
+    <div class="card">
+
+      ${list.map((x,index)=>{
+
+        const c=cocktail(x[0]);
+
+        return `
+
+          <div class="line"
+            style="
+              padding:10px 0;
+              border-bottom:1px solid var(--border)">
+
+            <span>
+              ${index+1}. ${escape(c?.name||"")}
+            </span>
+
+            <strong>
+              ${
+                isMoney
+                  ?money(x[1])
+                  :x[1]+" "+type
+              }
+            </strong>
+
+          </div>
+
+        `;
+
+      }).join("")}
+
+    </div>
+
+  `;
+
+}
+
+
+/* ======================================================
+   HOME
+====================================================== */
+
+function renderHome(){
+
+  const s=statsForDay(today());
+
+  document.getElementById("homeRevenue")
+    .textContent=money(s.revenue);
+
+  document.getElementById("homeCocktails")
+    .textContent=s.quantity;
+
+  document.getElementById("homeCost")
+    .textContent=money(s.cost);
+
+  document.getElementById("homeMargin")
+    .textContent=money(s.margin);
+
+  document.getElementById("homeCustomers")
+    .textContent=s.customers;
+
+  document.getElementById("homeMessage")
+    .textContent=
+      s.quantity>=50
+        ?"🔥 Turno molto intenso"
+        :s.quantity>=25
+          ?"⚡ Buon ritmo"
+          :s.quantity
+            ?"🟢 Turno iniziato"
+            :"Nessuna vendita";
+
+  const alerts=[];
+
+  db.stock.forEach(s=>{
+
+    const a=available(s.ingredientId);
+    const i=ingredient(s.ingredientId);
+
+    if(a<=0){
+
+      alerts.push(`
+        <div class="card">
+          <strong class="red">
+            🔴 ${escape(i?.name||"")}
+          </strong>
+          <div class="item-sub">Esaurito</div>
+        </div>
+      `);
+
+    }else if(a<=s.minimum){
+
+      alerts.push(`
+        <div class="card">
+          <strong class="yellow">
+            🟡 ${escape(i?.name||"")}
+          </strong>
+          <div class="item-sub">
+            ${Math.round(a)} ml · da ordinare
+          </div>
+        </div>
+      `);
+
+    }
+
+  });
+
+  document.getElementById("homeAlerts")
+    .innerHTML=alerts.length
+      ?alerts.join("")
+      :`
+        <div class="card">
+          <span class="green">🟢 Tutto sotto controllo</span>
+        </div>
+      `;
+
+  document.getElementById("homeSales")
+    .innerHTML=renderSalesHTML(
+      getSales().slice(-5)
+    );
+
+}
+
+
+function renderSalesHTML(list){
+
+  if(!list.length){
+
+    return `<div class="card empty">
+      Nessuna vendita.
+    </div>`;
+
+  }
+
+  return list.slice().reverse().map(s=>{
+
+    const c=cocktail(s.cocktailId);
+
+    if(!c) return "";
+
+    return `
+
+      <div class="card">
+
+        <div class="item-head">
+
+          <span>
+            ${escape(c.name)}
+          </span>
+
+          <strong>
+            ×${s.quantity}
+          </strong>
+
+        </div>
+
+        <div class="item-sub">
+          ${s.time||""} ·
+          ${money(c.price*s.quantity)}
+        </div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* ======================================================
    SHIFT
-===================================================== */
+====================================================== */
 
-function openShiftModal(){
+function openShift(){
 
-    const s=
-        todayStats();
+  const s=statsForDay(today());
 
-    document.getElementById(
-        "shiftRevenue"
-    ).value=
-        s.revenue||"";
+  document.getElementById("shiftRevenue")
+    .value=s.revenue;
 
-    document.getElementById(
-        "shiftCustomers"
-    ).value=
-        history[today]
-            ?.customers||"";
+  document.getElementById("shiftCustomers")
+    .value=s.customers||"";
 
-    document.getElementById(
-        "shiftNotes"
-    ).value=
-        history[today]
-            ?.notes||"";
+  document.getElementById("shiftNotes")
+    .value=db.shifts[today()]?.notes||"";
 
-    document
-        .getElementById(
-            "shiftModal"
-        )
-        .classList.add("active");
+  document.getElementById("shiftModal")
+    .classList.add("open");
 
 }
 
 
 function saveShift(){
 
-    history[today]={
+  db.shifts[today()]={
 
-        revenueOverride:
-            Number(
-                document.getElementById(
-                    "shiftRevenue"
-                ).value
-            )||0,
+    revenue:
+      Number(
+        document.getElementById("shiftRevenue").value
+      )||0,
 
-        customers:
-            Number(
-                document.getElementById(
-                    "shiftCustomers"
-                ).value
-            )||0,
+    customers:
+      Number(
+        document.getElementById("shiftCustomers").value
+      )||0,
 
-        notes:
-            document.getElementById(
-                "shiftNotes"
-            ).value,
+    notes:
+      document.getElementById("shiftNotes").value
 
-        closed:true
+  };
 
-    };
+  save();
 
-    saveData();
+  closeModal("shiftModal");
 
-    closeModal(
-        "shiftModal"
-    );
+  renderAll();
 
-    renderAll();
-
-    showToast(
-        "Turno chiuso ✓"
-    );
+  toast("Turno salvato ✓");
 
 }
 
 
-/* =====================================================
-   MODALS
-===================================================== */
-
-function closeModal(id){
-
-    document
-        .getElementById(id)
-        .classList.remove("active");
-
-}
-
-
-/* =====================================================
-   RENDER ALL
-===================================================== */
+/* ======================================================
+   RENDER
+====================================================== */
 
 function renderAll(){
 
-    renderDashboard();
-
-    renderCocktails();
-
-    renderIngredients();
-
-    renderStock();
-
-    renderTodaySales();
-
-    renderOrders();
-
-    renderAnalysis();
-
-    renderStats();
+  renderHome();
+  renderCocktails();
+  renderIngredients();
+  renderStock();
+  renderSales();
+  renderOrders();
+  renderAnalysis();
+  renderWaste();
 
 }
 
 
-/* =====================================================
-   ESC
-===================================================== */
+/* ======================================================
+   START
+====================================================== */
 
-document.addEventListener(
-    "keydown",
-    e=>{
+document.getElementById("date")
+  .textContent=
+    new Date().toLocaleDateString(
+      "it-IT",
+      {
+        weekday:"short",
+        day:"numeric",
+        month:"short"
+      }
+    );
 
-        if(e.key==="Escape"){
-
-            document
-                .querySelectorAll(
-                    ".modal.active"
-                )
-                .forEach(
-                    m=>
-                        m.classList.remove(
-                            "active"
-                        )
-                );
-
-        }
-
-    }
-);
+renderAll();
 
 </script>
 
